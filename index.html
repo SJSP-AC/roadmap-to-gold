@@ -187,6 +187,13 @@ table.cmp td.num{font-variant-numeric:tabular-nums;white-space:normal}
 .tn-toggle[aria-expanded="false"] .chev{transform:rotate(45deg) translateY(-3px)}
 .tn-body{padding:0 13px 13px;font-size:13.5px}
 .tn-body p{margin:0;max-width:none}
+.gate{max-width:430px;margin:14vh auto 0;padding:0 20px}
+.gate h1{margin:0 0 16px}
+.gate-note{margin:0 0 20px;font-size:14.5px;line-height:1.55;color:var(--muted);max-width:none}
+.gate-form{display:flex;gap:8px}
+.gate-form input{flex:1;min-width:0;font:400 15px var(--body);padding:10px 12px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:0}
+.gate-form input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.gate-err{margin:14px 0 0;font-size:13.5px;line-height:1.5;color:var(--warn);max-width:none}
 a.seclink{color:inherit;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px;white-space:nowrap}
 a.seclink:hover{color:var(--gold-ink);background:var(--gold-wash)}
 a.seclink:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
@@ -1789,6 +1796,46 @@ function getKey(){
   if(m){ try{ localStorage.setItem(KEY_STORE, m[1]); }catch(e){} return m[1]; }
   try{ return localStorage.getItem(KEY_STORE) || ""; }catch(e){ return ""; }
 }
+/* The gate. Obfuscation, not encryption: this whole file is readable by anyone
+   who opens view-source. It stops a person who lands on the bare URL, which is
+   what it is for. Real access control would need a different host. */
+function hashKey(str){
+  var h = 5381, i;
+  for(i=0;i<str.length;i++){ h = (((h*33) ^ str.charCodeAt(i)) >>> 0); }
+  return h.toString(36);
+}
+var PASS_HASH = "1fa87go";
+function keyOk(k){ return !!k && hashKey(String(k).toLowerCase()) === PASS_HASH; }
+
+function renderGate(){
+  var root = document.getElementById("pg-root");
+  root.innerHTML =
+    '<div class="gate">'+
+      '<p class="eyebrow">Coach Marc Montoya</p>'+
+      '<h1>Roadmap to Gold</h1>'+
+      '<p class="gate-note">This one is private. Use the link I sent you, or type the passcode below.</p>'+
+      '<form id="gate-form" class="gate-form" autocomplete="off">'+
+        '<input id="gate-input" type="password" autocapitalize="none" autocorrect="off" spellcheck="false" aria-label="Passcode" placeholder="Passcode">'+
+        '<button type="submit" class="btn">Open</button>'+
+      '</form>'+
+      '<p class="gate-err" id="gate-err" hidden>That is not it. The passcode is the part of my link after <b>#k=</b>.</p>'+
+    '</div>';
+  var input = document.getElementById("gate-input");
+  document.getElementById("gate-form").addEventListener("submit", function(ev){
+    ev.preventDefault();
+    var v = (input.value||"").trim().toLowerCase();
+    if(keyOk(v)){
+      try{ localStorage.setItem(KEY_STORE, v); }catch(e){}
+      location.hash = "#k=" + v;
+      location.reload();
+    } else {
+      document.getElementById("gate-err").hidden = false;
+      input.select();
+    }
+  });
+  input.focus();
+}
+
 function getDevice(){
   var d=""; try{ d = localStorage.getItem(DEVICE_STORE) || ""; }catch(e){}
   if(!d){ d = Math.random().toString(36).slice(2,10); try{ localStorage.setItem(DEVICE_STORE, d); }catch(e){} }
@@ -1883,6 +1930,7 @@ function copyAnswers(){
 }
 
 /* ---------- boot ---------- */
+if(!keyOk(getKey())){ renderGate(); return; }
 render(); wire(); refresh(); syncAllBtn();
 var decided = DECISIONS.filter(function(d){ return isAnswered(d.id); }).length;
 var submittedAt = 0; try{ submittedAt = +localStorage.getItem(SUB_STORE)||0; }catch(e){}
