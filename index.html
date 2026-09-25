@@ -1,0 +1,1895 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Roadmap to Gold — Coach Marc Montoya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<script>(function(){try{var t=localStorage.getItem("pg-r2-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<style id="pg-style">
+:root{
+  --ground:#F3F2EE; --surface:#FFFFFF; --ink:#16140F; --muted:#67625A; --line:#DEDAD1;
+  --gold:#A87B22; --gold-ink:#7A5714; --gold-wash:#F3E9D2; --chip:#ECEAE4; --ok:#2F6B45; --warn:#8A3B1E;
+  --display:"Big Shoulders Display","Oswald","Arial Narrow",Impact,sans-serif;
+  --body:"Public Sans","Helvetica Neue",Arial,sans-serif;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#12110F; --surface:#1B1A17; --ink:#ECE8DF; --muted:#9C968A; --line:#2E2C27;
+    --gold:#D4A547; --gold-ink:#E5BD6A; --gold-wash:#2E2615; --chip:#262420; --ok:#7FC093; --warn:#E39A7C;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#12110F; --surface:#1B1A17; --ink:#ECE8DF; --muted:#9C968A; --line:#2E2C27;
+  --gold:#D4A547; --gold-ink:#E5BD6A; --gold-wash:#2E2615; --chip:#262420; --ok:#7FC093; --warn:#E39A7C;
+  color-scheme:dark;
+}
+[hidden]{display:none!important}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--ground);color:var(--ink);font:15px/1.55 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--gold-ink)}
+.wrap{max-width:860px;margin:0 auto;padding-inline:20px;padding-block:28px 140px}
+@media (max-width:480px){.wrap{padding-inline:16px}}
+.eyebrow{font:600 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink)}
+h1{font:800 clamp(38px,7.5vw,60px)/.92 var(--display);letter-spacing:.01em;text-transform:uppercase;margin:10px 0 14px;text-wrap:balance}
+.lede{max-width:64ch;margin:0 0 10px}
+.lede.muted{color:var(--muted)}
+.lede.sourceline{font-size:11.6px;line-height:1.5;letter-spacing:.02em}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin:22px 0 8px}
+.how div{background:var(--surface);padding:12px 14px;font-size:13.5px}
+.how b{display:block;font:800 18px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em;margin-bottom:4px}
+@media (max-width:640px){.how{grid-template-columns:1fr}}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:6;background:var(--ground);border-bottom:1px solid var(--line);margin:24px -20px 0;padding:10px 20px}
+@media (max-width:480px){.bar{margin-inline:-16px;padding-inline:16px}}
+.bar-row{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;justify-content:space-between}
+.meter{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.meter-track{width:110px;height:6px;background:var(--chip);position:relative}
+.meter-fill{position:absolute;inset:0 auto 0 0;background:var(--gold);width:0}
+.toggle{border:1px solid var(--line);background:var(--surface);color:var(--muted);font:500 13px var(--body);padding:6px 10px;cursor:pointer}
+.toggle:hover{color:var(--gold-ink);border-color:var(--gold)}
+.bar-btns{display:flex;align-items:center;gap:8px}
+.theme-btn{display:inline-flex;align-items:center;justify-content:center;padding:6px 8px;line-height:0}
+.theme-ico{width:14px;height:14px;border-radius:50%;display:block;
+  background:linear-gradient(90deg,var(--gold) 0 50%,#16140F 50% 100%);
+  box-shadow:0 0 0 1px var(--gold);transition:transform .2s ease}
+.theme-btn:hover .theme-ico,.theme-btn:focus-visible .theme-ico{transform:rotate(180deg)}
+:root[data-theme="dark"] .theme-ico{background:linear-gradient(90deg,var(--gold) 0 50%,#0C0B09 50% 100%)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .theme-ico{background:linear-gradient(90deg,var(--gold) 0 50%,#0C0B09 50% 100%)}}
+.jump{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.jump a{font:600 11.5px var(--body);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--muted);border:1px solid var(--line);background:var(--surface);padding:5px 9px}
+.jump a{display:inline-flex;align-items:baseline;gap:6px;transition:background .12s,color .12s,border-color .12s}
+.jump a em{font-style:normal;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums;letter-spacing:.04em;transition:color .12s}
+.jump a:hover,.jump a:focus-visible{color:#fff;background:var(--gold);border-color:var(--gold);outline:none}
+.jump a:hover em,.jump a:focus-visible em{color:#fff}
+/* the dark palette gold is far too light for white text, so the hover chip
+   uses a deeper gold there and the white stays readable */
+:root[data-theme="dark"] .jump a:hover,:root[data-theme="dark"] .jump a:focus-visible{background:#96691A;border-color:#96691A}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .jump a:hover,:root:not([data-theme="light"]) .jump a:focus-visible{background:#96691A;border-color:#96691A}}
+button:focus-visible,input:focus-visible,textarea:focus-visible,label:focus-within,a:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+.shell{margin-top:22px}
+.sidenav{display:none}
+@media (min-width:1040px){
+  .wrap{max-width:1100px}
+  .shell{display:grid;grid-template-columns:190px 1fr;gap:44px;align-items:start}
+  .sidenav{display:block;position:sticky;top:96px}
+  .sidenav ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}
+  .sidenav a{display:block;text-decoration:none;color:var(--muted);font:600 12px var(--body);letter-spacing:.06em;text-transform:uppercase;padding:9px 0 9px 14px;margin-left:-1px;border-left:2px solid transparent}
+  .sidenav a:hover{color:var(--gold-ink)}
+  .sidenav a[aria-current="true"]{color:var(--ink);border-left-color:var(--gold)}
+  .sidenav .num{color:var(--gold-ink);margin-right:7px;font-variant-numeric:tabular-nums}
+  .jump{display:none}
+}
+.secs{border-top:2px solid var(--ink)}
+section.sec{border-bottom:1px solid var(--line);scroll-margin-top:72px}
+.sec-h{margin:0}
+.sec-toggle{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 2px}
+.sec-num{font:800 12px/1 var(--display);color:var(--gold-ink);letter-spacing:.12em;display:block;margin-bottom:5px}
+.sec-title{font:800 26px/1 var(--display);text-transform:uppercase;letter-spacing:.02em;color:var(--ink)}
+.sec-right{display:flex;align-items:center;gap:12px;flex:none}
+.chev{width:10px;height:10px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg) translateY(-3px);transition:transform .15s}
+.sec-toggle[aria-expanded="true"] .chev{transform:rotate(-135deg) translateX(-2px)}
+.sec-toggle:hover .sec-title{color:var(--gold-ink)}
+.sec-note{font-size:12.5px;color:var(--muted);white-space:nowrap}
+.sec-body{padding-bottom:22px}
+@media (max-width:560px){
+  .sec-toggle > span:first-child{flex:1;min-width:0}
+  .sec-right{align-items:flex-start}
+  .sec-note{white-space:normal;max-width:108px;text-align:right;line-height:1.35}
+  .sec-title{font-size:21px}
+}
+h3{font:800 18px/1.1 var(--display);text-transform:uppercase;letter-spacing:.03em;margin:22px 0 8px;color:var(--gold-ink)}
+p{max-width:68ch}
+.muted{color:var(--muted)}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:14px 0}
+.stat{background:var(--surface);padding:12px 14px}
+.stat b{display:block;font:800 30px/1 var(--display);color:var(--ink);font-variant-numeric:tabular-nums}
+.stat span{display:block;font-size:12.5px;color:var(--muted);margin-top:4px}
+
+.chartwrap{border:1px solid var(--line);background:var(--surface);padding:16px;margin:14px 0}
+.chartrow{display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:center;margin:10px 0}
+.chartrow .lbl{font:600 12.5px var(--body);color:var(--muted)}
+.chartrow .sub{font-weight:400;font-size:11.5px;color:var(--muted)}
+.chartrow{grid-template-columns:120px 1fr}
+.stack{display:flex;height:26px;background:var(--chip);overflow:hidden}
+.seg{height:100%}
+.seg.c1{background:var(--gold)}
+.seg.c2{background:#6E5121}
+.seg.c3{background:#B79A62}
+.seg.c4{background:#8A6C33}
+.seg.c5{background:#D9C79A}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:12.5px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;margin-right:5px}
+.total{font:600 13px var(--body);color:var(--ink);font-variant-numeric:tabular-nums}
+
+.tbl{overflow-x:auto;margin:10px 0;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:13.5px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 11.5px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--ground);position:sticky;top:0}
+th.sortable{cursor:pointer;user-select:none;white-space:nowrap}
+th.sortable:hover{color:var(--gold-ink)}
+th .arrow{opacity:.35;margin-left:4px}
+th[aria-sort] .arrow{opacity:1;color:var(--gold-ink)}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:var(--gold-wash)}
+tr.grouprow td{background:var(--ground);font:800 13px var(--display);text-transform:uppercase;letter-spacing:.08em;color:var(--gold-ink)}
+tr.grouprow:hover td{background:var(--ground)}
+tr.subtotal td{font-weight:600;color:var(--muted);border-top:1px solid var(--line)}
+tr.subtotal:hover td{background:transparent}
+.ownerbars{display:grid;gap:8px;margin:12px 0 4px}
+.ownerbar{display:grid;grid-template-columns:64px 1fr 110px;gap:12px;align-items:center;font-size:13px}
+.ownerbar .track{display:block;height:20px;background:var(--chip)}
+.ownerbar .fill{display:block;height:100%;background:var(--gold)}
+.ownerbar .fill.o2{background:#8A6C33}
+.ownerbar .fill.o3{background:#B79A62}
+.ownerbar b{font:600 13px var(--body)}
+.ownerbar .val{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.rec td{background:var(--gold-wash)}
+table.cmp{min-width:680px}
+table.cmp td{font-size:13px}
+table.cmp th:first-child,table.cmp td:first-child{width:20%;font-weight:600;color:var(--muted)}
+table.cmp td:first-child{font-size:12.5px;text-transform:uppercase;letter-spacing:.04em}
+table.cmp td.num{font-variant-numeric:tabular-nums;white-space:normal}
+.addon{margin:12px 0;border:1px solid var(--gold);background:var(--gold-wash)}
+.addon-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:11px 13px;background:none;border:0;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.addon-toggle:hover{background:rgba(0,0,0,.03)}
+.ad-l{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ad-cta{font:700 10.5px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink)}
+.ad-nm{font:700 14.5px var(--display)}
+.ad-px{font:700 14px var(--display);color:var(--gold-ink);white-space:nowrap}
+.ad-body{padding:0 13px 13px;border-top:1px solid var(--gold)}
+.ad-body>b{display:block;font:600 11px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:11px 0 6px}
+.ad-body ul{margin:0;padding:0 0 0 18px}
+.ad-body li{font-size:13px;margin:0 0 6px}
+.ad-note{font-size:12.5px;color:var(--muted);font-style:italic;margin:10px 0 0;padding-top:9px;border-top:1px dashed var(--line);max-width:none}
+@media (max-width:520px){.addon-toggle{flex-wrap:wrap}.ad-px{margin-left:auto}}
+.tnotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;align-items:start;margin:-4px 0 4px}
+.tnote{border:1px solid var(--line);background:var(--surface)}
+.tnote:has(.tn-toggle[aria-expanded="true"]){border-color:var(--gold)}
+.tn-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:11px 13px;background:none;border:0;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.tn-l{display:flex;flex-direction:column;gap:2px;min-width:0}
+.tn-cta{font:700 10.5px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink)}
+.tn-nm{font:700 15px var(--display);text-transform:uppercase;letter-spacing:.04em}
+.tn-toggle:hover .tn-cta{color:var(--gold)}
+.tn-toggle:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.tn-toggle[aria-expanded="true"] .chev{transform:rotate(-135deg) translateX(-2px)}
+.tn-toggle[aria-expanded="false"] .chev{transform:rotate(45deg) translateY(-3px)}
+.tn-body{padding:0 13px 13px;font-size:13.5px}
+.tn-body p{margin:0;max-width:none}
+a.seclink{color:inherit;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:1px;white-space:nowrap}
+a.seclink:hover{color:var(--gold-ink);background:var(--gold-wash)}
+a.seclink:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+h4.xh{font:700 12px var(--body);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:16px 0 4px}
+.notyours{font:600 11px var(--body);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);opacity:.75;white-space:nowrap}
+p.legend{font-size:12.5px;color:var(--muted);margin:10px 0 2px;max-width:none}
+p.tstack{font-size:12.5px;color:var(--muted);margin:10px 0 0;padding-top:9px;border-top:1px dashed var(--line);max-width:none}
+.feebox{border:2px solid var(--gold);background:var(--gold-wash);padding:14px 16px;margin:12px 0}
+.feebox p{margin:0;font-size:15.5px;max-width:none}
+.feebox p+p{margin-top:8px;font-size:14px;color:var(--muted)}
+.machine{margin:14px 0;border:1px solid var(--line);background:var(--surface)}
+.mstage{display:flex;gap:13px;padding:13px 14px;border-bottom:1px solid var(--line)}
+.mnum{flex:0 0 28px;height:28px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font:800 13px var(--display)}
+.mbody{min-width:0;flex:1}
+.mbody h4{margin:2px 0 1px;font:800 15px var(--display);text-transform:uppercase;letter-spacing:.06em}
+.mq{margin:0;font:600 13.5px var(--body);color:var(--gold-ink);max-width:none}
+.mw{margin:4px 0 0;font-size:13.5px;color:var(--muted);max-width:none}
+.mlink{display:inline-block;margin-top:5px;font:600 11px var(--body);letter-spacing:.07em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+.mlink:hover{color:var(--gold-ink);border-color:var(--gold)}
+.mloop{padding:11px 14px;background:var(--gold-wash);font:600 13px var(--body);color:var(--gold-ink)}
+.hmap{margin:16px 0 0}
+.hm-tag{display:inline-block;font:800 10.5px var(--body);letter-spacing:.13em;text-transform:uppercase;color:var(--gold-ink);background:var(--gold-wash);padding:3px 9px;margin:0 0 8px}
+.hm-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}
+.hm-cell{border:1px solid var(--line);background:var(--surface);padding:11px 12px;display:flex;flex-direction:column}
+.hm-cell h5{margin:0 0 4px;font:800 13.5px var(--display);text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
+.hm-cell p{margin:0;font-size:12.5px;line-height:1.45;color:var(--muted);max-width:none}
+.hm-funnel{display:flex;align-items:center;gap:9px;padding:9px 0;color:var(--muted);font:700 10.5px var(--body);letter-spacing:.13em;text-transform:uppercase}
+.hm-funnel:before,.hm-funnel:after{content:"";flex:1;height:1px;background:var(--line)}
+.hm-hub{border:2px solid var(--gold);background:var(--surface);padding:15px 15px 13px}
+.hm-hub h4{margin:0;font:800 22px var(--display);text-transform:uppercase;letter-spacing:.04em;line-height:1.05;color:var(--ink)}
+.hm-hub .hm-sub{margin:3px 0 10px;font:600 12.5px var(--body);color:var(--gold-ink);max-width:none}
+.hm-jobs{list-style:none;margin:0;padding:0}
+.hm-jobs li{position:relative;padding:4px 0 4px 16px;font-size:13px;line-height:1.45}
+.hm-jobs li:before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;background:var(--gold)}
+.hm-cap{margin-top:12px;padding-top:11px;border-top:1px dashed var(--line)}
+.hm-cap b{display:block;font:800 11px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-ink);margin-bottom:4px}
+.hm-cap p{margin:0;font-size:12.5px;line-height:1.45;color:var(--muted);max-width:none}
+.hm-fork{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.hm-br{border:1px solid var(--line);background:var(--surface);padding:12px}
+.hm-br.loopback{border-style:dashed}
+.hm-br h5{margin:0 0 6px;font:800 14px var(--display);text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
+.hm-steps{list-style:none;margin:0;padding:0}
+.hm-steps li{position:relative;padding:3px 0 3px 15px;font-size:12.5px;line-height:1.4}
+.hm-steps li:before{content:"";position:absolute;left:3px;top:10px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.hm-br p{margin:7px 0 0;font-size:12.5px;line-height:1.45;color:var(--muted);max-width:none}
+.hm-loop{margin-top:8px;border:1px dashed var(--gold);background:var(--gold-wash);padding:12px 13px}
+.hm-loop b{display:block;font:800 11px var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-ink);margin-bottom:4px}
+.hm-loop p{margin:0;font:600 13px var(--body);line-height:1.45;color:var(--gold-ink);max-width:none}
+.hm-link{display:inline-block;margin-top:7px;font:700 10px var(--body);letter-spacing:.09em;text-transform:uppercase;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);align-self:flex-start}
+.hm-link:hover{color:var(--gold-ink);border-color:var(--gold)}
+.hm-cell .hm-link{margin-top:auto;padding-top:8px}
+.hm-br{display:flex;flex-direction:column}
+.hm-br .hm-link{margin-top:auto;padding-top:8px}
+.hm-br .hm-tag{align-self:flex-start}
+.hm-drain{margin:10px 0 0;font-size:12.5px;color:var(--muted)}
+@media(max-width:560px){.hm-grid,.hm-fork{grid-template-columns:1fr}.hm-hub h4{font-size:19px}}
+ol.fmla{margin:10px 0;padding:0 0 0 22px}
+ol.fmla li{margin:0 0 9px;padding-left:4px}
+ol.fmla li b{font-family:var(--display);font-size:13.5px;color:var(--gold-ink);display:block}
+ol.fmla li span{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.mathwrap{overflow-x:auto;margin:10px 0;border:1px solid var(--line);background:var(--surface)}
+table.mtbl{min-width:600px}
+table.mtbl td.mp{width:22%;font-weight:700;color:var(--gold-ink);font-family:var(--display);font-size:13px}
+table.mtbl td.mw{width:24%;font-weight:600}
+table.mtbl td.mx{font-size:13px;color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0;align-items:center}
+#group-btn{border:1px solid var(--line);background:var(--surface);color:var(--muted);font:500 13px var(--body);padding:6px 10px;cursor:pointer}
+#group-btn[aria-pressed="true"]{border-color:var(--gold);background:var(--gold-wash);color:var(--gold-ink);font-weight:600}
+.filters button{border:1px solid var(--line);background:var(--surface);color:var(--muted);font:500 13px var(--body);padding:6px 10px;cursor:pointer}
+.filters button[aria-pressed="true"]{border-color:var(--gold);background:var(--gold-wash);color:var(--gold-ink);font-weight:600}
+
+.timeline{border:1px solid var(--line);background:var(--surface);padding:16px 16px 10px;margin:14px 0;overflow-x:auto}
+.tl-grid{min-width:820px}
+.tl-months{display:grid;grid-template-columns:108px repeat(13,1fr);gap:3px;margin-bottom:8px}
+.tl-months span{font:600 9.5px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:center}
+.tl-months span:first-child{text-align:left}
+.tl-row{display:grid;grid-template-columns:108px repeat(13,1fr);gap:3px;align-items:center;margin:7px 0}
+.tl-name{font:800 14px/1.1 var(--display);text-transform:uppercase;letter-spacing:.03em;color:var(--ink)}
+.tl-bar{height:22px;background:var(--gold);display:flex;align-items:center;padding:0 8px;color:#16140F;font:600 11px var(--body);white-space:nowrap;overflow:hidden}
+.tl-bar.b2{background:#8A6C33;color:#FFF}
+.tl-bar.b3{background:#B79A62}
+.tl-bar.b4{background:#6E5121;color:#FFF}
+.tl-bar.b5{background:var(--gold-ink);color:#FFF}
+.tl-foot{font-size:12px;color:var(--muted);margin:8px 0 0}
+.phase{border:1px solid var(--line);background:var(--surface);padding:14px 16px;margin:10px 0}
+.phase{padding:0}
+.phase-toggle{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px}
+.phase-toggle:hover h4{color:var(--gold-ink)}
+.phase-toggle:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.phase > div{padding:0 16px 14px}
+.phase h4{margin:0 0 4px;font:800 19px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.phase .when{font-size:12.5px;color:var(--gold-ink);font-weight:600}
+.phase p{margin:6px 0 0;font-size:14px}
+
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0 0}
+.tabs button{border:1px solid var(--line);background:var(--surface);color:var(--muted);font:600 13px var(--body);padding:8px 12px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.panel{border:1px solid var(--line);border-top:0;background:var(--surface);padding:16px}
+
+/* cost cards */
+.scards,.pcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:16px 0}
+.scards.tiers{margin-bottom:12px}
+.scard,.pcard{position:relative;border:1px solid var(--line);background:var(--surface);padding:16px 16px 18px}
+.scard.rec,.pcard.rec{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+.scards.tiers .scard{padding-top:38px}
+.scards.tiers .scard h4{margin-bottom:7px;font-size:26.4px}
+.ribbon{position:absolute;top:0;right:0;background:var(--gold);color:#16140F;font:600 10.5px var(--body);letter-spacing:.1em;text-transform:uppercase;padding:4px 8px}
+.scard h4,.pcard h4{margin:0 0 2px;font:800 24px/1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.scard .tag,.pcard .tag{margin:0 0 12px;font-size:12.5px;color:var(--muted);background:none;padding:0;letter-spacing:0;text-transform:none}
+.lines{border-top:1px solid var(--line);margin:4px 0 12px}
+.lrow{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+.lrow b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.scard .lines .lrow{display:block;padding:9px 0}
+.scard .lines .lrow span{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.scard .lines .lrow b{display:block;white-space:normal;font-size:13.5px;line-height:1.35}
+.alt{margin-top:10px;padding:9px 10px;background:var(--gold-wash);color:var(--gold-ink);font-size:12.5px}
+.alt b{font-variant-numeric:tabular-nums}
+ul.covers{margin:8px 0 0;padding-left:18px;font-size:14px}
+ul.covers li{margin:5px 0}
+.scard .big{font:800 32px/1.05 var(--display);color:var(--ink);font-variant-numeric:tabular-nums;display:flex;align-items:baseline;flex-wrap:wrap;gap:2px}
+.scard .big span{font:600 13px var(--body);color:var(--muted);margin-left:6px;letter-spacing:0;white-space:nowrap}
+.scard .sub{font-size:13px;color:var(--muted);margin-top:6px}
+.scard .sub b{color:var(--ink);font-variant-numeric:tabular-nums}
+.scard .scale{height:3px;background:var(--gold);margin:14px 0 10px;min-width:12%}
+.lede{font-size:16.5px;line-height:1.55}
+.claimbox{margin:14px 0 18px;padding:18px 20px;border:2px solid var(--ink);background:var(--surface)}
+.claimbox .lab{font:600 10.5px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.claimbox .claim{font:800 26px/1.2 var(--display);letter-spacing:.01em;margin:0}
+.claimbox .under{font-size:13px;color:var(--muted);margin:10px 0 0}
+.proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
+.proofcard{border:1px solid var(--line);background:var(--surface);padding:12px 13px}
+.proofcard b{display:block;font:800 21px/1 var(--display);margin-bottom:4px}
+.proofcard span{font-size:12.5px;color:var(--muted);line-height:1.4;display:block}
+.proofcard.todo{border-style:dashed}
+.flow{margin:16px 0}
+.ftrack{margin:0 0 14px}
+.ftrack>.thead{font:600 11px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.fsteps{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch}
+.fstep{flex:1 1 128px;min-width:128px;border:1px solid var(--line);background:var(--surface);padding:10px 11px;position:relative}
+.fstep.paid{border-color:var(--gold);background:var(--gold-wash)}
+.fstep b{display:block;font-size:13px;margin-bottom:3px}
+.fstep span{font-size:11.5px;color:var(--muted);line-height:1.35;display:block}
+.fstep .px{font-variant-numeric:tabular-nums;font-weight:700;color:var(--gold-ink)}
+.nsown{margin:12px 0 16px;display:grid;gap:8px}
+.nsown blockquote{margin:0;padding:11px 14px;border-left:2px solid var(--line);background:var(--chip);font-size:14px;font-style:italic}
+.nsown blockquote.hero{border-left:3px solid var(--gold);background:var(--gold-wash);color:var(--gold-ink);font:600 16px/1.45 var(--display);font-style:normal;letter-spacing:.01em}
+.nsq.alt2{font:600 15px/1.5 var(--body);letter-spacing:0}
+.nsq{margin:16px 0;padding:14px 16px;border-left:3px solid var(--gold);background:var(--gold-wash);color:var(--gold-ink);font:600 17px/1.4 var(--display);letter-spacing:.01em}
+.nsgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:16px 0}
+.nscard{border:1px solid var(--line);background:var(--surface);padding:14px 16px 16px}
+.nscard.out{border-color:var(--gold)}
+.nscard h4{margin:0 0 4px;font:800 17px/1.1 var(--display);text-transform:uppercase;letter-spacing:.03em}
+.nscard ul{margin:8px 0 0;padding-left:18px}
+.nscard li{font-size:13.5px;margin:0 0 7px;line-height:1.45}
+.nssteps{display:grid;gap:8px;margin:12px 0 4px}
+.nsstep{display:flex;gap:11px;align-items:flex-start;border-top:1px solid var(--line);padding-top:9px}
+.nsstep span{flex:0 0 auto;width:24px;height:24px;display:grid;place-items:center;background:var(--ink);color:var(--surface);font:800 13px var(--display)}
+.nsstep p{margin:2px 0 0;font-size:14px}
+.terms{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}
+.terms span{font-size:11.5px;font-variant-numeric:tabular-nums;background:var(--chip);padding:4px 7px;white-space:nowrap}
+.terms span b{font-weight:700}
+.allin{display:flex;justify-content:space-between;align-items:baseline;gap:8px;border-top:2px solid var(--ink);padding-top:8px;margin-top:2px}
+.allin b{font:800 21px/1 var(--display);font-variant-numeric:tabular-nums}
+.allin span{font-size:11.5px;color:var(--muted);text-align:right;max-width:60%}
+.minirow{background:var(--chip);margin:16px 0 0}
+.mini{display:flex;height:16px;overflow:hidden}
+.bar-note{font-size:11.5px;color:var(--muted);margin:5px 0 0}
+.mseg{display:block;height:100%}
+.mseg.m1,.mini-key i.m1{background:#B79A62}
+.mseg.m2,.mini-key i.m2{background:#8A6C33}
+.mseg.m3,.mini-key i.m3{background:var(--gold)}
+.mini-key{display:grid;gap:3px;margin:8px 0 0;font-size:12px;color:var(--muted)}
+.mini-key i{display:inline-block;width:9px;height:9px;margin-right:6px}
+.scard .gets{font-size:13.5px;margin:8px 0 6px}
+.wsum .wper{font:600 14px var(--body);color:var(--muted);letter-spacing:0;margin-left:3px}
+.scard .vow{font-size:13px;margin:10px 0 2px;padding:10px 12px;border-left:3px solid var(--gold);background:var(--gold-wash);color:var(--gold-ink)}
+.scard .system{font-size:13.5px;margin:12px 0 0;padding:10px 11px;background:var(--chip)}
+.small{font-size:12.5px}
+.small-btn{font-size:13px;padding:7px 11px;margin-top:8px;width:100%}
+.scard-detail{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
+.grp{margin-bottom:14px}
+.grp-h{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 10px;align-items:baseline;font:800 13px var(--display);text-transform:uppercase;letter-spacing:.06em;color:var(--gold-ink);border-bottom:1px solid var(--line);padding-bottom:5px;margin-bottom:8px}
+.grp-h span{font:600 12px var(--body);color:var(--muted);letter-spacing:0;text-transform:none;white-space:normal;text-align:right;margin-left:auto}
+.li{display:grid;grid-template-columns:1fr auto;gap:2px 10px;margin:7px 0}
+.li-l{font-size:13.5px;font-weight:600}
+.li-c{font-size:13px;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+.li-b{grid-column:1 / -1;font-size:12.5px;color:var(--muted)}
+.prow{display:flex;justify-content:space-between;gap:10px;align-items:baseline;border-bottom:1px solid var(--line);padding:7px 0;font-size:13px;color:var(--muted)}
+.prow b{color:var(--ink);font-weight:600;text-align:right}
+.prow.big-row{border-bottom:0;padding-top:10px}
+.prow.big-row b{font:800 22px/1 var(--display);font-variant-numeric:tabular-nums}
+.pcard p{font-size:13px;margin:10px 0 0}
+.pcard ul{margin:10px 0 6px;padding-left:17px;font-size:13px}
+.pcard li{margin:4px 0}
+
+/* questions */
+.q{padding:16px 0;border-bottom:1px solid var(--line)}
+.q:last-child{border-bottom:0}
+.q-top{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:6px}
+.tag{font:600 11px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;padding:4px 7px;background:var(--chip);color:var(--muted)}
+.tag.need{background:var(--gold-wash);color:var(--gold-ink)}
+.tag.done{background:transparent;color:var(--ok);padding-inline:0}
+.q-text{font-weight:600;font-size:16px;margin:0 0 4px;max-width:66ch}
+.q-help{color:var(--muted);font-size:13.5px;margin:0 0 10px;max-width:66ch}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.opt{position:relative;display:inline-flex}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt span{border:1px solid var(--line);background:var(--surface);padding:7px 12px;cursor:pointer;font-size:14px;line-height:1.3}
+.opt input:checked + span{border-color:var(--gold);background:var(--gold-wash);color:var(--gold-ink);font-weight:600}
+textarea,input.note{width:100%;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:14.5px/1.5 var(--body);padding:9px 11px}
+textarea{min-height:70px;resize:vertical}
+input.note{margin-top:6px;font-size:13.5px}
+
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:7;background:var(--ground);border-top:1px solid var(--line);padding:10px 20px calc(10px + env(safe-area-inset-bottom,0px))}
+.dock-row{max-width:860px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.status{font-size:13px;color:var(--muted);max-width:52ch}
+.status.good{color:var(--ok)}
+.status.bad{color:var(--warn)}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:600 14px var(--body);padding:9px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--ground);cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:disabled{opacity:.45;cursor:default}
+.copybox{margin-top:14px}
+.copybox textarea{min-height:170px;font-size:12.5px}
+.signoff{margin-top:30px;color:var(--muted);font-size:13.5px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+/* 09 How we can work together */
+.together{margin:18px 0 6px}
+.trow{border:1px solid var(--line);background:var(--surface);padding:16px 16px 6px;margin-bottom:12px}
+.trow .thd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.trow .tnum{font:600 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--gold);letter-spacing:.08em;padding-top:2px}
+.trow .thd h4{margin:0;font-size:1.02rem;flex:1 1 auto}
+.trow .tprice{font-weight:700;color:var(--gold);white-space:nowrap}
+.trow .tis{margin:0 0 12px;color:var(--ink)}
+.trow .tcols{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.trow .tcol{padding:12px 14px 12px 0;border-top:1px solid var(--line)}
+.trow .tcol.mine{padding-left:14px;border-left:1px solid var(--line)}
+.trow .tcol b{display:block;font-size:.74rem;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.trow .tcol.mine b{color:var(--gold)}
+.trow .tcol p{margin:0;font-size:.94rem}
+ul.cant{list-style:none;padding:0;margin:12px 0 10px}
+ul.cant li{border-left:2px solid var(--gold);padding:2px 0 2px 12px;margin-bottom:10px}
+@media(max-width:720px){
+  .trow .tcols{grid-template-columns:1fr}
+  .trow .tcol{padding-right:0}
+  .trow .tcol.mine{padding-left:0;border-left:0}
+}
+.wex{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 6px}
+.wcard{border:1px solid var(--line);background:var(--surface);padding:16px}
+.wcard.rec{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
+.wcard h4{margin:0 0 2px}
+.wcard .wsum{margin:0 0 10px;font-weight:700;color:var(--gold)}
+.wcard ul{margin:0 0 10px;padding-left:18px}
+.wcard li{margin-bottom:3px;font-size:.93rem}
+.wcard p:last-child{margin:0;font-size:.94rem}
+@media(max-width:720px){.wex{grid-template-columns:1fr}}
+.smuted{color:var(--muted);font-size:.86rem}
+/* collapsible sub-blocks */
+.sub{border-top:1px solid var(--line);margin:14px 0 0}
+.sub-toggle{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0 11px}
+.sub-toggle .sub-title{font:600 .82rem/1.3 ui-sans-serif,system-ui,sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--gold)}
+.sub-toggle:hover .sub-title{color:var(--gold-ink)}
+.sub-toggle:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.sub-toggle[aria-expanded="true"] .chev{transform:rotate(-135deg) translateX(-2px)}
+.sub-toggle[aria-expanded="false"] .chev{transform:rotate(45deg) translateY(-3px)}
+.sub-body{padding-bottom:4px}
+.sub-body>*:first-child{margin-top:0}
+.trow{padding:0}
+.trow-toggle{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:15px 16px}
+.trow-toggle .thd{display:block;margin:0}
+.trow-toggle h4{margin:0 0 3px;font-size:1.02rem}
+.trow-toggle .tis{display:block;font-size:.93rem;color:var(--ink);font-weight:400}
+.trow-toggle:hover h4{color:var(--gold-ink)}
+.trow-toggle:focus-visible{outline:2px solid var(--gold);outline-offset:-3px}
+.trow-toggle .sec-right{display:flex;align-items:center;gap:10px;white-space:nowrap;padding-top:2px}
+.trow-toggle[aria-expanded="true"] .chev{transform:rotate(-135deg) translateX(-2px)}
+.trow-toggle[aria-expanded="false"] .chev{transform:rotate(45deg) translateY(-3px)}
+.trow>div[id^="body-tg-"]{padding:0 16px 6px}
+</style>
+</head>
+<body>
+<main class="wrap" id="pg-root"></main>
+<script id="pg-app">
+(function(){
+"use strict";
+
+var MONTHS = ["Oct","Nov","Dec","Jan","Feb","Mar"];
+
+var PHASES = [
+ {id:"p0", weeks:4.4, from:"2026-10-01", to:"2026-10-31", mlab:"Archive", name:"Build the archive", when:"Oct 1 – Oct 31, 2026", start:0, span:1,
+  end:"Everything Marc has ever shot is in one place, organized, indexed and searchable. The site build and the editor both start from it, so nothing visual can begin until this is done. Four weeks, not three, because it depends on people outside this room — Jordan Kurtz, Red Rocks, anyone who ever filmed you — and they have no deadline. If it slips, everything after it slips with it, so tell me early rather than in December."},
+ {id:"p1", weeks:3.6, from:"2026-10-01", to:"2026-10-25", mlab:"Get your story straight", name:"Get your story straight", when:"Oct 1 – Oct 25, 2026", start:0, span:1,
+  end:"The claim has been out of Marc’s mouth enough times that he knows what it does to a room, every offer has a price he will say without hedging, the bootcamp sell sheet exists, and there is a one-sentence answer to “what do you do now?” that makes people lean in. This runs beside the archive because none of it needs footage — and the site cannot be written until it is settled."},
+ {id:"p3", weeks:5.0, from:"2026-11-01", to:"2026-12-05", mlab:"Build the site and capture", name:"Build the site and turn on capture", when:"Nov 1 – Dec 5, 2026", start:1, span:2,
+  end:"A site that looks like a real business, says what you do now, and books calls — with the front door wired on day one: a form that sends an auto-reply, creates the record and texts Marc. This moved ahead of content deliberately. Three separate tracks are waiting on it, and the one that matters most is not Instagram — it is the person who hears Marc on a podcast and goes looking for him."},
+ {id:"p2", weeks:17.4, from:"2026-12-01", to:"2027-03-31", mlab:"Content engine", name:"Turn on the content engine", when:"Dec 1, 2026 – ongoing", start:2, span:4,
+  end:"Content ships on a schedule, every piece has a job and a CTA, and the audience Marc already has starts learning what he does now. It starts after the site on purpose: posting into a void is how attention arrives and leaks straight back out."},
+ {id:"p4", weeks:4.4, from:"2026-12-01", to:"2026-12-31", mlab:"Pipeline", name:"Wire the pipeline", when:"Dec 1 – Dec 31, 2026", start:2, span:1,
+  end:"The selling half of the system. A structure for the call, a qualification rule, a proposal, a follow-up rhythm, an invoice and a close-out. Capture was already built with the site; this is what happens after someone raises their hand. It lands before the first real calls rather than before the first posts — nobody needs a proposal template to publish a reel."},
+ {id:"p5", weeks:13.0, from:"2027-01-01", to:"2027-03-31", mlab:"Go get the rooms", name:"Go get the rooms", when:"Jan – Mar 2027", start:3, span:3,
+  end:"Podcasts booked, speaking pipeline moving, bootcamp conversations open. Demand stops depending on the algorithm. Warm invitations get a yes long before this — the moment they arrive. And there is a second payoff nobody counts: every one of these rooms that gets recorded is free footage, which is the only source of raw material in this whole plan that costs you nothing but the ask."}
+];
+
+/* The monthly table is computed from PHASES + TASKS so it can never drift
+   out of step with the work. Each phase's hours are spread evenly across its
+   calendar days, then summed per month. */
+function monthlyRows(){
+  var MONTHS = [[2026,9,"Oct"],[2026,10,"Nov"],[2026,11,"Dec"],[2027,0,"Jan"],[2027,1,"Feb"],[2027,2,"Mar"]];
+  var out = MONTHS.map(function(m){ return {label:m[2], y:m[0], m:m[1], hrs:0, running:[]}; });
+  PHASES.forEach(function(p){
+    if(!p.from || !p.to) return;
+    var hrs = 0;
+    TASKS.forEach(function(t){ if(t[0]===p.id && t[2]!==FEE_OWNER) hrs += (t[3]||0); });
+    var a = new Date(p.from+"T00:00:00"), b = new Date(p.to+"T00:00:00");
+    var days = Math.round((b-a)/86400000) + 1;
+    if(days <= 0 || !hrs) return;
+    var per = hrs/days;
+    out.forEach(function(row){
+      var ms = new Date(row.y, row.m, 1), me = new Date(row.y, row.m+1, 0);
+      var lo = a > ms ? a : ms, hi = b < me ? b : me;
+      if(lo <= hi){
+        row.hrs += per * (Math.round((hi-lo)/86400000) + 1);
+        row.running.push(p.mlab || p.name);
+      }
+    });
+  });
+  var peak = 0; out.forEach(function(r){ if(r.hrs > peak) peak = r.hrs; });
+  return out.map(function(r){
+    return [r.label, r.running.join(" + "), "~"+Math.round(r.hrs), Math.round(r.hrs) >= Math.round(peak)];
+  });
+}
+
+var TASKS = [
+ // p0 — the archive
+ ["p0","Fill the archive: everything you can find onto one drive — fights, corners, gym, podcasts, interviews, old phones. Do not curate, do not sort. Reckon on 4 hours a day for about a week, between the two of you","Marc",10],
+ ["p0","Chase the recordings of talks and speeches you have already given — anything sitting on a host’s YouTube or Vimeo, and anything they still have on a drive. This is the cheapest footage you will ever get and it is in somebody else’s account","Marc",4],
+ ["p0","The other half of the same job, plus chasing every creator still holding footage — Jordan Kurtz, Red Rocks Church, anyone who ever filmed you","Jarah",10],
+ ["p0","Buy two 4 TB external drives — one to dump onto, one for the editor (about $200 the pair)","Jarah",1],
+ ["p0","Sort and restructure the whole dump into a proper archive — folders that make sense, files named so you can find them","Alex",0],
+ ["p0","Build the index: every clip tagged by arena, pressure pattern, tool shown and what it is usable for — searchable and sortable","Alex",0],
+ ["p0","Cut both drive copies from the finished archive — one yours, one the editor’s","Alex",0],
+ ["p0","Build the shot list: what is missing and needs filming","Alex",0],
+ ["p0","Hand the editor the labeled library and the index, ready to work from","Alex",0],
+ ["p0","Mirror the finished archive to Google Drive — the backup nobody can accidentally delete. Happens after the drive is organized, not before","Alex",0],
+ // p1 — decide the business
+ ["p1","The claim is already written and it is in section 01. Read it. If a word of it is wrong, tell me now","Marc",1],
+ ["p1","Use it in the conversations you are already having this month — clients, coaches, whoever asks what you do now. You are not booking meetings to test a sentence. You are listening to what happens after you say it","Marc",2],
+ ["p1","Then tell me what happened: which part they repeated back, which part made them ask a second question, and where it landed flat","Marc",1],
+ ["p1","Put it in the Instagram and LinkedIn bios once it holds","Jarah",1],
+ ["p1","Put it on the site, the one-sheet and the opening of a call — this rides along with the site build","Alex",0],
+ ["p1","Price every offer: the 90-day Mission, speaking, workshop, bootcamp, Expedition","Alex",0],
+ ["p1","Sign off on the prices","Marc",3],
+ ["p1","Write the one-sentence answer to “what do you do now?”","Alex",0],
+ ["p1","Decide where faith sits and write it into the positioning","Marc",1],
+ ["p1","Confirm the facts: belt count, PRACCE wording, years, named fighters","Marc",3],
+ ["p1","Ask your current coaching clients first — the founders, leaders and people in a hard season. They are the ones a buyer needs to see","Marc",6],
+ ["p1","Then ask the six fighters, and chase the ones who say yes","Marc",8],
+ ["p1","Build the bootcamp sell sheet and fee card — one page a company can circulate internally","Jarah",5],
+ // p2 — content engine
+ ["p2","Three pillars mapped to discovery, awareness and conversion","Alex",0],
+ ["p2","Build the 4-week rotating calendar with a CTA on every slot","Alex",0],
+ ["p2","Write the editor brief: the look and feel, do’s and don’ts, tone of voice, deliverables — reels, carousels and quote cards — every asset tied to a funnel stage","Alex",0],
+ ["p2","A worked example of each pillar, so the handover sticks","Alex",0],
+ ["p2","Talk into your phone whenever something happens worth telling","Marc",6],
+ ["p2","Brief the editor each month, collect the cuts, review","Jarah",16],
+ ["p2","Manual posting twice a week across platforms — caption, schedule, engage the audience and reply to DMs. About 5 hours a week","Jarah",87],
+ ["p2","Build the email list: the people you actually want hearing from you","Marc",6],
+ ["p2","Write the monthly newsletter — minimum one a month, in your own words","Marc",5],
+ ["p2","Review what worked each month and adjust the mix","Marc",4],
+ // p3 — the site
+ ["p3","Site map and the job each page has to do","Alex",0],
+ ["p3","Write every page","Alex",0],
+ ["p3","Design and build it","Alex",0],
+ ["p3","Cut the speaker sizzle reel from the archive","Alex",0],
+ ["p3","Structured data and a Google profile, so a search for his name returns the business rather than a guess (full build)","Alex",0],
+ ["p3","Sit for the photos and the on-camera intro","Marc",6],
+ ["p3","Set up booking, the inquiry form, the auto-reply and the alert to Marc","Alex",0],
+ ["p3","Build the tracker: the fields, the stages, and the view that shows what needs chasing","Jarah",6],
+ ["p3","Set up the domain email: Google Workspace, the three addresses on coachmarcmontoya.com, the DNS records, and forwarding from whatever Marc uses now so nothing gets lost","Jarah",3],
+ ["p3","Finish the mailboxes properly: a jarah@ alias on marketing@ so she can send as herself, accounting@ forwarding to the bookkeeper, and a designed signature for each of you that matches the site","Jarah",2],
+ ["p3","Learn to update the site and run the inbox","Jarah",6],
+ ["p3","Approve copy and design — two rounds, 5 days each","Marc",4],
+ // p4 — sales system
+ ["p4","Discovery call structure, printed and practiced","Alex",0],
+ ["p4","Run it twice with real people and adjust","Marc",4],
+ ["p4","Qualification criteria — who is a fit and who is not","Alex",0],
+ ["p4","One-page proposal template","Alex",0],
+ ["p4","Four-touch follow-up rhythm, with owners","Alex",0],
+ ["p4","Objection prompts for Marc to write his own answers from","Alex",0],
+ ["p4","Invoicing, payments and the deposit rule","Jarah",5],
+ ["p5","Work the pipeline: chase follow-ups, update stages, keep every inquiry moving","Jarah",22],
+ ["p5","The Monday review: read the six numbers, decide what changes","Marc",2],
+ // p5 — the rooms
+ ["p5","Speaker one-sheet","Marc",5],
+ ["p5","Podcast target list and the pitch","Marc",6],
+ ["p5","Send the pitches, book the slots","Jarah",14],
+ ["p5","Ask every host for the recording — podcasts and stages both. Put it in the booking email so it is agreed before you turn up, not begged for afterwards","Jarah",3],
+ ["p5","Record two podcasts a month","Marc",18],
+ ["p5","Name 10 companies, call them, and run the conversations that follow","Marc",20],
+ ["p5","Work the Red Rocks relationship and the referrals behind it","Marc",8],
+ ["p5","Speaking inquiries, contracts, travel","Jarah",10]
+];
+
+var CONSTRAINT = {
+ headline:"The problem is not the website. It is that not enough of the right people know you are doing this.",
+ bullets:[
+  ["Your audience is not yet your market","The people following you know you as a fight coach. The people who will pay $3,000–5,000 for a 90-day Mission are founders, leaders and teams who have never heard of you. Same man, two different rooms, and only one of them is currently listening."],
+  ["Two jobs, not one","Tell the audience you already have what you do now. And get in front of the audience you do not have yet — podcasts, stages, referrals. Both start this month; neither needs a website to begin."],
+  ["Nothing to point at","Right now a post that lands has nowhere to send anyone. That is the real cost of not having a site yet — not that it looks unprofessional, but that attention arrives and leaks straight back out."],
+  ["No one is keeping score","Nobody knows how many people inquire in a month, where they came from, or how many turn into anything. Until that exists, every decision about marketing is a guess with a confident voice."]
+ ],
+ seed:"One thing worth thinking about, because it costs you almost nothing: right now there is nothing to buy between a $0 reel or newsletter and a $3-5k 90-day Mission. Tough tiddy asking a stranger for $3-5k. Much easier to ask a stranger for $50-500. That gap is survivable while the audience is small. It becomes the bottleneck the moment the content starts working, because a stranger who is interested but not ready has no way to raise their hand and no reason to stay in touch. What belongs in that gap is yours to decide — you know what people already ask you for and what you would actually enjoy delivering. Worth thinking about before the content starts producing leads, not after."
+};
+
+var MATH = {
+ need:18500,
+ rows:[
+  ["90-day Missions only","14 running at once, forever","At $4,000 a Mission that is $1,333 a month while each one runs. 14 concurrent is 14 of your 20 client slots permanently full \u2014 and about 5 new Missions starting every single month, every month, with no gaps."],
+  ["What that needs at the top","About 40 inquiries a month","Close 1 in 4 of the calls you take and 1 in 10 of the people who inquire, and 5 new clients a month means roughly 20 calls and 40 inquiries. Today that number is not low. It is unmeasured."],
+  ["Mixed \u2014 coaching, a bootcamp, a stage","8 Missions + 1 bootcamp a month","Eight Missions running is $10,667 a month. One bootcamp day at $6,500 gets you to $17,167. One workshop or one keynote clears $18,500. That is 3 new Missions a month, not 5 \u2014 which halves what the top of the funnel has to produce."]
+ ],
+ close:"Neither column is a forecast. It is the same $18,500 divided three ways, and the only conclusion worth drawing is the third row: the mix is not a nice-to-have. Coaching alone asks the content engine to produce 40 inquiries a month from a standing start. Coaching plus bootcamps plus stages asks it for roughly half that, and the bootcamp money can arrive before the site does."
+};
+
+var FORMULA = [
+ ["1","The moment","One scene, told cold. A corner between rounds. A phone call. A room you walked into. No setup, no ’I want to talk about’ — start inside it."],
+ ["2","The pressure","What was actually at stake, in one sentence. Not the drama — the stakes. This is the line that makes a founder keep reading a story about a fighter."],
+ ["3","What it revealed","The pattern underneath the moment. This is the turn, and it is the whole reason the newsletter exists. Pressure reveals, and what it revealed is the thing you are about to coach."],
+ ["4","The tool","One tool, named, and only one. Facts, Feelings and Forecasts. AGE. The Pressure Band. Self-Corner. Show it being used, do not define it."],
+ ["5","The translation","Same pattern, their arena. ’You are not cornering a fighter. You are sitting in a board meeting deciding whether to say the thing.’ Without this beat it is a fight story. With it, it is coaching."],
+ ["6","One thing this week","Small, specific, and finishable before the next issue lands. Not ’reflect on your patterns.’ Something with a verb in it."]
+];
+
+var ADDON_CAVEAT = "These are a starting set. We’d confirm the scope before anything begins, it can shrink or grow, and figure out an honest fee together.";
+var ADDONS = [
+ {id:"kb", name:"A brand guide", price:"$1,500–2,500",
+  deliv:["Logo usage: the versions, the clear space, the smallest it can go, and what nobody is allowed to do to it. Usage, not drawing — if the mark itself needs designing, that is a different job and a different number.",
+         "Color with the technical values — hex, RGB and CMYK — so a printer, an editor and Squarespace all produce the same color instead of three near-misses.",
+         "Type: the typefaces, the weights, the sizes, and the licenses actually confirmed so nobody gets a bill in year two.",
+         "Imagery direction: what a Proving Grounds photograph looks like, and what it never looks like. This is the line the editor and the shooter both work to.",
+         "Do’s and don’ts, with worked examples — a post, a slide, a page header — so Jarah and the editor can follow it without asking either of us.",
+         "Delivered as a web page with a link you can send anybody, not a PDF that ends up in one person’s downloads folder.",
+         "If I build the full site, this comes with it."]},
+ {id:"k2", name:"The Monday scoreboard, wired up", price:"$500",
+  deliv:["The inquiry tracker and the scoreboard connected, so four of the six numbers — inquiries, calls booked, closes and revenue — fill themselves in from the pipeline.",
+         "Jarah types two numbers a week instead of six.",
+         "A Monday reminder that fires on its own, and a one-page note on how to run the 10 minutes."]},
+ {id:"k3", name:"The small stuff", price:"$200–500 each",
+  deliv:["The bootcamp sell sheet and fee card — one page a company can circulate internally.",
+         "The Monday scoreboard as a plain template, if you would rather fill it in by hand than have it wired.",
+         "The handover page: every tool, where it lives, how to change it, and what breaks if nobody looks at it.",
+         "A booking tracker for podcasts, stages and companies — who you pitched, where it stands, and who needs chasing this week. You write the list; this is just somewhere to keep it."]}
+];
+
+var MAP_IN = [
+ {k:"Instagram and LinkedIn", w:"Two channels, one rotation. The only source here whose volume you actually control \u2014 and the one that runs on footage.", sec:"content", secn:"04"},
+ {k:"Podcasts and stages", w:"Somebody else\u2019s audience, and their credibility comes with it. Costs nothing but the ask, it is the fastest thing available to you right now — and when it gets recorded it hands back footage too.", sec:"engine", secn:"03"},
+ {k:"People who already know", w:"Fighters, coaches, the founders you are already coaching, the 10 companies you can name. Warm, and nobody has to find you.", sec:"sales", secn:"06"},
+ {k:"Your own name in Google", w:"Anyone who watches you corner a fight goes and types \u201cMarc Montoya\u201d into a search bar. Highest-intent traffic there is, and it costs nothing but a site built correctly.", sec:"site", secn:"05"}
+];
+
+var MAP_SITE = {
+ jobs:["Says what you do now in 10 seconds, above the fold, without a scroll",
+       "Proves it \u2014 the reel, the names, and the words of people you have already coached",
+       "Asks for one thing, and it is the same one thing on every page"],
+ cap:"One form. It fires the auto-reply, creates the record and texts Marc \u2014 all three, every time. Nothing in here waits on somebody remembering to check an inbox."
+};
+
+var MAP_OUT = [
+ {tag:"Convert", k:"Ready now", steps:["A structured call, with real coaching inside it","A one-page proposal","Four follow-ups","A deposit","The 90-day Mission"],
+  w:"Nine steps, one owner each. The call is the part no competitor can copy \u2014 you are visibly good at this inside 90 seconds.", sec:"sales", secn:"06"},
+ {tag:"Nurture", k:"Not ready yet", steps:["Five welcome emails over three weeks","Then the newsletter, once a month","Months go by","They come back on their own"],
+  w:"Almost nobody builds this, and it is what holds somebody across the six months between interested and ready. It does not create demand. It stops you losing the demand you already paid for.", sec:"sales", secn:"06"}
+];
+
+var MAP_LOOP = "A Mission that finishes properly \u2014 Film Room, the Victory Log handed over, then the testimonial and the referral ask while it is still fresh \u2014 sends the next three people. That is the loop, and it is the only part of this that gets cheaper over time.";
+
+var NURTURE = [
+ ["Straight away","You are in. Here is what this is.","Who Marc is in a hundred words, the claim, and one link to the best thing he has made. No ask."],
+ ["Day 3","The translation.","One story: a fighter and a founder with the same broken pattern. This is the email that makes a founder realize it applies to him. Still no ask."],
+ ["Day 7","What a 90-day Mission actually is.","The structure, what happens in it, who it is for and who it is not. Plain and specific."],
+ ["Day 14","Proof.","A client in their own words. Founders first."],
+ ["Day 21","The ask.","Book a call, or stay on the list and nothing happens. Either is fine, and saying so is why it works."]
+];
+
+var PILLARS = [
+ {name:"Who he is", stage:"Discovery", share:"25%",
+  job:"For people who have never met you, and for people who only know you as a fight coach.",
+  looks:"Corner stories. What 24 years actually taught you. The moments nobody films. Why you stopped and what you started."},
+ {name:"What pressure does", stage:"Awareness", share:"50%",
+  job:"The translation. Proves the method works outside a cage, to people who have never been in one.",
+  looks:"The Trinity of F’s on a real problem. AGE. Internal vs external confidence. A fighter and a founder with the same broken pattern."},
+ {name:"What he does now", stage:"Conversion", share:"25%",
+  job:"Tells people the business exists and how to get in. The part most coaches never actually say out loud.",
+  looks:"Who a 90-day Mission is for. What a bootcamp does to a leadership team. What happens on a call. Client evidence."}
+];
+
+var STAGES = [
+ ["Discovery","They have never heard of you, or they only know you as a fight coach. The job is to be worth a second look.","one slot a month"],
+ ["Awareness","They have heard of you and do not yet believe it applies to them. The job is the translation \u2014 same pressure, different arena.","two slots a month"],
+ ["Consideration","They believe you and are not ready to spend $3\u20135k. The job is to keep them close until they are.","no slot yet"],
+ ["Conversion","They are ready and need to know how to start. The job is to make the ask.","one slot a month"]
+];
+
+var CALENDAR = [
+ ["Week 1","Discovery","1x reel + 1x carousel","A corner story that only you could tell","Follow, and the line in the bio"],
+ ["Week 2","Awareness","1x reel + 1x carousel","One tool, applied to a problem a founder actually has","DM a keyword — starts a real conversation"],
+ ["Week 3","Awareness","1x reel + 1x carousel","The translation: same pressure, different arena","Link in bio → the site"],
+ ["Week 4","Conversion","1x reel + 1x carousel","Who this is for, what it is, how to start","Book a call"]
+];
+
+var SITEMAP = [
+ ["Home","Make a stranger understand in 10 seconds and give them one thing to do.","The claim above the fold. Proof underneath. One primary button. Capture before they scroll away."],
+ ["Work with me","Turn interest into a booked conversation.","Every offer with a price or a range. Who it is for. What happens. One CTA per offer."],
+ ["Speaking","Let an organizer say yes without emailing you first.","Sizzle reel at the top. Topics, formats, past stages, fee range, a form that reaches Jarah."],
+ ["About","Earn trust and make the 24 years land.","The story, told properly. Faith where you decided it sits. The belts, the names, the receipts."],
+ ["Book","Sell the book and collect the buyer.","Pre-order or buy, plus an email capture that outlives the launch."],
+ ["Contact","Never lose an inquiry.","One form, routed to one inbox, with an automatic reply that buys you 48 hours."]
+];
+
+var SALES = [
+ ["1","An inquiry arrives","Form, DM, referral or after a talk","Jarah","Three things fire at once: an auto-reply with the booking link, a row in the tracker, and a text to Marc. Nobody has to remember to check anything. The auto-reply lands in both inboxes, so neither of them is waiting on the other to forward it — and every reply after that one comes from Marc."],
+ ["2","Qualify it","Is this a fit, and can they afford it","Jarah","Against written criteria — not a feeling. Not a fit gets a warm, fast no."],
+ ["3","Book the call","20 minutes, not 60","Jarah","Booking link. No email ping-pong. Calendar blocked for calls, not scattered."],
+ ["4","Run the call","The structure, every time","Marc","What is the fight · what have you tried · what happens if nothing changes · what does winning look like · how it works and what it costs. Coach one thing inside it."],
+ ["5","Send the proposal","Within 24 hours","Marc","One page. Their fight in their words, the 90-day Mission, the terms, an expiry date."],
+ ["6","Follow up","Four touches, then stop","Jarah","Day 1 proposal · day 3 something useful, no ask · day 7 direct ask · day 21 “should I stop?”"],
+ ["7","Close and invoice","Deposit before the first session","Jarah","Deposit rule in writing. Card or transfer. No work starts before it clears."],
+ ["8","Track it","Six numbers, every Monday","Jarah","Assets shipped · newsletter subscribers · inquiries · calls booked · closes · revenue. One Notion page, entered by hand in 10 minutes."],
+ ["9","Finish it properly","The last session of the Mission","Marc","Film Room on the whole 90 days, the Victory Log handed over, then two asks while it is still fresh: a testimonial, and who else needs this. A client who finishes well is the cheapest lead you will ever get, and this is the only step that makes that happen on purpose."]
+];
+
+var STACK = [
+ ["Website + store","Squarespace Core","$29/mo","Sells the book and apparel later with no transaction fee"],
+ ["Booking","Acuity","$16–27/mo","Intake forms, reminders, no email ping-pong"],
+ ["Email + storage","Google Workspace, 3 seats","$42/mo","marc@, marketing@, accounting@ on your own domain, so nothing goes out from a gmail address. Plus 6 TB pooled, which is where the archive backs up"],
+ ["Newsletter","Kit","$0–39/mo","Runs the welcome sequence and the monthly send. Chosen because the list is a sales asset, not a publication — its sequences are what fill the gap between interested and ready"],
+ ["Payments","Stripe or Square","2.9% + 30¢","Invoices, deposits, card on file"],
+ ["Tracking","Notion","$0–12/mo","The inquiry tracker, in the system Marc already uses. Free tier is genuinely enough at this volume"],
+ ["Editing","A freelance editor, working to a brief","$225–720/mo","Scales with how many pieces a month. Jarah approves, she does not cut"],
+ ["Design","Canva Pro","$15/mo","Quote cards, the sell sheet, one-pagers — the small things Jarah needs to make without waiting on anyone. The carousels come from the editor"],
+ ["Paid reach","Meta ads manager","$0–800/mo","Not for cold ads. For putting money behind the organic piece that already worked"],
+ ["Scheduling","Metricool","$0–25/mo","Posts to Instagram and LinkedIn from one place, and reports the numbers Jarah needs on Mondays"],
+ ["Storage backup","2x 4 TB external drives","~$200 once","One to dump onto, one for the editor. The finished archive also mirrors to Google Drive"],
+ ["Inquiry alerts","Form tool + automation","$0–30/mo","Auto-reply, a row in Notion and a text to Marc, all from one form submission"]
+];
+
+var TIERS = [
+ {name:"Scrappy", why:"Tell me more", cost:"$450–700", label:"a month, all in", sub:"What you can do with what you already have",
+  gets:["4x reels + 4x carousels a month, cut from the archive","1x newsletter a month","Posted by hand, by Jarah","No ad spend","Site live and capturing"],
+  stack:"Squarespace + Acuity + Kit + Notion + Canva + Google Workspace",
+  truth:"The archive is the whole engine here. It costs almost nothing because the footage already exists and somebody just has to cut it. Below about $450 nothing compounds — you get occasional posts, no rhythm, and an algorithm that treats occasional as absent."},
+ {name:"Prospect", why:"Tell me more", cost:"$900–1,400", label:"a month, all in", rec:1, sub:"Put money behind what is already landing",
+  gets:["Everything in Scrappy","5x reels + 5x carousels a month — one more of each than Scrappy, not double","1x newsletter a month","Metricool doing the posting — one upload goes out to Instagram and LinkedIn together, instead of Jarah uploading twice by hand","$200–300 a month of ad spend — boosting posts that already performed, not new creative"],
+  stack:"Everything in Scrappy + Metricool (~$25/mo) + Meta ads manager",
+  truth:"The volume only moves by one of each, and that is deliberate. Your editor’s retainer discount does get better with volume — going from 4 pieces to 8 would only cost about $180 more — but money is not the constraint here. Footage is. Doubling the output halves how long the archive lasts, and buying a cheaper rate on a well that drains twice as fast is not a saving. So the extra money goes into reach instead: the $200–300 is ad spend, put behind a post that already proved it works so more people see it than happened to follow you. It costs zero archive."},
+ {name:"Contender", why:"Tell me more", cost:"$1,500–4,000", label:"a month, depending on cadence", sub:"New footage, shot properly, on a schedule",
+  gets:["Everything in Scrappy and Prospect — including the newsletter and the ad spend",
+        "8x reels + 8x carousels a month — two of each a week. 4 of each still come off the archive; the other 4 come out of the shoot",
+        "Your archive draw goes down: 4 pieces a month here against 5 at Prospect, while you post twice as much",
+        "A professional full-day shoot — lifestyle + storytelling *authenticity is everything",
+        "1x long-form piece per shoot, 5–10 minutes, with its YouTube thumbnails",
+        "Each shoot gets fragmented hard: the long-form piece, then reels and carousels cut out of the same day. That is where the extra pieces above come from",
+        "New footage every 3 or 6 months, depending on cadence"],
+  stack:"Everything in Prospect + a local production shooter and editor, hired per shoot",
+  truth:"This is the level where new material starts arriving on a schedule you set. Not you talking to a lens, and not a studio block once a month — neither of those is what this brand is, and doing them would undercut the footage that makes it work. What this is: highlight and sizzle cuts, reels pulled out of the speaking events, and two or four shoot days a year fragmented as hard as they can be. One full day is a great deal of footage, and the job is to get every leg out of it the budget allows — the production team shoots it and cuts the long-form, your short-form editor fragments the same day into reels and carousels at short-form rates. That is what takes you from five pieces a month to eight without the archive paying for all of it."}
+];
+
+var SOURCES = [
+ ["The archive","24 years of it. Fights, corners, gym, podcasts, old phones.","Nothing. It already exists.","Yours",1,"Yes. This is the one that ends."],
+ ["Talks and speeches that get recorded","You on a stage, shot by whoever hosted it.","The ask, plus the edit.","Only when you are booked",0,"No — but it arrives on somebody else’s calendar."],
+ ["Podcasts that record video","Same thing, smaller room.","The ask, plus the edit.","Only when you are booked",0,"No — same catch."],
+ ["What the UFC and your fighters shoot","The reason the archive exists at all.","Nothing.","Not yours",0,"No — but none of it is aimed at the business you are building now."],
+ ["A professional shoot","A full day, crew, B-roll, a long-form piece.","$3,500–7,500 each.","Yours",0,"No. This is the only one you can switch on deliberately."],
+ ["Voice notes and your phone","Whatever happened this week, said out loud.","Minutes.","Yours",0,"No — but it feeds the newsletter, not the feed."]
+];
+
+var REELSPEC = [
+ ["Under 60 seconds","No exceptions. If a moment needs longer than that to land, it is not a reel — it is the long-form piece, or it is a newsletter."],
+ ["Educate, inspire or entertain","At least one of the three. Ideally all three at once, which is what the best ones do. A clip that does none of them is a clip nobody asked for."],
+ ["B-roll wherever it is needed","A talking head for 55 straight seconds loses people. Cut away — the gym, the corner, the room, the hands."],
+ ["Animated graphics, always","Titles, captions, emphasis, motion. Every reel gets them, and every one follows the brand guide so the whole feed looks like one person made it."],
+ ["One ask","Same rule as everything else on this page. Never zero, never two."]
+];
+
+var TALKFOOTAGE = [
+ ["What we do not do","Post the full recording. That belongs to whoever hosted the event and paid to put you on their stage — publishing it is their call, not ours, and taking it would cost you the next invitation."],
+ ["What we do want","The raw file. Pull it off their YouTube or Vimeo if it is already up, or just ask for it. Most hosts hand it over without thinking twice, and almost nobody thinks to ask."],
+ ["What it becomes","Reels. However many genuinely clear the bar and no more — a talk with three real moments in it gives us three, and padding it out to hit a number is exactly how a feed starts to look thin."]
+];
+
+var SHOOT = [
+ ["Pre-production","Concept, shot list, locations, scheduling","$300–600"],
+ ["Full-day shoot","10 hours, professional shooter and gear","$1,400–2,500"],
+ ["Long-form edit","5–10 minutes, story-cut from a full day — plus 1 or 2 YouTube thumbnails, which come with the edit","$900–2,400"],
+ ["2–4 reels","Cut from the same shoot by the same team, at $450–500 each","$900–2,000"]
+];
+
+var CADENCE = [
+ {name:"Every quarter", shoots:"4 shoots a year", mo:"$2,100–3,900", yr:"$24,800–46,800",
+  out:"4 long-form pieces, and every shoot day fragmented for everything it will give — plus the short-form still coming off the archive in between",
+  gap:"New footage every 3 months"},
+ {name:"Twice a year", shoots:"2 shoots a year", mo:"$1,500–2,650", yr:"$17,800–31,800",
+  out:"2 long-form pieces, fragmented the same way — plus the short-form coming off the archive for the other 10 months",
+  gap:"New footage every 6 months"}
+];
+
+var LADDER = [
+ {phase:"Now", name:"Get seen, get found, get called", when:"Months 1–6", spend:"$450–1,600/mo",
+  what:["The archive, organized and feeding everything","A site that looks like a real business and captures people","Content on a schedule with a job and a CTA on every piece","A sales process an inquiry cannot fall out of","Podcasts and one speaking relationship worked properly"],
+  solves:"Nobody knows you do this yet.",
+  alex:"Set out phase by phase in section 09 \u2014 what each piece is, what it looks like if you run it yourselves, and what it costs if I do it. No second number here, because there should only ever be one.",
+  without:"All of it is doable without me. The site takes Jarah a weekend on a template, the calendar is a spreadsheet, and the sales structure is on this page. It will be rougher and slower, and it will still work."},
+ {phase:"Next", name:"Stop doing it by hand", when:"Months 6–12", spend:"+$200–400/mo in tools",
+  what:["Scheduling and posting automated across platforms","Email sequences that run without anyone sending them","A real CRM instead of a Notion database \u2014 when you need automation Notion cannot do, not when the list gets long","Whatever you decide belongs between $0 and a 90-day Mission, earning properly","Speaker pipeline with a target list and a cadence"],
+  solves:"Jarah is the bottleneck, and interested people have no way to stay in touch. Months 6\u201312 is an estimate, not a deadline \u2014 Notion holds this longer than most people expect, and the move happens when something breaks, not when the calendar says so.",
+  alex:"Set it up, wire it together, train Jarah, leave. Roughly $4,000–8,000 as a project, or a few hundred a month to keep running it.",
+  without:"Achievable with off-the-shelf tools and a weekend of patience. The risk is ending up with six tools that do not talk to each other."},
+ {phase:"Later", name:"Own the whole thing", when:"Months 12–24",
+  spend:"$17,000–24,000 build",
+  what:["One system you own instead of six subscriptions you rent","Hours back every month, because the copying between tools stops","A client experience nobody else in this category has: Drills, the Victory Log and the Film Room in one place with their name on it","Intake to 90-day Mission to renewal tracked end to end, so you know your numbers without asking anyone","The Tape running as a system: record, transcribe, draft, file"],
+  solves:"By then you are renting six tools that do not talk to each other, and Jarah is the integration \u2014 copying between them by hand, every week.",
+  alex:"Design and build, stage by stage, each one standing alone. Priced per stage, approved before it starts.",
+  without:"This is the one that genuinely needs someone technical. Not necessarily me — but not a template either."}
+];
+
+var TOGETHER = [
+ {id:"p0", name:"Build the archive", price:"On me",
+  is:"Everything you have ever shot, in one place, organized, tagged and searchable, plus two hard-drive copies and a list of what is missing.",
+  diy:"Dump it all into one Drive folder named by year. Jarah, a few weekends. It works, and it will not be searchable by what is actually in a clip — which is the part that matters every month for the next 2 years.",
+  mine:"This one is on me, and here is how it runs. You dump everything you can find onto one drive — raw, uncurated, no sorting. I sort it, restructure it into an archive that actually makes sense, and build the index so it is searchable and sortable by what is in a clip rather than what year it is from. Then both drives get cut from the finished version, one yours and one the editor’s, and the whole thing mirrors up to Google Drive as the backup. You buy the drives, about $200 the pair. Nothing else here moves at full speed until this is done, so I would rather guarantee it happens than put a price on it."},
+ {id:"p1", name:"Get your story straight", price:"On me",
+  is:"Every part of this you are not certain about yet. The claim, what each thing costs, the one-sentence answer to “what do you do now?”, how the pipeline actually runs, how the content engine feeds itself, how this part is too wordy or what you genuinely hate about this roadmap. Anything in this document.",
+  diy:"You two argue about it with each other. Which works, right up until you agree too fast because it is late and you are tired, or you go round the same loop for three weeks because you are both standing inside the thing you are trying to look at. Failing that, there is always arguing with yourself in the mirror. People get further with that than they admit.",
+  mine:"I will argue about it with you for nothing. That is not a figure of speech and it is not a teaser for something priced further down — call me, send a voice note at 11pm, tell me a section of this is wrong. Ask me to push back on something you have already decided. Ask me to make the opposite case so you can hear how it sounds out loud. Ask me what I actually think and you will get it, including the parts you would rather I softened. Nothing here is on a meter. What’s the point of handing you a plan and not getting to argue about it with you?"},
+ {id:"p3", name:"Build the site", price:"$2,700–2,900 or $5,800–7,900",
+  is:"A site that looks like a real business, says what you do now, and books calls.",
+  diy:"Pick a site you like and build your version of it on Squarespace. John Windsor’s is the right reference for this category — ask me and I will send it. Jarah, 2 weekends. Rougher, simpler funnel, and still better than having nowhere to send anyone.",
+  mine:"Two ways. A working site, about 20 hours at $2,700–2,900: one strong page, booking wired, built properly. Or the full thing, about 50 hours at $5,800–7,900: every page written, the speaker reel cut from the archive, a real funnel behind it, and the structured data that makes Google and the AI assistants describe you correctly instead of guessing. The difference is a site that exists and a site that converts."},
+ {id:"p2", name:"Turn on the content engine", price:"$1,900–2,900",
+  is:"Three pillars, a 4-week calendar with a CTA on every slot, an editor briefed and running, and a newsletter going out.",
+  diy:"The calendar is on this page — copy it into a spreadsheet. The newsletter formula is on this page too, in section 04, so Marc can write one tonight without asking me anything. Brief the editor yourselves. Jarah, 2 or 3 hours to set up, then the same ongoing work either way.",
+  mine:"16\u201324 hours: the pillars, the 4-week calendar, and the editor brief \u2014 the look and feel, do\u2019s and don\u2019ts, tone of voice, every asset tied to a funnel stage so you can see which ones actually move people. Plus a worked example of each pillar, so the handover actually sticks. One thing gets set later on purpose: how often the editor delivers and how long Jarah has to approve. That depends on who the editor turns out to be, and guessing it now just means changing it in January. Then it is yours to run, and the monthly review after that is yours too."},
+ {id:"p4", name:"Wire the pipeline", price:"$1,000–1,200",
+  is:"Call structure, qualification, a one-page proposal, a four-touch follow-up, objections in your words — and an inquiry that announces itself instead of waiting to be found.",
+  diy:"The eight steps are in section 06 — that is the system. Write your own versions, run two calls, adjust. It works. The first draft is just the slow part.",
+  mine:"10–12 hours for the structure of each one \u2014 the call skeleton, the qualification criteria, a proposal shell, the follow-up rhythm and prompts for the objections. Plus the wiring on the front end: a form that sends the auto-reply with the booking link, creates the row in Notion and texts Marc, all off one submission. You do more of the writing; I make sure the shape is right. Still the cheapest phase here that directly makes money."},
+ {id:"p5", name:"Go get the rooms", price:"Yours",
+  is:"Speaker one-sheet, podcast target list and pitch, bootcamp sell sheet — and the calls.",
+  diy:"All of it, and honestly this is the one I would keep. Three things are worth building before you start dialing: a tracker so nothing gets dropped, one pitch template you reuse, and the first 25 names written down. The assets are a page each in Canva. The calls are relationships, not tasks, and they only work coming from you.",
+  mine:"This one stays yours, and I mean that as a compliment — nobody can pitch you but you, and you already know most of the people worth calling. Worth knowing before you decide how hard to chase it: every room that gets recorded hands you footage for free, which quietly buys back months of archive. The only piece I would offer is somewhere to keep track of it, and that sits with the other small builds below. After that I can push it to the 10 yard line, but you still have to run it in."}
+];
+
+var CANT = [
+ ["Being in the room","Not a monthly homework assignment in front of a lens. But every stage, every podcast and any shoot you decide to pay for needs you physically there, and none of that footage exists without you in it."],
+ ["The calls","Discovery calls, and the 10 companies you can already name. Relationships, not tasks."],
+ ["The approvals","5 days, one approver. Everything downstream waits here and nothing else can unblock it."],
+ ["The testimonials","Six fighters will answer you. They will not answer me."],
+ ["Saying it out loud","The claim only becomes yours once you have said it to five people and watched their faces."]
+];
+
+var DECISIONS = [
+ {id:"d1", need:1, q:"What can you actually spend on this each month?",
+  help:"The single most useful answer on this page, and the one everything else bends around. It is not my fee — it is the running cost: editor, tools, hosting, design. Three honest levels are laid out in What It Runs On. Roughly $500 a month starts it. Roughly $1,500 makes it compound. Roughly $3,000 makes it fast. There is no wrong answer, and a real number beats a generous guess every time.",
+  opts:["Around $500 a month to start","Around $1,000–1,500 a month","Around $2,500–3,000 a month","I need to think about it — note below"]},
+ {id:"d2", need:1, q:"Will you and Jarah dump the whole archive in the next 3 weeks?",
+  help:"Everything. Fights, corners, gym footage, podcasts, interviews, family-adjacent stuff, photos on old phones, whatever Jordan Kurtz and Red Rocks are sitting on. Do not curate — dump it. I organize and tag the lot, then hand the editor a labeled library. Nothing else in this plan moves at full speed until this is done, because everything visual comes out of it.",
+  opts:["Yes, all of it, in 3 weeks","Yes, but it will take longer","Some of it — see the note","I don’t think there’s much there"]},
+ {id:"d3", need:1, q:"When the archive thins out, where does new footage come from?",
+  help:"There is no monthly sit-down-and-talk-to-a-lens block in this plan, and there is not going to be — that is not the kind of content this brand is built on. So new material arrives one of two ways: rooms you get into that happen to be recorded, which is free but lands on somebody else’s calendar, or a shoot you pay for, which is expensive but is the only source you can actually switch on. Section 07 prices the second one. This question is about which way you lean, and you can lean both.",
+  opts:["Rooms first — get recorded speaking and chase the files","Pay for a shoot once the archive gets thin","Both, from the start","Nothing yet — tell me when the archive is actually running low"]},
+ {id:"d4", need:1, q:"Speaking and corporate work: hunt, or let it come?",
+  help:"A real fork with real tradeoffs. Building a target list of conferences, churches and corporates means research, a one-sheet, and someone sending pitches every week — it produces bookings in 3–6 months and you control the pace. Organic means podcasts, Red Rocks, and referrals from people who have seen you — lower effort, lower friction, slower and less predictable. Plenty of speakers build good careers either way. What matters is picking one and actually doing it.",
+  opts:["Build the target list — I want to hunt","Organic — podcasts, Red Rocks, referrals","Start organic, build the list once the reel exists","Not sure — talk me through it"]},
+ {id:"d5", need:1, q:"What do you charge for a team bootcamp?",
+  help:"You said bootcamps could start now, and they are the fastest money on this page — no website needed, no audience needed, just a price and a one-page sell sheet. A day with a leadership or sales team, priced per company rather than per head. Comparable work runs $5,000–10,000 a day.",
+  opts:["$5,000","$6,500","$8,000+","Depends on the company — see my note"]},
+ {id:"d6", need:1, q:"Speaking fees: confirm the range.",
+  help:"You gave keynote at $5,000+ and Red Rocks at a discounted $3,000, with workshops blank. The site needs a number or a range — “inquire” loses bookings from organizers with a budget to spend and a shortlist to fill. Fill in the workshop half-day and full-day rates here.",
+  type:"text"},
+ {id:"d7", need:1, q:"Where does faith sit?",
+  help:"You answered “up front” on the Decision Sheet. This confirms what that means in practice. It is a real positioning decision with a real trade: it will cost some corporate and sales-team bookings, and it will be the reason other clients trust you in the first meeting and send you their friends. Recommended: up front on About and in the book, present but not leading on the corporate and bootcamp pages. Same man, different room.",
+  opts:["Up front everywhere","Up front personally, quieter on corporate pages (recommended)","Present but not prominent","Let’s talk it through"]},
+ {id:"d8", need:1, q:"Who owns the inquiry inbox?",
+  help:"Every inquiry needs one owner, one inbox and a same-day reply. Jarah asked to own client intake and scheduling, so she is the obvious answer — but it needs saying out loud, because “we both check it” reliably means nobody does. Confirm it and confirm she has the time.",
+  opts:["Jarah owns it","Marc owns it","Jarah owns it, Marc sees everything","We need someone else for this"]},
+ {id:"d9", need:0, q:"Website platform?",
+  help:"Recommended: Squarespace Core at about $29 a month, plus Acuity for booking. You already own the domain there, Jarah can maintain it without help, and Core drops the store fee to zero for the book and apparel later. The alternatives cost more and buy you things you do not need yet.",
+  opts:["Squarespace Core + Acuity (recommended)","Something else — see my note","Let me decide"]},
+ {id:"d10", need:0, q:"Newsletter platform?",
+  help:"Free until about a thousand subscribers either way. Kit is built for exactly this and handles sequences later without needing replacing. Recommended: Kit, set up now even if the first send is months away — a list you started late is the most common regret in this category.",
+  opts:["Kit (recommended)","Beehiiv","Whatever Squarespace includes","Let me decide"]},
+ {id:"d11", need:0, q:"Podcast guesting — two a month?",
+  help:"The highest-leverage thing available to you right now, and it costs nothing but time. Other people’s audiences already exist and their credibility transfers to you. 20 appearances over 6 months would do more for the pipeline than 50x reels. The angle that gets bookings: 24 years in UFC corners, now coaching founders — here is what transfers and what does not.",
+  opts:["Yes, two a month","One a month","As many as get booked","I’d rather not"]},
+ {id:"d12", need:0, q:"Realistically, how many hours a week can you give this?",
+  help:"Separate from coaching clients. This is recording, calls, calling companies, podcasts and approvals. You said 30+ on the Decision Sheet, which is generous — worth sanity-checking against the gym, three fighters and a manuscript. An honest smaller number builds a better plan than an optimistic large one.",
+  opts:["5–10 hours","10–20 hours","20+ hours","It varies wildly — see my note"]},
+ {id:"d14", need:1, q:"How do you want to get paid for a 90-day Mission?",
+  help:"This is yours and Jarah’s call, not mine, but it has to be decided before the first proposal goes out rather than invented on the call. The three real options: a deposit that holds the slot with the balance across 3 months; paid in full up front, which is the strongest commitment signal and the highest bar for a stranger; or 3 equal payments with no deposit, which is the easiest yes and leaves you carrying the risk if someone disappears in month 2. Whatever you pick, it goes in writing and no work starts before the first payment clears.",
+  opts:["Deposit to hold, balance across 3 months","Paid in full up front","3 equal monthly payments, no deposit","Something else — see my note"]},
+ {id:"d15", need:0, q:"Expeditions: describe the first one you would actually run.",
+  help:"Section 11 lays out the shape, the sequence and the questions. This is the one that unlocks the rest: how many people, how many days, where, how physical, what they leave with. Do not design the perfect version — describe the one you could run in 6 months with people who already trust you. Rough is fine. Vague is the problem.",
+  type:"text"},
+ {id:"d16", need:0, q:"Expeditions: what is your appetite for the liability side?",
+  help:"Waivers, insurance, medical screening, possibly a medic on site. This is the actual gate on the idea and it is worth knowing your instinct now, because it changes how physical the thing can be and therefore what it is. There is no wrong answer — a low-risk version is still a real product.",
+  opts:["I will sort it properly, whatever it costs","Keep it physically mild so the exposure stays small","No idea — I need someone to tell me what this involves","Let’s talk it through"]},
+ {id:"d13", need:0, q:"Anything here you disagree with?",
+  help:"Genuinely. You have 24 years of reading people under pressure and this is a plan written by someone who has never cornered a fight. If something feels wrong it probably is, and it is far cheaper to say so now.",
+  type:"text"}
+];
+
+/* ---------- state ---------- */
+var answers = {};
+var DRAFT_KEY = "pg-r2-draft", OPEN_KEY = "pg-r2-open", THEME_KEY = "pg-r2-theme", KEY_STORE = "pg-key", DEVICE_STORE = "pg-device", SENT_STORE = "pg-r2-sent", SUB_STORE = "pg-r2-submitted";
+var HOOK = "https://hooks.airtable.com/workflows/v1/genericWebhook/app4p3M3dzNu8DCqS/wfl2T8bgEp7TQkpkz/wtrVaqFMDG8KuUC3V";
+var restoredAt = 0, dirty = false, saving = false, lastSentSig = "", confirmSubmit = false;
+var sortKey = "phase", sortDir = 1, ownerFilter = "All";
+
+try{
+  var d = JSON.parse(localStorage.getItem(DRAFT_KEY) || "null");
+  if(d && d.answers){ answers = d.answers; restoredAt = d.t || 0; }
+}catch(e){}
+try{ lastSentSig = localStorage.getItem(SENT_STORE) || ""; }catch(e){}
+var openSecs = {};
+try{ openSecs = JSON.parse(localStorage.getItem(OPEN_KEY) || "{}") || {}; }catch(e){}
+
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+function money(n){ return "$" + n.toLocaleString("en-US"); }
+function fmtDate(t){ try{ return new Date(t).toLocaleString([], {month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}); }catch(e){ return ""; } }
+function isAnswered(id){ var a=answers[id]; if(!a) return false; var v=a.v; return v!=null && String(v).trim()!==""; }
+function phaseName(id){ for(var i=0;i<PHASES.length;i++){ if(PHASES[i].id===id) return PHASES[i].name; } return id; }
+function phaseIndex(id){ for(var i=0;i<PHASES.length;i++){ if(PHASES[i].id===id) return i; } return 99; }
+function owners(){ var o={}, out=["All"]; TASKS.forEach(function(t){ if(!o[t[2]]){ o[t[2]]=1; out.push(t[2]); } }); return out; }
+
+/* Short labels for the jump bar, in section order. Numbers are generated from
+   the index, so this list and the section numbering can never disagree. */
+var JUMP = [["north","North Star"],["constraint","The constraint"],["engine","Demand"],["content","Content"],
+ ["site","The site"],["sales","The Pipeline"],["runs","What it runs on"],["roadmap","The work"],
+ ["together","Working together"],["decisions","Decisions"],["ladder","Where this goes"]];
+
+/* ---------- render ---------- */
+var SEC_N = 0;
+function sectionShell(id, title, note, body){
+  var open = !!openSecs[id];
+  SEC_N++;
+  var num = (SEC_N<10?"0":"")+SEC_N;
+  return '<section class="sec" id="sec-'+id+'">'+
+    '<h2 class="sec-h"><button type="button" class="sec-toggle" data-sec="'+id+'" aria-expanded="'+(open?"true":"false")+'" aria-controls="body-'+id+'">'+
+      '<span><span class="sec-num">'+num+'</span><span class="sec-title">'+esc(title)+'</span></span>'+
+      '<span class="sec-right"><span class="sec-note" id="note-'+id+'">'+note+'</span><span class="chev"></span></span>'+
+    '</button></h2>'+
+    '<div class="sec-body" id="body-'+id+'"'+(open?"":" hidden")+'>'+body+'</div></section>';
+}
+
+function taskTable(){
+  var h = '<div class="filters" id="owner-filters">';
+  ["All","Alex","Marc","Jarah"].forEach(function(o){ h += '<button type="button" data-owner="'+esc(o)+'" aria-pressed="'+(o===ownerFilter?"true":"false")+'">'+esc(o)+'</button>'; });
+  h += '<button type="button" data-key="phase" class="sortable" id="group-btn" style="margin-left:auto">Group by phase</button></div><div class="tbl"><table id="task-table"><thead id="task-head"></thead><tbody id="task-body"></tbody></table></div>'+
+    '<p class="muted" id="task-foot"></p>';
+  return h;
+}
+
+/* Alex's hours are never rendered. The fee is not billed by the hour, and publishing
+   them lets a client derive an effective rate per tier. Internal figures live in the
+   Pricing Architecture doc, not here. */
+var FEE_OWNER = "Alex";
+function shownHrs(t){ return t[2]===FEE_OWNER ? 0 : t[3]; }
+function hrsCell(t){ return t[2]===FEE_OWNER ? '<span class="notyours">Not yours</span>' : (t[3]?t[3]:'<span class="notyours">Not yours</span>'); }
+function feeTaskCount(){ var c=0; TASKS.forEach(function(t){ if(t[2]===FEE_OWNER) c++; }); return c; }
+
+function renderOwnerSummary(){
+  var box = document.getElementById("owner-summary");
+  if(!box) return;
+  var people = ["Marc","Jarah"], tot = {}, max = 0, all = 0;
+  people.forEach(function(o){ tot[o] = 0; });
+  TASKS.forEach(function(t){ if(tot[t[2]]!==undefined){ tot[t[2]] += t[3]; all += t[3]; } });
+  people.forEach(function(o){ if(tot[o] > max) max = tot[o]; });
+  var h = '<div class="ownerbars">';
+  people.forEach(function(o,i){
+    h += '<div class="ownerbar"><b>'+o+'</b><span class="track"><span class="fill o'+(i+2)+'" style="width:'+(max?tot[o]/max*100:0)+'%"></span></span>'+
+      '<span class="val">'+tot[o]+' hrs</span></div>';
+  });
+h += '</div><p class="muted"><b>'+all+' hours across 6 months</b> is what this asks of the two of you. Marc\u2019s are mostly talking, being filmed and picking up the phone \u2014 the parts only he can do. Jarah\u2019s are the operational jobs she asked to own, and they settle at roughly 9\u201310 hours a week once content is going out.</p>'+
+    '<p class="muted"><b>These are the hours for building it, not for doing it.</b> Coaching clients, delivering a bootcamp, standing on a stage \u2014 none of that is counted here, because none of it is setup. A bootcamp day is roughly two more of Marc\u2019s days once you add the prep. That is the good problem, and it is the one this whole plan is trying to cause.</p>'+
+    '<p class="muted"><b>Jarah\u2019s hours scale with how much you publish.</b> The numbers above are the Scrappy case \u2014 eight pieces a month. At Prospect, which is ten, add roughly 1 hour a week to her total; at Contender, which is sixteen, add roughly 3. The three content lines are the ones that move; everything else stays where it is.</p>'+
+    '<p class="muted"><b>My hours are not listed, on purpose.</b> I own '+feeTaskCount()+' of the '+TASKS.length+' tasks below. What that work costs is a separate conversation, and it happens after you answer the budget question \u2014 not before. Putting an hour count beside it would only start an argument about hours instead of about whether the right things are on the list.</p>'+
+    '<p class="muted"><b>Every one of them is doable without me.</b> The tasks marked Alex are the ones I would take off your hands, not ones only I can do. Section 11 sets out plainly what each phase looks like if you run it yourselves \u2014 this plan does not stop working if you do.</p>';
+  box.innerHTML = h;
+}
+
+function renderTasks(){
+  var rows = TASKS.filter(function(t){ return ownerFilter==="All" || t[2]===ownerFilter; });
+  rows = rows.slice().sort(function(a,b){
+    var x,y;
+    if(sortKey==="phase"){ x=phaseIndex(a[0]); y=phaseIndex(b[0]); if(x===y) return 0; }
+    else if(sortKey==="hours"){ x=shownHrs(a); y=shownHrs(b); }
+    else if(sortKey==="owner"){ x=a[2].toLowerCase(); y=b[2].toLowerCase(); }
+    else { x=a[1].toLowerCase(); y=b[1].toLowerCase(); }
+    if(x<y) return -1*sortDir; if(x>y) return 1*sortDir; return 0;
+  });
+  var body = document.getElementById("task-body");
+  if(!body) return;
+  var html = "", grouped = (sortKey==="phase"), lastPhase = null, groupHrs = 0;
+  function closeGroup(){
+    if(grouped && lastPhase!==null){ html += '<tr class="subtotal"><td>'+esc(phaseName(lastPhase))+' total</td><td></td><td class="num">'+(groupHrs||"—")+'</td></tr>'; }
+  }
+  rows.forEach(function(t){
+    if(grouped && t[0]!==lastPhase){
+      closeGroup();
+      lastPhase = t[0]; groupHrs = 0;
+      var ph = null; PHASES.forEach(function(x){ if(x.id===t[0]) ph = x; });
+      html += '<tr class="grouprow"><td colspan="3">'+esc(ph.name)+' · '+esc(ph.when)+'</td></tr>';
+    }
+    groupHrs += shownHrs(t);
+    html += '<tr>'+(grouped?"":'<td>'+esc(phaseName(t[0]))+'</td>')+'<td>'+esc(t[1])+'</td><td>'+esc(t[2])+'</td><td class="num">'+hrsCell(t)+'</td></tr>';
+  });
+  closeGroup();
+  body.innerHTML = html;
+  if(typeof linkifySections === "function") linkifySections(body);
+  var hrs = 0; rows.forEach(function(t){ hrs += shownHrs(t); });
+  var foot = document.getElementById("task-foot");
+  if(foot){
+    var tail = (ownerFilter===FEE_OWNER)
+      ? " · hours not shown, this work is covered by the fee"
+      : " · " + hrs + " hours" + (ownerFilter==="All" ? " for Marc and Jarah" : " for " + ownerFilter);
+    foot.textContent = rows.length + " tasks" + tail + (sortKey==="phase" ? " · grouped by phase" : "");
+  }
+  var head = document.getElementById("task-head");
+  if(head){
+    var cols = grouped ? [["work","Work"],["owner","Owner"],["hours","Hrs"]]
+                       : [["phase","Phase"],["work","Work"],["owner","Owner"],["hours","Hrs"]];
+    head.innerHTML = '<tr>'+cols.map(function(c){ return '<th class="sortable" data-key="'+c[0]+'">'+c[1]+'<span class="arrow">&#9650;</span></th>'; }).join("")+'</tr>';
+  }
+  var gb = document.getElementById("group-btn");
+  if(gb) gb.setAttribute("aria-pressed", grouped ? "true" : "false");
+  var ths = document.querySelectorAll("#task-table th.sortable");
+  for(var i=0;i<ths.length;i++){
+    if(ths[i].getAttribute("data-key")===sortKey){ ths[i].setAttribute("aria-sort", sortDir===1?"ascending":"descending"); ths[i].querySelector(".arrow").innerHTML = sortDir===1?"&#9650;":"&#9660;"; }
+    else { ths[i].removeAttribute("aria-sort"); ths[i].querySelector(".arrow").innerHTML = "&#9650;"; }
+  }
+}
+
+function decisionHTML(d){
+  var a = answers[d.id] || {};
+  var h = '<div class="q" id="q-'+d.id+'"><div class="q-top">'+
+    (d.need ? '<span class="tag need">Needed for the plan</span>' : '<span class="tag">Helpful</span>')+
+    '<span class="tag done" id="done-'+d.id+'"'+(isAnswered(d.id)?"":" hidden")+'>&#10003; answered</span></div>'+
+    '<p class="q-text" id="lbl-'+d.id+'">'+esc(d.q)+'</p>'+
+    (d.help ? '<p class="q-help">'+esc(d.help)+'</p>' : '');
+  if(d.opts){
+    h += '<div class="opts">';
+    d.opts.forEach(function(o,i){
+      var checked = a.v===o ? " checked" : "";
+      h += '<label class="opt"><input type="radio" name="'+d.id+'" value="'+esc(o)+'"'+checked+'><span>'+esc(o)+'</span></label>';
+    });
+    h += '</div><input class="note" type="text" data-note="'+d.id+'" placeholder="Add a note (optional)" value="'+esc(a.n||"")+'">';
+  } else if(d.type==="short"){
+    h += '<input class="note" type="text" data-val="'+d.id+'" placeholder="Type your answer" value="'+esc(a.v||"")+'">';
+  } else {
+    h += '<textarea data-val="'+d.id+'" placeholder="Type your answer">'+esc(a.v||"")+'</textarea>';
+  }
+  return h + '</div>';
+}
+
+
+function mathRows(){
+  return '<div class="mathwrap"><table class="mtbl"><thead><tr><th>Path</th><th>What it takes</th><th>The arithmetic</th></tr></thead><tbody>'+
+    MATH.rows.map(function(r){
+      return '<tr><td class="mp">'+esc(r[0])+'</td><td class="mw">'+esc(r[1])+'</td><td class="mx">'+esc(r[2])+'</td></tr>';
+    }).join("")+'</tbody></table></div>';
+}
+function addonCard(id){
+  var a=null,i; for(i=0;i<ADDONS.length;i++){ if(ADDONS[i].id===id) a=ADDONS[i]; }
+  if(!a) return "";
+  var sid="ad-"+a.id, open=!!openSecs[sid];
+  return '<div class="addon">'+
+    '<button type="button" class="addon-toggle" data-sec="'+sid+'" aria-expanded="'+(open?"true":"false")+'" aria-controls="body-'+sid+'">'+
+      '<span class="ad-l"><span class="ad-cta">Ask me to build it</span><span class="ad-nm">'+esc(a.name)+'</span></span>'+
+      '<span class="sec-right"><span class="ad-px">'+esc(a.price)+'</span><span class="chev"></span></span>'+
+    '</button>'+
+    '<div id="body-'+sid+'"'+(open?"":" hidden")+'><div class="ad-body">'+
+      '<b>What you get</b><ul>'+a.deliv.map(function(d){ return "<li>"+esc(d)+"</li>"; }).join("")+'</ul>'+
+      '<p class="ad-note">'+esc(ADDON_CAVEAT)+'</p>'+
+    '</div></div></div>';
+}
+function hubMap(){
+  var cell = function(o){
+    return '<div class="hm-cell"><h5>'+esc(o.k)+'</h5><p>'+esc(o.w)+'</p>'+
+      '<a class="hm-link" href="#sec-'+o.sec+'">Section '+esc(o.secn)+'</a></div>';
+  };
+  var branch = function(o){
+    return '<div class="hm-br'+(o.tag==="Nurture"?" loopback":"")+'">'+
+      '<span class="hm-tag">'+esc(o.tag)+'</span>'+
+      '<h5>'+esc(o.k)+'</h5>'+
+      '<ul class="hm-steps">'+o.steps.map(function(x){ return "<li>"+esc(x)+"</li>"; }).join("")+'</ul>'+
+      '<p>'+esc(o.w)+'</p>'+
+      '<a class="hm-link" href="#sec-'+o.sec+'">Section '+esc(o.secn)+'</a></div>';
+  };
+  return '<div class="hmap">'+
+    '<span class="hm-tag">Reach</span>'+
+    '<div class="hm-grid">'+MAP_IN.map(cell).join("")+'</div>'+
+    '<div class="hm-funnel">All four point at one place</div>'+
+    '<div class="hm-hub">'+
+      '<span class="hm-tag">Land</span>'+
+      '<h4>The site</h4>'+
+      '<p class="hm-sub">Every route above ends here. If it is not built, all four leak.</p>'+
+      '<ul class="hm-jobs">'+MAP_SITE.jobs.map(function(x){ return "<li>"+esc(x)+"</li>"; }).join("")+'</ul>'+
+      '<div class="hm-cap"><span class="hm-tag">Capture</span>'+
+        '<p>'+esc(MAP_SITE.cap)+'</p>'+
+        '<a class="hm-link" href="#sec-sales">Section 06</a></div>'+
+    '</div>'+
+    '<div class="hm-funnel">Then one of two things happens</div>'+
+    '<div class="hm-fork">'+MAP_OUT.map(branch).join("")+'</div>'+
+    '<div class="hm-funnel">And the people who finish send the next ones</div>'+
+    '<div class="hm-loop"><b>Advocate</b><p>'+esc(MAP_LOOP)+'</p></div>'+
+  '</div>';
+}
+function nurtureRows(){
+  return '<div class="tbl"><table><thead><tr><th>When</th><th>The email</th><th>What is in it</th></tr></thead><tbody>'+
+    NURTURE.map(function(r){ return '<tr><td><b>'+esc(r[0])+'</b></td><td>'+esc(r[1])+'</td><td>'+esc(r[2])+'</td></tr>'; }).join("")+
+    '</tbody></table></div>';
+}
+function pillarCards(){
+  return '<div class="scards">'+PILLARS.map(function(p){
+    return '<div class="scard"><h4>'+esc(p.name)+'</h4><p class="tag">'+esc(p.stage)+' · '+esc(p.share)+' of what goes out</p>'+
+      '<p class="gets"><b>Its job:</b> '+esc(p.job)+'</p>'+
+      '<p class="system">'+esc(p.looks)+'</p></div>';
+  }).join("")+'</div>';
+}
+
+function shootTable(){
+  return '<div class="tbl"><table><thead><tr><th>What</th><th>Detail</th><th>Denver, high level</th></tr></thead><tbody>'+
+    SHOOT.map(function(r){ return '<tr><td><b>'+esc(r[0])+'</b></td><td>'+esc(r[1])+'</td><td class="num">'+esc(r[2])+'</td></tr>'; }).join("")+
+    '<tr class="subtotal"><td><b>Per shoot</b></td><td></td><td class="num"><b>$3,500\u20137,500</b></td></tr>'+
+    '</tbody></table></div>';
+}
+function cadenceCards(){
+  return '<div class="wex">'+CADENCE.map(function(c){
+    return '<div class="wcard'+(c.name==="Every quarter"?" rec":"")+'"><h4>'+esc(c.name)+'</h4><p class="wsum">'+esc(c.mo)+'<span class="wper">/month</span></p>'+
+      '<p class="muted small">'+esc(c.yr)+' a year '+"\u00b7"+' '+esc(c.shoots)+'</p>'+
+      '<ul><li>'+esc(c.out)+'</li><li><b>'+esc(c.gap)+'</b></li></ul></div>';
+  }).join("")+'</div>';
+}
+function sourceTable(){
+  return '<div class="tbl"><table><thead><tr><th>Source</th><th>What it is</th><th>What it costs</th><th>Yours to schedule?</th><th>Does it run out?</th></tr></thead><tbody>'+
+    SOURCES.map(function(r){
+      return '<tr'+(r[4]?' class="rec"':'')+'><td class="mw"><b>'+esc(r[0])+'</b></td><td>'+esc(r[1])+'</td><td>'+esc(r[2])+'</td><td>'+esc(r[3])+'</td><td>'+esc(r[5])+'</td></tr>';
+    }).join("")+'</tbody></table></div>';
+}
+function twoCol(rows,h1,h2){
+  return '<div class="tbl"><table><thead><tr><th>'+esc(h1)+'</th><th>'+esc(h2)+'</th></tr></thead><tbody>'+
+    rows.map(function(r){ return '<tr><td class="mw"><b>'+esc(r[0])+'</b></td><td>'+esc(r[1])+'</td></tr>'; }).join("")+
+    '</tbody></table></div>';
+}
+function tierNotes(){
+  return '<div class="tnotes">'+TIERS.map(function(t){
+    var sid = "tn-"+t.name.toLowerCase().replace(/[^a-z0-9]+/g,"-");
+    var open = !!openSecs[sid];
+    return '<div class="tnote">'+
+      '<button type="button" class="tn-toggle" data-sec="'+sid+'" aria-expanded="'+(open?"true":"false")+'" aria-controls="body-'+sid+'">'+
+        '<span class="tn-l"><span class="tn-cta">'+esc(t.why)+'</span><span class="tn-nm">'+esc(t.name)+'</span></span>'+
+        '<span class="sec-right"><span class="chev"></span></span>'+
+      '</button>'+
+      '<div id="body-'+sid+'"'+(open?"":" hidden")+'><div class="tn-body"><p>'+esc(t.truth)+'</p></div></div>'+
+    '</div>';
+  }).join("")+'</div>';
+}
+function tierCards(){
+  return '<div class="scards tiers">'+TIERS.map(function(t){
+    return '<div class="scard'+(t.rec?" rec":"")+'">'+(t.rec?'<div class="ribbon">Where it compounds</div>':'')+
+      '<h4>'+esc(t.name)+'</h4>'+
+      '<div class="big">'+esc(t.cost)+'<span>'+esc(t.label)+'</span></div>'+
+      '<div class="sub">'+esc(t.sub)+'</div>'+
+      '<div class="lines">'+t.gets.map(function(g){ return '<div class="lrow"><span>'+esc(g)+'</span></div>'; }).join("")+'</div>'+
+      '<p class="tstack"><b>The stack:</b> '+esc(t.stack)+'</p></div>';
+  }).join("")+'</div>';
+}
+
+function ladderCards(){
+  return LADDER.map(function(l){
+    return '<div class="pcard"><h4>'+esc(l.phase)+' · '+esc(l.name)+'</h4>'+
+      '<p class="tag">'+esc(l.when)+' · '+esc(l.spend)+'</p>'+
+      '<p class="gets"><b>What it solves:</b> '+esc(l.solves)+'</p>'+
+      '<ul>'+l.what.map(function(w){ return '<li>'+esc(w)+'</li>'; }).join("")+'</ul>'+
+      '<p class="system"><b>With me:</b> '+esc(l.alex)+'</p>'+
+      '<p class="muted small"><b>Without me:</b> '+esc(l.without)+'</p></div>';
+  }).join("");
+}
+
+function togetherRows(){
+  return TOGETHER.map(function(t){
+    var sid = "tg-"+t.id, open = !!openSecs[sid];
+    return '<div class="trow">'+
+      '<button type="button" class="trow-toggle" data-sec="'+sid+'" aria-expanded="'+(open?"true":"false")+'" aria-controls="body-'+sid+'">'+
+        '<span class="thd"><h4>'+esc(t.name)+'</h4><span class="tis">'+esc(t.is)+'</span></span>'+
+        '<span class="sec-right"><span class="tprice">'+esc(t.price)+'</span><span class="chev"></span></span>'+
+      '</button>'+
+      '<div id="body-'+sid+'"'+(open?"":" hidden")+'><div class="tcols">'+
+        '<div class="tcol"><b>If you do it yourselves</b><p>'+esc(t.diy)+'</p></div>'+
+        '<div class="tcol mine"><b>If I do it</b><p>'+esc(t.mine)+'</p></div>'+
+      '</div>'+'</div></div>';
+  }).join("");
+}
+
+/* Progressive disclosure: wrap every h3 and its following siblings into a
+   collapsible sub-block. An h3 marked data-keep stays open. */
+var SUB_N = 0;
+function makeCollapsible(){
+  SUB_N = 0;
+  var bodies = document.querySelectorAll(".sec-body");
+  for(var b=0;b<bodies.length;b++){
+    var body = bodies[b], heads = [], kids = body.children, i;
+    for(i=0;i<kids.length;i++){ if(kids[i].tagName==="H3" && !kids[i].hasAttribute("data-keep")) heads.push(kids[i]); }
+    for(i=0;i<heads.length;i++){
+      var h = heads[i], group = [], n = h.nextElementSibling;
+      while(n && n.tagName!=="H3"){ group.push(n); n = n.nextElementSibling; }
+      if(!group.length) continue;
+      SUB_N++;
+      var sid = "sub"+SUB_N, open = !!openSecs[sid];
+      var wrap = document.createElement("div"); wrap.className = "sub";
+      var btn = document.createElement("button");
+      btn.type = "button"; btn.className = "sub-toggle";
+      btn.setAttribute("data-sec", sid);
+      btn.setAttribute("aria-expanded", open?"true":"false");
+      btn.setAttribute("aria-controls", "body-"+sid);
+      btn.innerHTML = '<span class="sub-title">'+h.innerHTML+'</span><span class="chev"></span>';
+      var inner = document.createElement("div");
+      inner.id = "body-"+sid; inner.className = "sub-body"; inner.hidden = !open;
+      h.parentNode.insertBefore(wrap, h);
+      wrap.appendChild(btn); wrap.appendChild(inner);
+      for(var g=0; g<group.length; g++){ inner.appendChild(group[g]); }
+      h.parentNode.removeChild(h);
+    }
+  }
+}
+
+function render(){
+  var h = '<p class="eyebrow">Coach Marc Montoya</p><h1>Roadmap to Gold</h1>'+
+   '<p class="lede">Nothing happens until the right people know about it. A plan you can run with me or without me. It starts where the money actually is.</p>'+
+   '<p class="lede muted sourceline">Built from the Decision Sheet you submitted on Sep 22, 2026.</p>'+
+   '<div class="how"><div><b>Read</b>Tap any section to open it. Everything starts closed so you can see the whole shape on one screen.</div>'+
+   '<div><b>Decide</b>16 questions in section 10. The first one — what you can spend each month — matters more than the other 15 together.</div>'+
+   '<div><b>Save</b>Press <i>Save progress</i> anytime. When you\'re done, press <i>Submit</i> so I know.</div></div>';
+
+  h += '<div class="bar"><div class="bar-row"><div class="meter"><span id="pg-meter-text">0 of 16 answered</span>'+
+   '<span class="meter-track"><span class="meter-fill" id="pg-fill"></span></span></div>'+
+   '<div class="bar-btns">'+
+     '<button type="button" class="toggle theme-btn" id="pg-theme" aria-label="Switch to dark mode" title="Switch to dark mode">'+
+       '<span class="theme-ico" aria-hidden="true"></span>'+
+     '</button>'+
+     '<button type="button" class="toggle" id="pg-all">Expand all</button>'+
+   '</div></div>'+
+   '<div class="jump">'+
+     JUMP.map(function(j,i){
+       return '<a href="#sec-'+j[0]+'"><em>'+(i<9?"0":"")+(i+1)+'</em>'+esc(j[1])+'</a>';
+     }).join("")+
+   '</div></div>';
+
+  var NAV = [["north","North Star"],["constraint","The constraint"],["engine","How demand gets made"],["content","Content"],["site","The site"],["sales","The Pipeline"],["runs","What it runs on"],["roadmap","The work"],["together","How we can work together"],["decisions","Decisions"],["ladder","Where this goes"]];
+  h += '<div class="shell"><nav class="sidenav" aria-label="Sections"><ol>'+
+    NAV.map(function(n,i){ return '<li><a href="#sec-'+n[0]+'" data-nav="'+n[0]+'"><span class="num">'+(i<9?"0":"")+(i+1)+'</span>'+esc(n[1])+'</a></li>'; }).join("")+
+    '</ol></nav><div class="secs">';
+
+  /* 01 North Star */
+  h += sectionShell("north","North Star","what this becomes",
+    '<p class="lede">Start with where this ends up, because it changes what is worth building first.</p>'+
+    '<div class="claimbox"><div class="lab">The line your market repeats</div>'+
+      '<p class="claim">Every high performer has a corner. Most executives don’t.</p>'+
+      '<p class="under"><b>Helping People Perform Under Pressure</b> stays under your name — that is the description. This is the argument. It names a category, identifies the buyer by what he is missing, makes 24 years in the corner load-bearing rather than decorative, and is hard to hear without asking a follow-up question. That last part is how referrals actually start.</p></div>'+
+    '<div class="nsq">Pressure reveals. And what it reveals gives us something to coach.</div>'+
+    '<h3>Your words, from the Decision Sheet</h3>'+
+    '<div class="nsown">'+
+      '<blockquote>Proving Grounds exists to build people who can coach themselves under pressure.</blockquote>'+
+      '<blockquote class="hero">The goal is not to create lifetime clients — the goal is to create lifetime advocates.</blockquote>'+
+      '<blockquote>The program exists to help exceptional people perform exceptionally when the pressure is greatest.</blockquote>'+
+    '</div>'+
+    '<p>The middle one is the sharpest thing in this whole plan, and it has consequences. A retention business keeps people paying. An advocate business finishes the job, sends someone out better, and gets the next three clients from them. That makes referrals, testimonials and the Victory Log revenue infrastructure rather than nice-to-haves — and it is the honest reason a 90-day Mission ends instead of renewing forever.</p>'+
+    '<div class="nsgrid">'+
+      '<div class="nscard"><h4>Who it’s for</h4><p class="muted small">You said leaders and founders first, then athletes and teams. That order decides the photography, the language and the first line anyone reads.</p><ul>'+
+        '<li><b>First:</b> the founder who has always been the one with the answers and has no corner of his own</li>'+
+        '<li><b>First:</b> the leader whose company outgrew the role he built his life around</li>'+
+        '<li>Leadership and sales teams — which is what a bootcamp is for</li>'+
+        '<li>Pastors carrying everyone else while carrying themselves</li>'+
+        '<li>Athletes fighting the six inches, or working out who they are when it ends</li>'+
+      '</ul></div>'+
+      '<div class="nscard out"><h4>What it’s not</h4><p class="muted small">Naming this matters more, because these are the assumptions the market will make for you.</p><ul>'+
+        '<li><b>Not another life-coaching brand.</b> No vague transformation language, no stock photography</li>'+
+        '<li><b>Not motivational speaking, and not therapy.</b> It is coaching — reps, film, adjustments, a 90-day Mission with a date on it</li>'+
+        '<li><b>Not a UFC brand.</b> The corner is the credibility and the origin. It cannot be the whole identity or nothing translates</li>'+
+        '<li><b>Not a personality business that stalls when you are tired.</b> That is what the systems below are for</li>'+
+      '</ul></div>'+
+    '</div>'+
+    '<div class="nsq alt2"><b>Faith sits up front.</b> You answered that on the Decision Sheet and named faith among what your clients are fighting. It is a real positioning choice with a real trade — it will cost some corporate bookings and it will be exactly why other clients trust you in the first meeting. Worth choosing deliberately rather than by accident, which is why it is a decision below.</div>'+
+    '<h3>Where this goes</h3>'+
+    '<p>One-on-one 90-day Missions now — private coaching twice a month, with a written plan and a date on it — because that is the product that already works. Speaking and team bootcamps next, because they pay soonest and need the least built first. Then the book, the content engine, and eventually Expeditions — accomplished people in controlled unfamiliar environments, to see what pressure reveals and coach the response.</p>'+
+    '<p class="muted">None of that happens until the right people know it exists. Which is the next section.</p>');
+
+  /* 02 The constraint */
+  h += sectionShell("constraint","The constraint","why the phone isn’t ringing",
+    '<p class="lede">'+esc(CONSTRAINT.headline)+'</p>'+
+    '<div class="nsgrid">'+CONSTRAINT.bullets.map(function(b){
+      return '<div class="nscard"><h4>'+esc(b[0])+'</h4><p style="font-size:13.5px;margin:6px 0 0">'+esc(b[1])+'</p></div>';
+    }).join("")+'</div>'+
+    '<p><b>So the plan is shaped around awareness first, infrastructure second.</b> Not because infrastructure does not matter — the site is in here, and early — but because a beautiful site nobody visits is an expensive way to stay invisible. The order is: make the right people aware, give them somewhere to land, then make sure nothing gets lost once they arrive.</p>'+
+    '<p class="muted">The reassuring part: two of the three demand tracks in the next section work before the site exists. You can start this month.</p>'+
+    "<h3>What $18,500 a month actually requires</h3>"+'<p>You gave two numbers on the Decision Sheet: $18,500 a month of gym income to replace, and a ceiling of 20 clients. Put together, they decide the shape of this business \u2014 so it is worth doing the division before building anything on top of it.</p>'+mathRows()+'<p class="muted">'+esc(MATH.close)+'</p>'+'<h3>The gap between $0 and a 90-day Mission</h3>'+
+    '<p class="muted">'+esc(CONSTRAINT.seed)+'</p>');
+
+  /* 03 Engine */
+  h += sectionShell("engine","How demand gets made","the whole thing on one screen, then the three ways in",
+    '<p class="lede">Five questions decide whether this business works: how the right people hear about you, where they land, how you stop losing them, what happens to the ones who are not ready, and how you get more without paying for more. Here is all five on one screen, and which section answers each.</p>'+
+    hubMap()+
+    '<p class="hm-drain">One thing this picture does not show: the top-left box runs on footage, and the archive behind it is finite. Everything you have ever shot is a fixed amount of raw material, and the calendar eats it every month. Eventually the footage has to be ones you go out and make. Section 07 is where that gets priced.</p>'+
+    '<p><b>Only the top row and the bottom one bring new people in.</b> Everything between them is plumbing \u2014 it does not create demand, it stops you losing the demand you already earned. Most of this category builds the plumbing and never does the reaching, which is exactly why most of it is invisible.</p>'+
+    '<p>And the site is in the middle for a reason. It is not one channel among several. It is the only place all four routes end, which is why building it before turning the content on is not a preference \u2014 four things leak at once until it exists.</p>'+
+    '<h3>The three ways in</h3>'+
+    '<p class="muted">Stage one, in detail. Three tracks — two of them start before the website does.</p>'+
+    '<div class="flow">'+
+      '<div class="ftrack"><div class="thead">Instagram and LinkedIn — starting now</div><div class="fsteps">'+
+        '<div class="fstep"><b>A post that lands</b><span>Reel or carousel, with a job and a CTA</span></div>'+
+        '<div class="fstep"><b>Profile visit</b><span>Bio says what you do now, in one line</span></div>'+
+        '<div class="fstep"><b>DM or link</b><span>A keyword in the DMs starts a real conversation</span></div>'+
+        '<div class="fstep"><b>The site</b><span>Somewhere to land, and a way to capture them</span></div>'+
+        '<div class="fstep paid"><b>A call, then a 90-day Mission</b><span class="px">$3,000–5,000</span></div>'+
+      '</div></div>'+
+      '<div class="ftrack"><div class="thead">Borrowed audiences — podcasts and stages, starting now</div><div class="fsteps">'+
+        '<div class="fstep"><b>A podcast or a stage</b><span>Their audience, their credibility, transferred to you</span></div>'+
+        '<div class="fstep"><b>They look you up</b><span>This is why the site has to look real</span></div>'+
+        '<div class="fstep"><b>Follow or inquire</b><span>Some convert now, most convert later</span></div>'+
+        '<div class="fstep paid"><b>A booking or a client</b><span class="px">$5,000+</span></div>'+
+      '</div></div>'+
+      '<div class="ftrack"><div class="thead">Direct — companies and referrals, needs nothing but a phone</div><div class="fsteps">'+
+        '<div class="fstep"><b>10 companies you can name</b><span>People who already know and trust you</span></div>'+
+        '<div class="fstep"><b>A one-page sell sheet</b><span>Something a buyer can circulate internally</span></div>'+
+        '<div class="fstep"><b>A 20-minute call</b><span>Structured. You coach one thing inside it</span></div>'+
+        '<div class="fstep paid"><b>A bootcamp</b><span class="px">$6,500</span><span>A day with their team</span></div>'+
+      '</div></div>'+
+    '</div>'+
+    '<p><b>The third track is the one that can earn while the other two are still building.</b> It needs no audience and no content \u2014 a price, a one-page sell sheet and 10 phone calls. But it does need the site, for one unglamorous reason: a company that likes the idea has to look you up before they will put you in front of their team, and right now there is nothing to find. So the sell sheet gets built early, in Phase 1, and the calls get worked properly in Phase 5 once there is somewhere to send people. If a bootcamp opportunity shows up before then, take it \u2014 just do not plan the year around one arriving.</p>'+
+    '<p class="muted">The first track is the long game and the one that compounds. The second is the highest-leverage thing available, because someone else already did the work of gathering the audience.</p>');
+
+  /* 04 Content */
+  h += sectionShell("content","Content","what to post, and why",
+    '<p class="lede">The point of every piece is to move someone one step. Nothing goes out decorative.</p>'+
+    '<h3 data-keep>Three pillars</h3>'+
+    pillarCards()+
+    '<h3>What the stages actually mean</h3>'+
+    '<p>Four stages, because there are four different people standing in them. The labels are only useful if you can picture who each one is.</p>'+
+    '<ul class="cant">'+STAGES.map(function(g){ return '<li><b>'+esc(g[0])+'</b> \u2014 '+esc(g[1])+' <span class="smuted">('+esc(g[2])+')</span></li>'; }).join("")+'</ul>'+
+    '<p><b>Notice the third one has nothing.</b> There is no pillar for Consideration and no slot in the calendar, and that is not an oversight \u2014 it is because there is nothing to point those people at. They believe you, they are not ready for a 90-day Mission, and right now the only thing on offer is to keep following. <b>That is the same gap section 02 names, seen from the content side.</b> Fill that gap and this stage fills itself.</p>'+
+    '<p class="muted">The rotation runs 25/50/25 across the four anchor posts \u2014 one discovery, two awareness, one conversion. Awareness gets the double slot because the translation is the hardest thing to prove and the thing your current audience least expects. As people catch up, one awareness slot can become a second conversion slot.</p>'+
+    '<h3>The rotating month</h3>'+
+    '<p class="muted small">4 weeks, one rotation, repeating. Every slot has a job and an ask.</p>'+
+    '<div class="tbl"><table><thead><tr><th>Week</th><th>Stage</th><th>Output</th><th>What it is</th><th>The ask</th></tr></thead><tbody>'+
+    CALENDAR.map(function(c){ return '<tr'+(c[1]==="Conversion"?' class="rec"':'')+'><td><b>'+esc(c[0])+'</b></td><td>'+esc(c[1])+'</td><td>'+esc(c[2])+'</td><td>'+esc(c[3])+'</td><td class="num">'+esc(c[4])+'</td></tr>'; }).join("")+
+    '</tbody></table></div>'+
+    '<p class="muted small">Each week’s pair goes to both channels. Same assets, two uploads.</p>'+'<p class="muted small">This rotation is the Scrappy baseline — eight pieces, one pair a week. Prospect adds one more pair a month and Contender adds four, and the extra slots go wherever the month needs them rather than getting a fixed job — which in practice is wherever the new footage is strongest.</p>'+
+    '<p><b>Every piece gets exactly one call to action. Never zero, never two.</b> The most common failure in this category is not weak content — it is good content with no ask attached, published for years by someone who cannot understand why nothing happens.</p>'+
+    '<h3>Where it comes from</h3>'+
+    '<p class="lede">Six sources, and they are not equal. Worth seeing all of them in one place before deciding how much to post.</p>'+
+    sourceTable()+
+    '<p><b>Read the last two columns together and the whole problem is right there.</b> The source doing almost all the work today is the only one that runs out. The two that never run out are not yours to schedule — they show up when somebody else books you. And the one source you can actually switch on whenever you want is the one that costs $3,500 to $7,500 a go.</p>'+
+    '<p><b>There is deliberately no monthly sit-down-in-front-of-a-lens block in here.</b> It is the obvious answer and it is the wrong one for this brand. Talking-head content would undercut the thing that makes the archive worth anything — that it is real footage of a man doing the job, not a man describing it. Better to post less and have all of it be real.</p>'+
+    '<h3>How long does the archive last?</h3>'+
+    '<p><b>Nobody knows yet, and anybody who hands you a number today is guessing.</b> What we can say is how fast each level spends it. Scrappy pulls 4 pieces a month out of the archive. Prospect pulls 5. Contender pulls 4 as well — the same as Scrappy — because the other 4 come out of the shoot. So the level that drains the archive fastest is the middle one, and the most expensive level is the only one that buys the archive more time while doubling what goes out. The talks and the podcasts stretch all three further still, by however many rooms you get into. That is the real argument for chasing rooms: they are lead generation and they are footage, from the same ask.</p>'+
+    '<p class="muted">The index built in October is what turns this from a shape into a number — how many genuinely usable moments are actually in there, by pillar and by stage. It is the first thing I will tell you when it is done, and it is the number that should decide which level in section 07 you pick.</p>'+
+    '<p><b>So the calendar eventually has to be fed by footage that exists because Marc decided to make it.</b> With no talking-head block in the plan, that means either rooms or a shoot — and only one of those is his to schedule. Not soon, and not expensively at first, but it is the one thing here that cannot be avoided by being clever. Section 07 puts a number on it.</p>'+
+    '<p class="muted">You and Jarah dump everything; I organize and index the lot and hand the editor a labeled library. Nothing else moves at full speed until that is done.</p>'+
+    '<h3>Talks and speeches that get recorded</h3>'+
+    '<p>Every time you speak in front of a live audience and somebody points a camera at it, that is footage — and it is footage nobody had to pay to shoot. It belongs in this plan as a named source rather than something that occasionally turns up.</p>'+
+    twoCol(TALKFOOTAGE,"The rule","Why")+
+    '<p class="muted">Same goes for podcasts. If the host records video, ask for the file. A clipped answer outlives the episode by years and reaches people who were never going to sit through 90 minutes.</p>'+
+    '<h3>What a reel has to be</h3>'+
+    '<p>This is the standing brief, and it applies to all of it — archive cuts, talk footage, podcast clips, anything shot new. It goes to the editor on day one so nobody is guessing.</p>'+
+    twoCol(REELSPEC,"The rule","Why")+
+    "<h3>The newsletter formula</h3>"+'<p>This is the thing you asked me to keep and I would rather you just had it. Six beats, one issue, about 500 words. It works because it is the shape of a coaching conversation, not the shape of a newsletter.</p>'+'<ol class="fmla">'+FORMULA.map(function(f){ return '<li><b>'+esc(f[1])+'</b><span>'+esc(f[2])+'</span></li>'; }).join('')+'</ol>'+'<p><b>Then one line and one ask.</b> Never two asks. The ask changes by month and matches whatever the conversion slot is pointing at.</p>'+'<p class="muted"><b>If you do not have time to write it:</b> record a voice memo answering the six beats out loud — it takes about 4 minutes — get the transcript, then write it up against the formula. The memo does the thinking, the formula does the shape. Worth being straight with you about the limit: right now that last step is still a person sitting down with the transcript. Turning a voice memo into a finished draft on its own needs the system built underneath it, and that is not built yet.</p>'+'<h3>Not doing</h3>'+
+    '<h3>The two channels</h3>'+
+    '<p><b>Instagram and LinkedIn.</b> Every piece goes to both — the assets are identical, only the upload is doubled, and that is minutes rather than hours. How many pieces depends on which level you run at: 8 a month at Scrappy, 10 at Prospect, 16 at Contender.</p>'+
+    '<p>They do different jobs. <b>Instagram reaches the audience you already have.</b> It is where the fight world is, and it is where the story and the personality land hardest. <b>LinkedIn reaches the buyer you do not have yet.</b> Founders, leaders and executives are on it daily and most of them are not on Instagram at all — which is the whole of section 02 in one sentence.</p>'+
+    '<p>The newsletter is not a third channel. <b>You cannot email somebody you have not reached yet</b> — it is the nurture layer underneath both, not a way in. Though it does get one free multiplier: republished as a LinkedIn newsletter two or three days after the email goes out, it notifies every follower, at no cost, aimed at exactly the person you want.</p>'+
+    '<p class="muted"><b>The honest cost:</b> a few more minutes a week for Jarah, and some pieces will want a different caption on LinkedIn because it is a different room. A raw gym clip that works on Instagram can land oddly beside a founder’s feed. Start by posting the same caption to both and adjust once you can see which pieces need it.</p>'+
+    '<p class="muted">No daily posting. No TikTok until something proves it. No blog, no SEO program. Two channels, one rotation, done properly, is worth more than five done badly.</p>'+
+    '<p><b>Being found for your own name is a different thing, and it is free.</b> Everyone who watches you corner a fight or hears you on a podcast goes and types your name into Google. That is the highest-intent traffic you have, it costs nothing but a site built correctly, and it is already inside the site phase. The same setup is what makes you legible to the AI assistants people now ask for recommendations — there is nothing worth buying there yet either.</p>');
+
+  /* 05 Site */
+  h += sectionShell("site","The site","what it has to do",
+    '<p class="lede">Not what it looks like. What it has to do.</p>'+
+    '<p>It has three jobs: make a stranger understand in 10 seconds, make an organizer or a founder believe you are the real thing, and make sure nobody who is interested leaves without a way to reach you. Everything else is decoration.</p>'+
+    '<div class="tbl"><table><thead><tr><th>Page</th><th>Its job</th><th>What it must have</th></tr></thead><tbody>'+
+    SITEMAP.map(function(p){ return '<tr><td><b>'+esc(p[0])+'</b></td><td>'+esc(p[1])+'</td><td>'+esc(p[2])+'</td></tr>'; }).join("")+
+    '</tbody></table></div>'+
+    '<div class="nsgrid">'+
+      '<div class="nscard"><h4>Non-negotiables</h4><ul>'+
+        '<li><b>Mobile first.</b> Social traffic is on a phone. If it is good on a laptop and awkward on a phone it is broken</li>'+
+        '<li><b>The sizzle reel high on Speaking.</b> Organizers decide in under a minute</li>'+
+        '<li><b>Capture on every page.</b> Email or booking, always within reach</li>'+
+        '<li><b>One primary action per page.</b> Two choices is the same as none</li>'+
+        '<li><b>Real photography.</b> From the archive. Never stock</li>'+
+      '</ul></div>'+
+      '<div class="nscard out"><h4>Not in the first build</h4><ul>'+
+        '<li>A blog</li>'+
+        '<li>A client portal</li>'+
+        '<li>Apparel — audience first, merchandise second</li>'+
+        '<li>Anything custom-coded</li>'+
+        '<li>Pages nobody has traffic for yet</li>'+
+      '</ul></div>'+
+    '</div>'+
+    '<h3>The email address comes with the domain</h3>'+
+    '<p><b>You need the Google Workspace account anyway</b> — it is the 6 TB the archive backs up into, and it is what forwards mail from the old address — so the only real question is what your outbound mail says. <b>marc@coachmarcmontoya.com reads like a business; a gmail address reads like a hobby</b>, and the founder section 02 is built around is exactly the person who notices the difference.</p>'+
+    '<p class="muted">Three seats, $42 a month: <b>marc@</b>, <b>marketing@</b> for Jarah to work from, and <b>accounting@</b> forwarding to the bookkeeper. One afternoon inside the site build, then it never comes up again.</p>'+
+    '<p class="muted"><b>Platform:</b> Squarespace Core plus Acuity for booking. You already own the domain there, Jarah can maintain it without calling anyone, and Core drops the store fee to zero for when the book arrives. About $45–56 a month all in. It is not the most impressive answer — it is the one that gets built in weeks rather than months and does not need a developer every time a date changes.</p>');
+
+  /* 06 Sales */
+  h += sectionShell("sales","The Pipeline","the part nobody builds",
+    '<p class="lede">Lead generation isn\u2019t worth anything if there are leaks. No leads, no lunch money. No conversion, no Christmas presents. These are the steps from inquiry to paid.</p>'+
+    '<h3>First, the part that was missing</h3>'+
+    '<p><b>Most people who find you will not be ready.</b> They liked the reel, they read the newsletter, they are not spending $3,000 to $5,000 this month. Until now this plan had no answer for them beyond "keep following" — the same hole section 02 calls the gap between $0 and a Mission, and section 04 calls the empty Consideration stage.</p>'+
+    '<p><b>The answer is a sequence and a newsletter, and it runs itself.</b> Somebody gives you their email. Five emails go out over three weeks without anyone pressing anything. Then they roll into the monthly newsletter and stay there until they are ready. That is nurture, it is the cheapest thing in this entire plan, and it is the only thing that holds a lead for six months.</p>'+
+    nurtureRows()+
+    '<p class="muted">Written once, in Kit, running forever. The monthly newsletter picks up where it ends — which is why the newsletter is not really content. It is the thing that keeps people warm between the day they find you and the day they are ready.</p>'+
+    '<h3>Then, inquiry to paid</h3>'+
+    '<p class="muted small">Nine steps. One owner each. The owner column is the whole point — work with two owners has none.</p>'+
+    '<div class="tbl"><table><thead><tr><th>#</th><th>Step</th><th>When</th><th>Owner</th><th>What good looks like</th></tr></thead><tbody>'+
+    SALES.map(function(s){ return '<tr'+(s[3]==="Marc"?' class="rec"':'')+'><td class="num">'+esc(s[0])+'</td><td><b>'+esc(s[1])+'</b></td><td>'+esc(s[2])+'</td><td>'+esc(s[3])+'</td><td>'+esc(s[4])+'</td></tr>'; }).join("")+
+    '</tbody></table></div>'+
+    '<h3>The call is the product demo</h3>'+
+    '<p>Your unfair advantage is that you are visibly good at this within 90 seconds, and no competitor can replicate that in a brochure. So <b>coach one thing inside every call.</b> Not a teaser — actually corner them on one real problem for 2 minutes. Every call should end with something useful having happened to the person on the other end, whether or not they buy.</p>'+
+    '<h3>Who is not a fit</h3>'+
+    '<p class="muted">Someone looking for a therapist. Someone who cannot afford it. Someone who wants you to fix a third party — a co-founder, a spouse, an employee. Saying no quickly and warmly is a feature: it protects your calendar and it is the clearest signal that you know exactly who this is for.</p>'+
+    '<h3>Six numbers, checked Monday</h3>'+
+    '<div class="tbl"><table><thead><tr><th>Number</th><th>What it tells you</th></tr></thead><tbody>'+
+    '<tr><td>Assets shipped</td><td>Whether the engine actually ran, or the month got away from you</td></tr>'+
+    '<tr><td>Newsletter subscribers</td><td>Whether the top of all this is filling</td></tr>'+
+    '<tr><td>Inquiries, and where from</td><td>Is anything arriving at all, and which of the three tracks is producing it</td></tr>'+
+    '<tr><td>Calls booked</td><td>Whether interest survives contact</td></tr>'+
+    '<tr class="rec"><td><b>Closes, and the close rate</b></td><td><b>The most diagnostic number you have. Low demand and low conversion need opposite fixes</b></td></tr>'+
+    '<tr><td>Revenue</td><td>The only one that pays the bills</td></tr>'+
+    '</tbody></table></div>'+
+    '<p class="muted">10 minutes, every Monday, in Notion \u2014 the system Marc already lives in. That is genuinely enough at this stage. The habit matters far more than the tool.</p>'+
+    '<p><b>Four of these six can fill themselves in.</b> If the tracker and the scoreboard are connected, inquiries, calls, closes and revenue all come straight off the pipeline, and Jarah types two numbers instead of six. Notion will also send the Monday reminder on its own. Worth knowing so nobody signs up for more manual work than the job actually needs \u2014 though the entry itself is deliberately by hand, because a dashboard nobody touches goes stale and then gets ignored.</p>');
+
+  /* 07 Runs on */
+  h += sectionShell("runs","What it runs on","what the business actually costs",
+    '<p class="lede">This is the number I need from you, and it is the only one that changes the shape of everything else.</p>'+
+    '<div class="feebox"><p><b>None of this is my fee.</b> Every number in this section is the running cost of the business \u2014 the editors, the tools, the hosting, the design, the shoots. What I charge sits separately, in section 09, and all of it is optional.</p>'+
+      '<p>Pick the level you can genuinely sustain for <b>12 to 18 months</b>. The level you choose should be the level you keep \u2014 a level you can hold is worth more than a level you can start.</p></div>'+
+    tierCards()+
+    tierNotes()+
+    '<p class="muted"><b>Read the ladder this way:</b> Prospect is where content starts building on itself rather than just existing. Contender is where you stop being limited by a finite archive, sporadic podcast appearances and speaking opportunities.</p>'+
+    '<h3>The thing that decides all of this</h3>'+
+    '<p><b>The archive is finite. It will run out.</b> 24 years of footage is a lot, and the first two levels run almost entirely on it — which is exactly why they are cheap. But every month you post from it, there is less of it. Nobody knows yet how long it lasts; the index built in phase one is what will tell us.</p>'+
+    '<p>And it is worth being clear about where that footage came from. <b>The UFC shot it. His fighters shot it. Podcast hosts shot it.</b> It arrived because Marc was in the room while somebody else was paying for the camera. That has been a gift for 24 years and it will keep coming — but none of it is his to schedule, none of it is aimed at the business he is building now, and none of it can be pointed at a message he needs to land next month.</p>'+
+    '<p><b>At some point the calendar has to be fed by footage that exists because Marc decided to make it.</b> That is what the level below actually buys. Not better production for its own sake — a supply of material he controls.</p>'+
+    '<h3>What a real shoot costs</h3>'+
+    '<p>This is the part that was missing, and it is the part that changes the budget. Your short-form editors cut footage — they do not shoot it. Shooting is a different trade at a different rate, and in Denver it is not cheap: the 2026 baseline for a competent professional runs $800 to $1,500 a day, in a market where the cost of living sits about 31% above the national average.</p>'+
+    '<p class="muted small">One full day. Lifestyle and storytelling, where authenticity matters more than polish — not a studio talking head. Prices are local, high-level and estimates only: this is not something I am offering to do for you.</p>'+
+    shootTable()+
+    '<p><b>Two different editors, two different jobs.</b> The reels from a shoot are cut by the team that shot it, at $450 to $500 each — they are working from footage that was planned and lit for exactly this, and it shows. Your short-form editors stay on what they are built for: highlight reels and short cuts from the archive, plus the graphics and carousels. Maybe one or two long-form highlight cuts a year, and that is it.</p>'+
+    '<p><b>Ask for the thumbnails by name.</b> One or two YouTube thumbnails belong to the long-form edit and should be quoted inside it, not billed afterwards as a design extra. It is a small thing that gets left off scopes constantly, and a long-form piece without a thumbnail is a video nobody clicks — you paid for the whole day and then hid it behind a grey freeze-frame. Put it in writing before the shoot.</p>'+
+    '<p class="muted">Stills are an add-on at $300 to $500 for the same day. Often times they can be negotiated into that $3,500–7,500 figure. Worth trying, because the site, the speaker one-sheet and the bootcamp sell sheet all need real photographs of Marc that are updated periodically, and they have to come from somewhere.</p>'+
+    '<h3>How often, and what it costs</h3>'+
+    '<p>The real decision inside Contender. Each option below includes everything — the shoots amortized, the short-form editor, the tools and the paid spend.</p>'+
+    '<p class="muted small"><b>How the monthly number is built:</b> it is the Prospect level — $900 to $1,400 a month, which already carries the newsletter, Metricool and the $200 to $300 of ad spend — plus the shoots annualized and divided across 12 months. Quarterly: 4 shoots at $3,500 to $7,500 is $14,000 to $30,000 a year, on top of $10,800 to $16,800 of Prospect, which is $24,800 to $46,800 a year. Twice a year: $7,000 to $15,000 of shoots for $17,800 to $31,800 a year.</p>'+
+    '<p class="muted small"><b>One thing the monthly figure hides:</b> shoot money does not arrive in even slices. You pay it in two or four lumps of $3,500 to $7,500. Treat the monthly number as what to set aside, not what leaves the account.</p>'+
+    cadenceCards()+
+    '<p><b>The difference is about $600 to $1,250 a month.</b> It buys two extra long-form pieces, twice as much footage to fragment, and it halves the gap between fresh footage. That last part is the one that matters, because a shoot is the only new footage you can actually schedule. Everything else arrives when somebody else books you. At twice a year, months four to six run entirely on footage half a year old, with the archive thinning underneath it.</p>'+
+    '<p class="muted">Quarterly is what I would argue for. Twice a year is the honest floor. Either is a real plan. Monthly is not, at any budget short of $5,000 a month.</p>'+
+    '<h3>The stack, line by line</h3>'+'<p class="muted small">Every tool named above, with what it costs and why it is there. The tools total is roughly the same at Scrappy and Prospect — the difference between the levels is people and spend, not software.</p>'+
+    '<div class="tbl"><table><thead><tr><th>What</th><th>Tool</th><th>Cost</th><th>Why</th></tr></thead><tbody>'+
+    STACK.map(function(s){ return '<tr><td>'+esc(s[0])+'</td><td><b>'+esc(s[1])+'</b></td><td class="num">'+esc(s[2])+'</td><td>'+esc(s[3])+'</td></tr>'; }).join("")+
+    '</tbody></table></div>'+
+    '<p class="muted">Tools come to roughly $110–160 a month. Everything above that is people — the editor and, later, a designer. That ratio is deliberate and it is the right one: software is cheap, and the thing that actually moves the needle is someone making the work.</p>'+
+    '<h3>The risk in every one of these levels</h3>'+
+    '<p><b>All three columns assume Jarah.</b> She is the approver, the poster, the inbox, the tracker and the person who chases the editor. That is not a criticism of the plan — it is the plan, and it works right up until it does not. If she gets sick, takes a week off, or the content simply gets busier than the hours allow, there is no second person and the engine stops. Nothing else on this page has that property.</p>'+
+    '<p>I am not going to pretend there is a clever fix. There are two real ones, and both cost money: <b>hire the help</b>, or <b>ship less</b>. What matters is deciding the trigger now, while it is theoretical, rather than in the week it happens.</p>'+
+    '<p><b>The trigger I would set:</b> when Jarah is at capacity and things start slipping — posts going out late, the editor waiting on approvals, inquiries sitting a day or two — that is the signal, not a number on a spreadsheet. At that point a scheduler and a part-time hand come out of revenue, not out of hope. Roughly $400–800 a month buys most of her week back.</p>'+
+    '<p class="muted">The reason to write this down is so that when it happens nobody treats it as a failure. It is the predictable cost of something working.</p>');
+
+  /* 08 Roadmap */
+  var tl = '<div class="timeline"><div class="tl-grid"><div class="tl-months"><span>Phase</span>'+
+    MONTHS.map(function(m){ return '<span>'+m+'</span>'; }).join("")+'</div>';
+  PHASES.forEach(function(p,i){
+    tl += '<div class="tl-row"><div class="tl-name">'+esc(p.name)+'</div>'+
+      '<div class="tl-bar" style="grid-column:'+(p.start+2)+' / span '+p.span+'"><span>'+esc(p.when)+'</span></div></div>';
+  });
+  tl += '</div><p class="tl-foot">Oct 2026 to March 2027. Several run at the same time on purpose — the archive and the business decisions happen together in October, and the pipeline is wired while the content engine is starting up.</p></div>';
+
+  var ml = '<h3>What each month actually costs you</h3>'+
+    '<p>Phases overlap, so no single phase tells you what a month asks of you. This does — every active phase added together, for the two of you combined.</p>'+
+    '<div class="tbl"><table><thead><tr><th>Month</th><th>What is running</th><th>Hours, both of you</th></tr></thead><tbody>'+
+    monthlyRows().map(function(m){ return '<tr'+(m[3]?' class="rec"':'')+'><td><b>'+esc(m[0])+'</b></td><td>'+esc(m[1])+'</td><td class="num">'+esc(m[2])+'</td></tr>'; }).join('')+
+    '</tbody></table></div>'+
+    '<p><b>Two things worth seeing before you agree to any of it.</b> October starts heavy — the archive and the business decisions land together, and both are almost entirely yours. Then November is deliberately quiet for you, because the site is mostly my work. <b>The real peak is January to March</b>, when the content engine and the rooms run at the same time. That is the quarter to protect, and it is the one to look at hardest before you agree to any of this.</p>'+
+    '<p class="muted">If that back half looks unrealistic, the honest fix is to move something rather than to try harder. Say so and we will move it.</p>';
+
+  var ph = "";
+  PHASES.forEach(function(p){
+    var hrs = 0, list = "";
+    TASKS.forEach(function(t){ if(t[0]===p.id){ hrs += shownHrs(t); list += '<tr><td>'+esc(t[1])+'</td><td class="num">'+hrsCell(t)+'</td></tr>'; } });
+    var n = TASKS.filter(function(t){ return t[0]===p.id; }).length;
+    var ny = TASKS.filter(function(t){ return t[0]===p.id && t[2]!==FEE_OWNER; }).length;
+    var open = !!openSecs["ph-"+p.id];
+    ph += '<div class="phase"><button type="button" class="phase-toggle" data-sec="ph-'+p.id+'" aria-expanded="'+(open?"true":"false")+'" aria-controls="body-ph-'+p.id+'">'+
+      '<span><span class="when">'+esc(p.when)+'</span><h4>'+esc(p.name)+'</h4></span>'+
+      '<span class="sec-right"><span class="sec-note">'+n+' tasks · '+ny+' of them yours'+(hrs?' · ~'+(Math.round(hrs/p.weeks*10)/10)+' hrs a week':'')+'</span><span class="chev"></span></span></button>'+
+      '<div id="body-ph-'+p.id+'"'+(open?"":" hidden")+'><p><b>At the end of it:</b> '+esc(p.end)+'</p>'+
+      '<p class="legend">Hours are what this asks of you and Jarah. <b>Not yours</b> means it does not land on you at all \u2014 section 09 sets out who does it and what each way costs.</p>'+'<div class="tbl"><table><thead><tr><th>Work</th><th>Your time</th></tr></thead><tbody>'+list+'</tbody></table></div>'+
+      '</div></div>';
+  });
+
+  var cant = CANT.map(function(c){ return '<li><b>'+esc(c[0])+'.</b> '+esc(c[1])+'</li>'; }).join("");
+
+  h += sectionShell("roadmap","The work","six phases, Oct \u2013 Mar",
+    '<p class="lede">Every piece of work, in the order it has to happen. <b>The sequence is the argument:</b> the archive and the decisions first, then the site with capture wired into it, then content, then the selling half of the pipeline, then the rooms.</p>'+'<p>The site moved ahead of content on purpose. Posting before there is somewhere to land is how attention arrives and leaks straight back out \u2014 and the person most likely to go looking for Marc is not an Instagram follower, it is someone who just heard him on a podcast.</p>'+
+    '<p>No names on this list. Who does what depends on what you decide in section 09, so putting a name beside every line would only be a guess dressed up as a plan. The only split shown is whether a task lands on the two of you or not.</p>'+
+    
+    tl+ml+'<p class="muted">Tap a phase to see what is in it.</p>'+ph+
+    '<h3>What nobody can do for you</h3>'+
+    '<p>Whatever you decide about the rest, these five stay yours at any budget. Worth knowing now, because hiring help does not get you out of them.</p>'+
+    '<ul class="cant">'+cant+'</ul>'+
+    '<p class="muted">I can push most of this to the 10 yard line. You still have to run it in.</p>'+
+    '<h3>When to stop, change, or double down</h3>'+
+    '<p>Every plan on paper assumes it works. This one has three points where you should stop and look at it honestly rather than keep going because the calendar says to. None of them mean quit — they mean the thing you are doing is not the thing that is wrong.</p>'+
+    '<ul class="cant">'+
+      '<li><b>No inquiries by the end of month 3.</b> Not a slow month — none. The problem is not the content and it is not the site. It is that the right people are not seeing you, which means the fix is podcasts, stages and the phone, not more posts.</li>'+
+      '<li><b>10 or more calls and no close by month 6.</b> Demand is working and conversion is not. That is a completely different repair: the offer, the price, the call structure, or who is being let onto the calendar in the first place. Doing more marketing here would be the most expensive possible mistake.</li>'+
+      '<li><b>Jarah is tapped out and things are falling behind.</b> Covered in section 07. Hire the help or ship less, and take the money out of revenue.</li>'+
+    '</ul>'+
+    '<p class="muted">And the one that points the other way: if something is clearly working — one pillar outperforming, one track producing every inquiry, a bootcamp that turns into two — put the money and the calendar behind it and let the rest of this plan bend around it. The plan is a starting position, not a contract.</p>');
+
+  /* 09 How we can work together */
+  h += sectionShell("together","How we can work together","where I fit, and what it costs",
+    '<p class="lede">Six phases, and for each one: what it is, what it looks like if you run it yourselves, and what changes if I do it.</p>'+
+    '<p>The money is the last thing in each row on purpose. It is the least interesting part \u2014 what matters is whether the difference is worth it to you, and on some of these it honestly is not.</p>'+
+    '<div class="together">'+togetherRows()+'</div>'+
+    '<h3>Smaller pieces, if you want them</h3>'+
+    '<p>Not everything is a phase. The first of these is real design work. The rest are small builds \u2014 a few hours each, mostly things where the tooling does the heavy lifting and I am really just deciding how they should be shaped.</p>'+
+    addonCard("kb")+addonCard("k2")+addonCard("k3")+
+    '<p><b>If the number is what stops you from asking, ask anyway.</b> I would rather help you build it than it get swept under the rug or break.</p>'+
+    '<h3>Two ways that actually adds up</h3>'+
+    '<p>Ranges make totals hard to picture, so here are the two I would actually recommend.</p>'+
+    '<div class="wex">'+
+      '<div class="wcard"><h4>About $5,000</h4><p class="wsum">$4,600\u20135,800</p>'+
+        '<ul><li>The content engine \u2014 $1,900\u20132,900</li><li>A working site \u2014 $2,700\u20132,900</li></ul>'+
+        '<p>You can make the right people aware of you, and you have somewhere real to send them. If this is the only money there is, this is the pairing I would pick \u2014 the two together do something neither does alone.</p></div>'+
+      '<div class="wcard rec"><h4>About $10,000</h4><p class="wsum">$8,700\u201312,000</p>'+
+        '<ul><li>The content engine \u2014 $1,900\u20132,900</li><li>The full site, reel and funnel \u2014 $5,800\u20137,900</li><li>The pipeline \u2014 $1,000\u20131,200</li></ul>'+
+        '<p>The same thing, but the site converts instead of just existing and nothing that comes in gets dropped. The brand guide rides along with the full site, so it is in here without a line of its own \u2014 which means this looks like a business rather than a start.</p></div>'+
+    '</div>'+
+    '<p class="muted">The archive is free and the rooms are yours either way, so neither appears in these. Nothing here is a package \u2014 they are just the two combinations I would argue for.</p>'+
+    '<h3 data-keep>Tell me what you can spend</h3>'+
+    '<p><b>These are ranges, not quotes.</b> Tell me what you can spend and I\u2019ll tell you honestly what we can accomplish with it \u2014 including if the honest answer is that you should do it yourselves. I\u2019d rather help at a number that works than not help at all.</p>'+
+    '<p>If the number is small, we shrink the scope, not the standard. Everything I take on, I do properly \u2014 you just pick fewer things. Around $5,000 buys two of these phases done right, and that is a real starting point rather than a consolation prize.</p>'+
+    '<p class="muted">The newsletter formula is in section 04 now — no need to ask. Two things I still have written up and will send if you want them: the site I would use as a reference for this category, and the skeletons behind the sales system. Ask and they are yours \u2014 no strings attached.</p>');
+
+  /* 10 Decisions */
+  var dec = DECISIONS.map(decisionHTML).join("");
+  h += sectionShell("decisions","Decisions","0 of 16 answered",
+    '<p>16 questions. Nine of them change the plan. The first one — what you can spend each month — changes more than the other 15 put together, so answer that one honestly even if you skip the rest.</p>'+
+    '<p class="muted">Most of these are yours. Jarah’s are the newsletter platform and who owns the inquiry inbox. Answer what you can, press Save, come back to the rest.</p>'+dec);
+
+  /* 11 Ladder */
+  h += sectionShell("ladder","Where this goes","the bigger build, if you ever want it",
+    '<p class="lede">Everything above is the first 6 months at a budget you set. This is what comes after, if and when you want it — and what it would cost.</p>'+
+    '<p>You do not need to decide any of this now. It is here so the next step is obvious whenever you are ready, and so you can see that nothing in phase one is wasted when phase two arrives.</p>'+
+    '<div class="pcards">'+ladderCards()+'</div>'+
+    '<h3>Expeditions — the one with no price on it</h3>'+
+    '<p>This is in your North Star and nowhere else on this page, which was a hole. It is also the only thing here I am deliberately not putting a number against, because the idea is not developed enough for a number to mean anything. What follows is the shape of it, the questions that would turn it into a product, and where it lands in the sequence.</p>'+
+    '<h4 class="xh">What it is</h4>'+
+    '<p>Accomplished people put into a controlled unfamiliar environment — MMA, outdoors, a leadership challenge — specifically so pressure shows up. Then you coach the response. The environment is not the product. <b>The Film Room afterwards is the product.</b> Anyone can run a hard weekend; almost nobody can tell a founder what his behavior under pressure just revealed about how he runs his company.</p>'+
+    '<h4 class="xh">What it could be — all three, in this order</h4>'+
+    '<ul class="cant">'+
+      '<li><b>A graduation product.</b> The thing a 90-day Mission client does at the end. Pressure-tests everything they learned, gives them evidence for the Victory Log, and is the natural reason to renew.</li>'+
+      '<li><b>A standalone entry point.</b> Somebody who would never book coaching will book an experience. It becomes the widest door into the business rather than the narrowest.</li>'+
+      '<li><b>A corporate or team version.</b> The highest-value one by a distance, and the bootcamp is its trial run. A leadership team that goes through this together is a different kind of client afterwards.</li>'+
+    '</ul>'+
+    '<p class="muted">Those are not competing options. Graduation proves it, standalone scales it, corporate pays for it — and you only get the third one credibly once you have footage of the first two.</p>'+
+    '<h4 class="xh">The thing nobody mentions until it is a problem</h4>'+
+    '<p>Liability. Putting a 52-year-old CEO into physical discomfort is a different business from coaching him on a call, and it comes with waivers, insurance, medical screening and possibly a medic on site. <b>That is the real gate on this idea, not the programming.</b> It is entirely solvable, it costs money, and it has to be solved before the first paying one, not after. Worth a conversation with your CPA and an insurance broker long before a landing page exists.</p>'+
+    '<h4 class="xh">When it launches, and in what order</h4>'+
+    '<ul class="cant">'+
+      '<li><b>Months 1–6 — say nothing publicly.</b> No page, no pricing, no teasing. The site sells the 90-day Mission, speaking and bootcamps. Announcing a product you have not run is how credibility gets spent early.</li>'+
+      '<li><b>Months 6–9 — run one at cost.</b> Three or four existing clients, filmed properly. You are not selling it, you are finding out what it actually is and getting the footage that will sell the next 10. This is the single most valuable thing in this whole section.</li>'+
+      '<li><b>Months 9–12 — then it goes on the site.</b> One landing page, built from real footage and real words from the people who did it, with a waitlist rather than a checkout. Content follows the page, not the other way round.</li>'+
+      '<li><b>Months 12+ — the corporate version.</b> By then the bootcamps have told you which companies want it and the footage does the convincing.</li>'+
+    '</ul>'+
+    '<h4 class="xh">Questions that would turn this into a product</h4>'+
+    '<p class="muted small">You do not have to answer these now. But the first one you cannot answer is where the work is.</p>'+
+    '<ul class="cant">'+
+      '<li>How many people, and how many days? Six people for two days and 20 for five are different companies.</li>'+
+      '<li>Where? Your own gym, a rented facility, or somewhere that costs a flight.</li>'+
+      '<li>How hard, physically? The answer decides your insurance, your screening, and who can say yes.</li>'+
+      '<li>Are you running it alone, or does it need other coaches — and are those people you already have?</li>'+
+      '<li>What does somebody leave with? A written Mission, footage of themselves, a Film Room session, a plan? That is the deliverable, and right now it is undefined.</li>'+
+      '<li>What has to be true for you to call it a success — and what would make you not run a second one?</li>'+
+    '</ul>'+
+    '<p><b>The recommendation, in one line:</b> run one at cost with people who already trust you, film it, and let what happens decide what the product is. That is cheaper than planning it and far more likely to produce something real.</p>'+
+    '<h3>Why phase three is the real North Star</h3>'+
+    '<p>The first 6 months make people aware of you. The second phase stops you doing it all by hand. <b>Phase three is the one that makes this a business you own rather than a job you run.</b> Everything in one place with your name on it, giving back hours every month, and giving clients something no other coach in this category can hand them.</p>'+
+    '<p>That is the version worth aiming at. It is also the version that only makes sense once the first two have proved themselves, which is why it sits at the end of this page and not the front.</p>'+
+    '<p><b>The honest summary:</b> phase one you could do alone with this document and some weekends. Phase two you could do alone with more patience than most people have. Phase three genuinely needs someone technical. Section 09 sets out where I fit in the first 6 months and what each piece costs \u2014 and I will not be offended by any part of it you take on yourself. The point of writing this down was to make sure you have it either way.</p>'+
+    '<p class="muted">One caution worth stating plainly: a custom build is a risk as much as an asset. It has to be documented and handed over properly or you end up depending on whoever built it. If phase three ever happens, that condition is not negotiable — whoever builds it, including me.</p>');
+
+  h += '</div></div>';
+
+  h += '<div class="copybox" id="pg-copybox" hidden><p class="q-help">Copy everything below and text or email it to me.</p><textarea id="pg-copytext" readonly></textarea></div>';
+  h += '<p class="signoff">Built by Alex Crossland for Marc and Jarah Montoya · September 2026. Nothing on this page is final until you say so, and all of it is yours either way. Grateful for your friendship, and everything you\u2019ve done for me.</p>';
+
+  document.getElementById("pg-root").innerHTML = h;
+
+  var dock = document.createElement("div");
+  dock.className = "dock";
+  dock.innerHTML = '<div class="dock-row"><div class="status" id="pg-status" role="status" aria-live="polite"></div>'+
+    '<div class="actions"><button type="button" class="btn ghost" id="pg-copy" hidden>Copy answers</button>'+
+    '<button type="button" class="btn ghost" id="pg-save">Save progress</button>'+
+    '<button type="button" class="btn" id="pg-submit">Submit</button></div></div>';
+  document.body.appendChild(dock);
+
+  renderTasks();
+  renderOwnerSummary();
+  makeCollapsible();
+  linkifySections();
+}
+
+/* every "section NN" in prose becomes a link that jumps and opens it */
+var SEC_BY_NUM = {"01":"north","02":"constraint","03":"engine","04":"content","05":"site",
+  "06":"sales","07":"runs","08":"roadmap","09":"together","10":"decisions","11":"ladder"};
+function linkifySections(root){
+  var scope = root || document.getElementById("pg-root");
+  if(!scope) return;
+  var re = /\b(sections?)\s+(0[1-9]|1[01])\b/gi;
+  var walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, null, false);
+  var nodes = [], nd;
+  while((nd = walker.nextNode())){
+    if(!re.test(nd.nodeValue)){ re.lastIndex = 0; continue; }
+    re.lastIndex = 0;
+    var p = nd.parentNode, skip = false;
+    while(p && p !== scope){
+      var tag = p.nodeName;
+      if(tag === "A" || tag === "BUTTON" || tag === "SCRIPT" || tag === "STYLE" || tag === "TEXTAREA" || tag === "OPTION"){ skip = true; break; }
+      p = p.parentNode;
+    }
+    if(!skip) nodes.push(nd);
+  }
+  nodes.forEach(function(node){
+    var frag = document.createDocumentFragment(), last = 0, m;
+    re.lastIndex = 0;
+    while((m = re.exec(node.nodeValue))){
+      var id = SEC_BY_NUM[m[2]];
+      if(!id) continue;
+      if(m.index > last) frag.appendChild(document.createTextNode(node.nodeValue.slice(last, m.index)));
+      var a = document.createElement("a");
+      a.className = "seclink";
+      a.href = "#sec-" + id;
+      a.textContent = m[0];
+      frag.appendChild(a);
+      last = m.index + m[0].length;
+    }
+    if(last === 0) return;
+    if(last < node.nodeValue.length) frag.appendChild(document.createTextNode(node.nodeValue.slice(last)));
+    node.parentNode.replaceChild(frag, node);
+  });
+}
+
+/* ---------- wiring ---------- */
+function setOpen(id, open){
+  openSecs[id] = open;
+  var btn = document.querySelector('[data-sec="'+id+'"]');
+  var body = document.getElementById("body-"+id);
+  if(btn) btn.setAttribute("aria-expanded", open?"true":"false");
+  if(body) body.hidden = !open;
+  try{ localStorage.setItem(OPEN_KEY, JSON.stringify(openSecs)); }catch(e){}
+  syncAllBtn();
+}
+function syncAllBtn(){
+  var secs = document.querySelectorAll(".sec-toggle");
+  var anyOpen = false;
+  for(var i=0;i<secs.length;i++){ if(secs[i].getAttribute("aria-expanded")==="true"){ anyOpen=true; break; } }
+  var b = document.getElementById("pg-all");
+  if(b){
+    b.textContent = anyOpen ? "Collapse all" : "Expand all";
+    b.setAttribute("aria-label", anyOpen ? "Collapse all sections" : "Expand all sections");
+  }
+}
+function refresh(){
+  var done = 0, needDone = 0, needAll = 0;
+  DECISIONS.forEach(function(d){
+    if(d.need) needAll++;
+    var ok = isAnswered(d.id);
+    if(ok){ done++; if(d.need) needDone++; }
+    var mark = document.getElementById("done-"+d.id);
+    if(mark) mark.hidden = !ok;
+  });
+  var t = done+" of "+DECISIONS.length+" answered";
+  var mt = document.getElementById("pg-meter-text"); if(mt) mt.textContent = t+" · "+needDone+" of "+needAll+" needed";
+  var f = document.getElementById("pg-fill"); if(f) f.style.width = (done/DECISIONS.length*100)+"%";
+  var note = document.getElementById("note-decisions"); if(note) note.textContent = t;
+}
+function setStatus(msg, kind){ var s=document.getElementById("pg-status"); if(!s) return; s.textContent=msg; s.className="status"+(kind?" "+kind:""); }
+function saveDraft(){
+  try{ localStorage.setItem(DRAFT_KEY, JSON.stringify({t:Date.now(), answers:answers})); }catch(e){}
+  if(JSON.stringify(answers)===lastSentSig) return;
+  dirty = true;
+  setStatus("Saved on this device. Press Save progress to send it to me.");
+}
+function wire(){
+  document.addEventListener("click", function(ev){
+    var t = ev.target;
+    var sec = t.closest && t.closest("[data-sec]");
+    if(sec){ setOpen(sec.getAttribute("data-sec"), sec.getAttribute("aria-expanded")!=="true"); return; }
+    var own = t.closest && t.closest("[data-owner]");
+    if(own){ ownerFilter = own.getAttribute("data-owner");
+      var btns = document.querySelectorAll("[data-owner]");
+      for(var i=0;i<btns.length;i++){ btns[i].setAttribute("aria-pressed", btns[i]===own?"true":"false"); }
+      renderTasks(); return; }
+    var gb = t.closest && t.closest("#group-btn");
+    if(gb){ if(sortKey==="phase"){ sortDir = -sortDir; } else { sortKey = "phase"; sortDir = 1; } renderTasks(); return; }
+    var th = t.closest && t.closest("th.sortable");
+    if(th){ var k = th.getAttribute("data-key"); if(k===sortKey){ sortDir = -sortDir; } else { sortKey = k; sortDir = 1; } renderTasks(); return; }
+    var sc = t.closest && t.closest("[data-open-sc]");
+    if(sc){ var k = sc.getAttribute("data-open-sc"); openScenario[k] = !openScenario[k]; renderCost("total"); return; }
+    var ct = t.closest && t.closest("[data-cost]");
+    if(ct){ renderCost(ct.getAttribute("data-cost")); return; }
+  });
+  document.addEventListener("change", function(ev){
+    var el = ev.target;
+    if(el.type==="radio" && el.name){ answers[el.name] = answers[el.name]||{}; answers[el.name].v = el.value; refresh(); saveDraft(); }
+  });
+  var typing;
+  document.addEventListener("input", function(ev){
+    var el = ev.target, id = el.getAttribute("data-val") || el.getAttribute("data-note");
+    if(!id) return;
+    answers[id] = answers[id] || {};
+    if(el.getAttribute("data-note")) answers[id].n = el.value; else answers[id].v = el.value;
+    refresh();
+    clearTimeout(typing); typing = setTimeout(saveDraft, 500);
+  });
+  var themeBtn = document.getElementById("pg-theme");
+  function systemDark(){
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  }
+  function isDark(){
+    var set = document.documentElement.getAttribute("data-theme");
+    return set ? set === "dark" : systemDark();
+  }
+  function paintTheme(){
+    var label = isDark() ? "Switch to light mode" : "Switch to dark mode";
+    themeBtn.setAttribute("aria-label", label);
+    themeBtn.setAttribute("title", label);
+  }
+  themeBtn.addEventListener("click", function(){
+    var next = isDark() ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try{ localStorage.setItem(THEME_KEY, next); }catch(e){}
+    paintTheme();
+  });
+  if(window.matchMedia){
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    var onSys = function(){ if(!document.documentElement.getAttribute("data-theme")) paintTheme(); };
+    if(mq.addEventListener) mq.addEventListener("change", onSys);
+    else if(mq.addListener) mq.addListener(onSys);
+  }
+  paintTheme();
+
+  document.getElementById("pg-all").addEventListener("click", function(){
+    var open = this.textContent === "Expand all";
+    var secs = document.querySelectorAll("[data-sec]");
+    for(var i=0;i<secs.length;i++){ setOpen(secs[i].getAttribute("data-sec"), open); }
+  });
+  document.getElementById("pg-save").addEventListener("click", saveNow);
+  document.getElementById("pg-submit").addEventListener("click", submitAll);
+  document.getElementById("pg-copy").addEventListener("click", copyAnswers);
+  document.addEventListener("visibilitychange", function(){ if(document.visibilityState==="hidden" && dirty){ try{ send({quiet:true}); }catch(e){} } });
+  // jumping to a section opens it
+  document.addEventListener("click", function(ev){
+    var a = ev.target.closest && ev.target.closest('a[href^="#sec-"]');
+    if(!a) return;
+    var id = a.getAttribute("href").slice(5);
+    if(!openSecs[id]) setOpen(id, true);
+  });
+  // highlight the section being read
+  var spy = function(){
+    var links = document.querySelectorAll("[data-nav]"), best = null, bestTop = -1e9;
+    for(var i=0;i<links.length;i++){
+      var el = document.getElementById("sec-"+links[i].getAttribute("data-nav"));
+      if(!el) continue;
+      var top = el.getBoundingClientRect().top - 120;
+      if(top <= 0 && top > bestTop){ bestTop = top; best = links[i]; }
+    }
+    for(var j=0;j<links.length;j++){ links[j].setAttribute("aria-current", links[j]===best ? "true" : "false"); }
+  };
+  window.addEventListener("scroll", spy, {passive:true});
+  spy();
+}
+
+/* ---------- send ---------- */
+function getKey(){
+  var m = /[#&]k=([A-Za-z0-9]+)/.exec(location.hash||"");
+  if(m){ try{ localStorage.setItem(KEY_STORE, m[1]); }catch(e){} return m[1]; }
+  try{ return localStorage.getItem(KEY_STORE) || ""; }catch(e){ return ""; }
+}
+function getDevice(){
+  var d=""; try{ d = localStorage.getItem(DEVICE_STORE) || ""; }catch(e){}
+  if(!d){ d = Math.random().toString(36).slice(2,10); try{ localStorage.setItem(DEVICE_STORE, d); }catch(e){} }
+  return d;
+}
+function payload(status){
+  var p = new URLSearchParams(), n = 0;
+  DECISIONS.forEach(function(d){
+    var a = answers[d.id] || {}, txt = (a.v==null?"":String(a.v)).trim();
+    if(String(a.n||"").trim()) txt += (txt?"\n":"") + "Note: " + a.n;
+    if(isAnswered(d.id)) n++;
+    p.append(d.id, txt);
+  });
+  var now = new Date();
+  p.append("status", status||"In progress");
+  p.append("save", (status==="Submitted"?"SUBMITTED ":"Save ") + now.toLocaleString([], {month:"short",day:"numeric",year:"numeric",hour:"numeric",minute:"2-digit"}) + " · " + n + " decided");
+  p.append("savedAt", now.toISOString());
+  p.append("answered", String(n));
+  p.append("device", getDevice());
+  p.append("passcode", getKey());
+  p.append("json", JSON.stringify(answers));
+  return {body:p, n:n};
+}
+function showCopy(){ var b=document.getElementById("pg-copy"); if(b) b.hidden=false; }
+function send(opts){
+  opts = opts || {};
+  var sig = JSON.stringify(answers), status = opts.status || "In progress";
+  if(opts.quiet && sig === lastSentSig) return Promise.resolve();
+  try{ localStorage.setItem(DRAFT_KEY, JSON.stringify({t:Date.now(), answers:answers})); }catch(e){}
+  if(!getKey()){
+    if(!opts.quiet){ showCopy(); setStatus("Saved on this device. This link is missing its key, so it can't reach me — open the exact link I sent, or press Copy answers.","bad"); }
+    return Promise.resolve();
+  }
+  var pl = payload(status);
+  return fetch(HOOK, {method:"POST", mode:"no-cors", keepalive:!!opts.quiet, body:pl.body}).then(function(){
+    lastSentSig = sig; dirty = false;
+    try{ localStorage.setItem(SENT_STORE, sig); }catch(e){}
+    if(status==="Submitted"){
+      try{ localStorage.setItem(SUB_STORE, String(Date.now())); }catch(e){}
+      setStatus("Submitted. Thank you! I have your "+pl.n+" decision"+(pl.n===1?"":"s")+". Change anything and press Submit again.","good");
+      return;
+    }
+    if(!opts.quiet) setStatus("Progress saved: "+pl.n+" decision"+(pl.n===1?"":"s")+" at "+fmtDate(Date.now())+". I have them.","good");
+  });
+}
+function saveNow(){
+  if(saving) return;
+  saving = true;
+  var btn = document.getElementById("pg-save"); btn.disabled = true; setStatus("Saving…");
+  send().then(function(){ saving=false; btn.disabled=false; }, function(){
+    saving=false; btn.disabled=false; showCopy();
+    setStatus("Couldn't reach me right now (check your connection). Your answers are safe on this device.","bad");
+  });
+}
+function submitAll(){
+  if(saving) return;
+  var blanks = DECISIONS.filter(function(d){ return d.need && !isAnswered(d.id); }).length;
+  var sb = document.getElementById("pg-submit");
+  if(blanks && !confirmSubmit){
+    confirmSubmit = true; sb.textContent = "Submit anyway";
+    setStatus(blanks+" decision"+(blanks===1?" marked Needed for the plan is":"s marked Needed for the plan are")+" still open. Fill them in, or press Submit anyway and I'll talk them through.","bad");
+    return;
+  }
+  confirmSubmit = false; sb.textContent = "Submit";
+  saving = true; sb.disabled = true; setStatus("Submitting…");
+  send({status:"Submitted"}).then(function(){ saving=false; sb.disabled=false; }, function(){
+    saving=false; sb.disabled=false; showCopy();
+    setStatus("Couldn't reach me right now (check your connection). Your answers are safe on this device.","bad");
+  });
+}
+function summary(){
+  var lines = ["COACH MARC MONTOYA — ROADMAP DECISIONS","("+new Date().toLocaleDateString()+")",""];
+  DECISIONS.forEach(function(d){
+    var a = answers[d.id]; if(!a) return;
+    var v = a.v || "";
+    if(!String(v).trim() && !String(a.n||"").trim()) return;
+    lines.push("Q: "+d.q);
+    if(String(v).trim()) lines.push("A: "+v);
+    if(String(a.n||"").trim()) lines.push("Note: "+a.n);
+    lines.push("");
+  });
+  return lines.join("\n");
+}
+function copyAnswers(){
+  var text = summary(), box = document.getElementById("pg-copybox"), ta = document.getElementById("pg-copytext");
+  ta.value = text;
+  var fallback = function(){ box.hidden=false; ta.focus(); ta.select(); setStatus("Your answers are in the box at the bottom. Select all, copy, and send them to me."); box.scrollIntoView({block:"center"}); };
+  try{
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(function(){ setStatus("Copied. Paste it into a text or email to me.","good"); }, fallback); }
+    else fallback();
+  }catch(e){ fallback(); }
+}
+
+/* ---------- boot ---------- */
+render(); wire(); refresh(); syncAllBtn();
+var decided = DECISIONS.filter(function(d){ return isAnswered(d.id); }).length;
+var submittedAt = 0; try{ submittedAt = +localStorage.getItem(SUB_STORE)||0; }catch(e){}
+if(submittedAt){ setStatus("You submitted on "+fmtDate(submittedAt)+". Change anything and press Submit again.","good"); }
+else if(restoredAt && decided){ setStatus("Welcome back. Your "+decided+" saved decision"+(decided===1?"":"s")+" from "+fmtDate(restoredAt)+" are right where you left them.","good"); }
+else { setStatus("Read what you like, decide what you can. Press Save progress anytime."); }
+})();
+</script>
+</body>
+</html>
