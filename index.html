@@ -174,6 +174,28 @@ table.cmp td.num{font-variant-numeric:tabular-nums;white-space:normal}
 .ad-body li{font-size:13px;margin:0 0 6px}
 .ad-note{font-size:12.5px;color:var(--muted);font-style:italic;margin:10px 0 0;padding-top:9px;border-top:1px dashed var(--line);max-width:none}
 @media (max-width:520px){.addon-toggle{flex-wrap:wrap}.ad-px{margin-left:auto}}
+.smx{margin:14px 0 6px}
+.smx-key{display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:11px}
+.smx-kitem{display:inline-flex;align-items:center;gap:7px;font:600 12px var(--body);color:var(--muted)}
+.smx-sw{width:11px;height:11px;display:inline-block;flex:0 0 auto}
+.smx-row{display:grid;grid-template-columns:96px 1fr auto;align-items:center;gap:12px;padding:5px 0}
+.smx-lab{font:800 12px var(--display);text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.smx-row.rec .smx-lab{color:var(--ink)}
+.smx-track{display:flex;gap:2px;height:22px;border-bottom:1px solid var(--line)}
+.smx-seg{display:flex;align-items:center;justify-content:center;font:700 11.5px var(--body);font-variant-numeric:tabular-nums;min-width:0;transition:opacity .12s}
+.smx-seg:last-child{border-top-right-radius:4px;border-bottom-right-radius:4px}
+.smx-track:hover .smx-seg{opacity:.55}
+.smx-track .smx-seg:hover{opacity:1}
+.smx-tot{font:700 12.5px var(--body);font-variant-numeric:tabular-nums;color:var(--ink);white-space:nowrap}
+.smx-foot{margin-top:9px;font-size:12px;color:var(--muted)}
+.smx-a{background:#D8CBA8;color:#16140F;box-shadow:inset 0 0 0 1px rgba(0,0,0,.10)}
+.smx-r{background:#B4862A;color:#16140F}
+.smx-s{background:#6B4A10;color:#FFFFFF}
+:root[data-theme="dark"] .smx-a{background:#5A5348;color:#FFFFFF;box-shadow:none}
+:root[data-theme="dark"] .smx-r{background:#B0862F;color:#16140F}
+:root[data-theme="dark"] .smx-s{background:#E7C87E;color:#16140F}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .smx-a{background:#5A5348;color:#FFFFFF;box-shadow:none}:root:not([data-theme="light"]) .smx-r{background:#B0862F;color:#16140F}:root:not([data-theme="light"]) .smx-s{background:#E7C87E;color:#16140F}}
+@media (max-width:520px){.smx-row{grid-template-columns:1fr auto;gap:6px 10px}.smx-lab{grid-column:1/-1;margin-bottom:-2px}}
 .tnotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;align-items:start;margin:-4px 0 4px}
 .tnote{border:1px solid var(--line);background:var(--surface)}
 .tnote:has(.tn-toggle[aria-expanded="true"]){border-color:var(--gold)}
@@ -741,25 +763,35 @@ var STACK = [
  ["Inquiry alerts","Form tool + automation","$0–30/mo","Auto-reply, a row in Notion and a text to Marc, all from one form submission"]
 ];
 
+var SOURCEMIX = [
+ ["Scrappy","4","—","—","4 + 4"],
+ ["Prospect","4","1","—","5 + 5",1],
+ ["Contender","4","1","1","6 + 6"]
+];
+
 var TIERS = [
- {name:"Scrappy", why:"Tell me more", cost:"$450–700", label:"a month, all in", sub:"What you can do with what you already have",
-  gets:["4x reels + 4x carousels a month, cut from the archive","1x newsletter a month","Posted by hand, by Jarah","No ad spend","Site live and capturing"],
+ {name:"Scrappy", why:"Tell me more", cost:"$450–700", label:"a month, all in", sub:"One source: the footage you already own",
+  gets:["4x reels + 4x carousels a month, all of it cut from the archive","1x newsletter a month","Posted by hand, by Jarah","No ad spend","Site live and capturing"],
   stack:"Squarespace + Acuity + Kit + Notion + Canva + Google Workspace",
-  truth:"The archive is the whole engine here. It costs almost nothing because the footage already exists and somebody just has to cut it. Below about $450 nothing compounds — you get occasional posts, no rhythm, and an algorithm that treats occasional as absent."},
- {name:"Prospect", why:"Tell me more", cost:"$900–1,400", label:"a month, all in", rec:1, sub:"Put money behind what is already landing",
-  gets:["Everything in Scrappy","5x reels + 5x carousels a month — one more of each than Scrappy, not double","1x newsletter a month","Metricool doing the posting — one upload goes out to Instagram and LinkedIn together, instead of Jarah uploading twice by hand","$200–300 a month of ad spend — boosting posts that already performed, not new creative"],
+  truth:"The archive is the whole engine here, and that is the limitation as much as the appeal. It costs almost nothing because the footage already exists and somebody just has to cut it. Below about $450 nothing compounds — you get occasional posts, no rhythm, and an algorithm that treats occasional as absent."},
+ {name:"Prospect", why:"Tell me more", cost:"$900–1,400", label:"a month, all in", rec:1, sub:"Two sources: the archive, plus the rooms you get into",
+  gets:["Everything in Scrappy",
+        "5x reels + 5x carousels a month. The fifth pair is cut from a podcast or a stage you did that month — somebody else pointed the camera, you are only paying to fragment it",
+        "Assumes at least one appearance a month. No appearance, no fifth pair — that month falls back to four",
+        "1x newsletter a month",
+        "Metricool doing the posting — one upload goes out to Instagram and LinkedIn together, instead of Jarah uploading twice by hand",
+        "$200–300 a month of ad spend — boosting posts that already performed, not new creative"],
   stack:"Everything in Scrappy + Metricool (~$25/mo) + Meta ads manager",
-  truth:"The volume only moves by one of each, and that is deliberate. Your editor’s retainer discount does get better with volume — going from 4 pieces to 8 would only cost about $180 more — but money is not the constraint here. Footage is. Doubling the output halves how long the archive lasts, and buying a cheaper rate on a well that drains twice as fast is not a saving. So the extra money goes into reach instead: the $200–300 is ad spend, put behind a post that already proved it works so more people see it than happened to follow you. It costs zero archive."},
- {name:"Contender", why:"Tell me more", cost:"$1,500–4,000", label:"a month, depending on cadence", sub:"New footage, shot properly, on a schedule",
+  truth:"The extra money here is not buying more archive — it is buying the edit on footage somebody else paid to shoot. Every podcast and every stage generates raw material at no cost to you, and without an editing budget it sits in a folder doing nothing. That is the whole step up: turn the rooms you are already getting into into posts. The rest goes into reach rather than volume — the $200 to $300 is ad spend, put behind a post that already proved it works. It costs zero archive."},
+ {name:"Contender", why:"Tell me more", cost:"$1,500–4,000", label:"a month, depending on cadence", sub:"Three sources: the archive, the rooms, and footage you commission",
   gets:["Everything in Scrappy and Prospect — including the newsletter and the ad spend",
-        "8x reels + 8x carousels a month — two of each a week. 4 of each still come off the archive; the other 4 come out of the shoot",
-        "Your archive draw goes down: 4 pieces a month here against 5 at Prospect, while you post twice as much",
+        "6x reels + 6x carousels a month. The sixth pair comes off a shoot you scheduled, not an invitation you waited for",
         "A professional full-day shoot — lifestyle + storytelling *authenticity is everything",
         "1x long-form piece per shoot, 5–10 minutes, with its YouTube thumbnails",
-        "Each shoot gets fragmented hard: the long-form piece, then reels and carousels cut out of the same day. That is where the extra pieces above come from",
+        "3–4 reels cut from each shoot by the team that shot it, plus carousels from the stills",
         "New footage every 3 or 6 months, depending on cadence"],
   stack:"Everything in Prospect + a local production shooter and editor, hired per shoot",
-  truth:"This is the level where new material starts arriving on a schedule you set. Not you talking to a lens, and not a studio block once a month — neither of those is what this brand is, and doing them would undercut the footage that makes it work. What this is: highlight and sizzle cuts, reels pulled out of the speaking events, and two or four shoot days a year fragmented as hard as they can be. One full day is a great deal of footage, and the job is to get every leg out of it the budget allows — the production team shoots it and cuts the long-form, your short-form editor fragments the same day into reels and carousels at short-form rates. That is what takes you from five pieces a month to eight without the archive paying for all of it."}
+  truth:"The honest difference between this and Prospect is not volume, it is reliability. Prospect’s fifth pair depends on Marc being invited somewhere. A quiet month means no fifth pair. Contender’s sixth pair comes off a day you booked, so it arrives whether or not the phone rang. That is what the money buys: a source you control. It also buys the one asset nothing else here can produce — a long-form piece, 5 to 10 minutes of Marc shot with intent, thumbnails included. Not talking to a lens, and not a studio block once a month. Highlight and sizzle cuts, reels out of the speaking events, and two or four shoot days a year fragmented for everything they will give."}
 ];
 
 var SOURCES = [
@@ -767,7 +799,7 @@ var SOURCES = [
  ["Talks and speeches that get recorded","You on a stage, shot by whoever hosted it.","The ask, plus the edit.","Only when you are booked",0,"No — but it arrives on somebody else’s calendar."],
  ["Podcasts that record video","Same thing, smaller room.","The ask, plus the edit.","Only when you are booked",0,"No — same catch."],
  ["What the UFC and your fighters shoot","The reason the archive exists at all.","Nothing.","Not yours",0,"No — but none of it is aimed at the business you are building now."],
- ["A professional shoot","A full day, crew, B-roll, a long-form piece.","$3,500–7,500 each.","Yours",0,"No. This is the only one you can switch on deliberately."],
+ ["A professional shoot","A full day, crew, B-roll, a long-form piece.","$3,950–7,500 each.","Yours",0,"No. This is the only one you can switch on deliberately."],
  ["Voice notes and your phone","Whatever happened this week, said out loud.","Minutes.","Yours",0,"No — but it feeds the newsletter, not the feed."]
 ];
 
@@ -789,14 +821,14 @@ var SHOOT = [
  ["Pre-production","Concept, shot list, locations, scheduling","$300–600"],
  ["Full-day shoot","10 hours, professional shooter and gear","$1,400–2,500"],
  ["Long-form edit","5–10 minutes, story-cut from a full day — plus 1 or 2 YouTube thumbnails, which come with the edit","$900–2,400"],
- ["2–4 reels","Cut from the same shoot by the same team, at $450–500 each","$900–2,000"]
+ ["3–4 reels","Cut from the same shoot by the team that shot it, at $450–500 each","$1,350–2,000"]
 ];
 
 var CADENCE = [
- {name:"Every quarter", shoots:"4 shoots a year", mo:"$2,100–3,900", yr:"$24,800–46,800",
+ {name:"Every quarter", shoots:"4 shoots a year", mo:"$2,220–3,900", yr:"$26,600–46,800",
   out:"4 long-form pieces, and every shoot day fragmented for everything it will give — plus the short-form still coming off the archive in between",
   gap:"New footage every 3 months"},
- {name:"Twice a year", shoots:"2 shoots a year", mo:"$1,500–2,650", yr:"$17,800–31,800",
+ {name:"Twice a year", shoots:"2 shoots a year", mo:"$1,560–2,650", yr:"$18,700–31,800",
   out:"2 long-form pieces, fragmented the same way — plus the short-form coming off the archive for the other 10 months",
   gap:"New footage every 6 months"}
 ];
@@ -1128,7 +1160,7 @@ function pillarCards(){
 function shootTable(){
   return '<div class="tbl"><table><thead><tr><th>What</th><th>Detail</th><th>Denver, high level</th></tr></thead><tbody>'+
     SHOOT.map(function(r){ return '<tr><td><b>'+esc(r[0])+'</b></td><td>'+esc(r[1])+'</td><td class="num">'+esc(r[2])+'</td></tr>'; }).join("")+
-    '<tr class="subtotal"><td><b>Per shoot</b></td><td></td><td class="num"><b>$3,500\u20137,500</b></td></tr>'+
+    '<tr class="subtotal"><td><b>Per shoot</b></td><td></td><td class="num"><b>$3,950\u20137,500</b></td></tr>'+
     '</tbody></table></div>';
 }
 function cadenceCards(){
@@ -1161,6 +1193,34 @@ function tierNotes(){
       '<div id="body-'+sid+'"'+(open?"":" hidden")+'><div class="tn-body"><p>'+esc(t.truth)+'</p></div></div>'+
     '</div>';
   }).join("")+'</div>';
+}
+/* Ordered ramp, not a categorical palette: the three sources run free-and-finite
+   -> free-but-unreliable -> paid-and-scheduled, so lightness carries the order.
+   Every segment is also directly labelled, so identity is never colour alone. */
+function sourceMix(){
+  var MAXV = 6;
+  var cols = [["a","The archive",1],["r","Rooms: a podcast or a stage",2],["s","A shoot you paid for",3]];
+  var rows = SOURCEMIX.map(function(m){
+    var segs = "";
+    [1,2,3].forEach(function(k,ix){
+      var v = m[k];
+      if(v === "—" || !v) return;
+      var cls = cols[ix][0];
+      segs += '<span class="smx-seg smx-'+cls+'" style="width:'+(parseFloat(v)/MAXV*100).toFixed(3)+'%" '+
+              'title="'+esc(cols[ix][1])+': '+esc(v)+' a month">'+esc(v)+'</span>';
+    });
+    return '<div class="smx-row'+(m[5]?" rec":"")+'">'+
+      '<div class="smx-lab">'+esc(m[0])+'</div>'+
+      '<div class="smx-track">'+segs+'</div>'+
+      '<div class="smx-tot">'+esc(m[4])+'</div></div>';
+  }).join("");
+  return '<div class="smx">'+
+    '<div class="smx-key">'+cols.map(function(c){
+      return '<span class="smx-kitem"><i class="smx-sw smx-'+c[0]+'"></i>'+esc(c[1])+'</span>';
+    }).join("")+'</div>'+
+    rows+
+    '<div class="smx-foot">Reels a month. Carousels run the same way.</div>'+
+  '</div>';
 }
 function tierCards(){
   return '<div class="scards tiers">'+TIERS.map(function(t){
@@ -1351,15 +1411,15 @@ function render(){
     '<div class="tbl"><table><thead><tr><th>Week</th><th>Stage</th><th>Output</th><th>What it is</th><th>The ask</th></tr></thead><tbody>'+
     CALENDAR.map(function(c){ return '<tr'+(c[1]==="Conversion"?' class="rec"':'')+'><td><b>'+esc(c[0])+'</b></td><td>'+esc(c[1])+'</td><td>'+esc(c[2])+'</td><td>'+esc(c[3])+'</td><td class="num">'+esc(c[4])+'</td></tr>'; }).join("")+
     '</tbody></table></div>'+
-    '<p class="muted small">Each week’s pair goes to both channels. Same assets, two uploads.</p>'+'<p class="muted small">This rotation is the Scrappy baseline — eight pieces, one pair a week. Prospect adds one more pair a month and Contender adds four, and the extra slots go wherever the month needs them rather than getting a fixed job — which in practice is wherever the new footage is strongest.</p>'+
+    '<p class="muted small">Each week’s pair goes to both channels. Same assets, two uploads.</p>'+'<p class="muted small">This rotation is the Scrappy baseline — eight pieces, one pair a week. Prospect adds one more pair a month, cut from a room Marc got into. Contender adds a second pair on top, off a shoot. Those extra slots go wherever the month needs them rather than getting a fixed job.</p>'+
     '<p><b>Every piece gets exactly one call to action. Never zero, never two.</b> The most common failure in this category is not weak content — it is good content with no ask attached, published for years by someone who cannot understand why nothing happens.</p>'+
     '<h3>Where it comes from</h3>'+
     '<p class="lede">Six sources, and they are not equal. Worth seeing all of them in one place before deciding how much to post.</p>'+
     sourceTable()+
-    '<p><b>Read the last two columns together and the whole problem is right there.</b> The source doing almost all the work today is the only one that runs out. The two that never run out are not yours to schedule — they show up when somebody else books you. And the one source you can actually switch on whenever you want is the one that costs $3,500 to $7,500 a go.</p>'+
+    '<p><b>Read the last two columns together and the whole problem is right there.</b> The source doing almost all the work today is the only one that runs out. The two that never run out are not yours to schedule — they show up when somebody else books you. And the one source you can actually switch on whenever you want is the one that costs $3,950 to $7,500 a go.</p>'+
     '<p><b>There is deliberately no monthly sit-down-in-front-of-a-lens block in here.</b> It is the obvious answer and it is the wrong one for this brand. Talking-head content would undercut the thing that makes the archive worth anything — that it is real footage of a man doing the job, not a man describing it. Better to post less and have all of it be real.</p>'+
     '<h3>How long does the archive last?</h3>'+
-    '<p><b>Nobody knows yet, and anybody who hands you a number today is guessing.</b> What we can say is how fast each level spends it. Scrappy pulls 4 pieces a month out of the archive. Prospect pulls 5. Contender pulls 4 as well — the same as Scrappy — because the other 4 come out of the shoot. So the level that drains the archive fastest is the middle one, and the most expensive level is the only one that buys the archive more time while doubling what goes out. The talks and the podcasts stretch all three further still, by however many rooms you get into. That is the real argument for chasing rooms: they are lead generation and they are footage, from the same ask.</p>'+
+    '<p><b>Nobody knows yet, and anybody who hands you a number today is guessing.</b> What we can say is how fast each level spends it. Scrappy pulls 4 pieces a month out of the archive. So does Prospect, and so does Contender — 4 a month at every level. The levels do not dig deeper into the archive; they add other places for the month’s content to come from. Prospect adds the rooms Marc gets into, Contender adds a shoot he books. Which means the archive lasts about as long whichever one he picks, and the way to stretch it further is more rooms, not a bigger budget. The talks and the podcasts stretch all three further still, by however many rooms you get into. That is the real argument for chasing rooms: they are lead generation and they are footage, from the same ask.</p>'+
     '<p class="muted">The index built in October is what turns this from a shape into a number — how many genuinely usable moments are actually in there, by pillar and by stage. It is the first thing I will tell you when it is done, and it is the number that should decide which level in section 07 you pick.</p>'+
     '<p><b>So the calendar eventually has to be fed by footage that exists because Marc decided to make it.</b> With no talking-head block in the plan, that means either rooms or a shoot — and only one of those is his to schedule. Not soon, and not expensively at first, but it is the one thing here that cannot be avoided by being clever. Section 07 puts a number on it.</p>'+
     '<p class="muted">You and Jarah dump everything; I organize and index the lot and hand the editor a labeled library. Nothing else moves at full speed until that is done.</p>'+
@@ -1367,12 +1427,13 @@ function render(){
     '<p>Every time you speak in front of a live audience and somebody points a camera at it, that is footage — and it is footage nobody had to pay to shoot. It belongs in this plan as a named source rather than something that occasionally turns up.</p>'+
     twoCol(TALKFOOTAGE,"The rule","Why")+
     '<p class="muted">Same goes for podcasts. If the host records video, ask for the file. A clipped answer outlives the episode by years and reaches people who were never going to sit through 90 minutes.</p>'+
+    '<p><b>A good month is a trap.</b> A podcast and a stage inside the same fortnight can yield four reels at once. Post them all in March and April is empty, and a feed that spikes then goes quiet performs worse than one that never spiked. Cut them all while the editor has the footage open, schedule two, and bank the rest against the quiet month that is definitely coming.</p>'+
     '<h3>What a reel has to be</h3>'+
     '<p>This is the standing brief, and it applies to all of it — archive cuts, talk footage, podcast clips, anything shot new. It goes to the editor on day one so nobody is guessing.</p>'+
     twoCol(REELSPEC,"The rule","Why")+
     "<h3>The newsletter formula</h3>"+'<p>This is the thing you asked me to keep and I would rather you just had it. Six beats, one issue, about 500 words. It works because it is the shape of a coaching conversation, not the shape of a newsletter.</p>'+'<ol class="fmla">'+FORMULA.map(function(f){ return '<li><b>'+esc(f[1])+'</b><span>'+esc(f[2])+'</span></li>'; }).join('')+'</ol>'+'<p><b>Then one line and one ask.</b> Never two asks. The ask changes by month and matches whatever the conversion slot is pointing at.</p>'+'<p class="muted"><b>If you do not have time to write it:</b> record a voice memo answering the six beats out loud — it takes about 4 minutes — get the transcript, then write it up against the formula. The memo does the thinking, the formula does the shape. Worth being straight with you about the limit: right now that last step is still a person sitting down with the transcript. Turning a voice memo into a finished draft on its own needs the system built underneath it, and that is not built yet.</p>'+'<h3>Not doing</h3>'+
     '<h3>The two channels</h3>'+
-    '<p><b>Instagram and LinkedIn.</b> Every piece goes to both — the assets are identical, only the upload is doubled, and that is minutes rather than hours. How many pieces depends on which level you run at: 8 a month at Scrappy, 10 at Prospect, 16 at Contender.</p>'+
+    '<p><b>Instagram and LinkedIn.</b> Every piece goes to both — the assets are identical, only the upload is doubled, and that is minutes rather than hours. How many pieces depends on which level you run at: 8 a month at Scrappy, 10 at Prospect, 12 at Contender. The archive supplies 8 of them at every level — what each step up adds is another source, not a deeper dig.</p>'+
     '<p>They do different jobs. <b>Instagram reaches the audience you already have.</b> It is where the fight world is, and it is where the story and the personality land hardest. <b>LinkedIn reaches the buyer you do not have yet.</b> Founders, leaders and executives are on it daily and most of them are not on Instagram at all — which is the whole of section 02 in one sentence.</p>'+
     '<p>The newsletter is not a third channel. <b>You cannot email somebody you have not reached yet</b> — it is the nurture layer underneath both, not a way in. Though it does get one free multiplier: republished as a LinkedIn newsletter two or three days after the email goes out, it notifies every follower, at no cost, aimed at exactly the person you want.</p>'+
     '<p class="muted"><b>The honest cost:</b> a few more minutes a week for Jarah, and some pieces will want a different caption on LinkedIn because it is a different room. A raw gym clip that works on Instagram can land oddly beside a founder’s feed. Start by posting the same caption to both and adjust once you can see which pieces need it.</p>'+
@@ -1441,6 +1502,10 @@ function render(){
     '<p class="lede">This is the number I need from you, and it is the only one that changes the shape of everything else.</p>'+
     '<div class="feebox"><p><b>None of this is my fee.</b> Every number in this section is the running cost of the business \u2014 the editors, the tools, the hosting, the design, the shoots. What I charge sits separately, in section 09, and all of it is optional.</p>'+
       '<p>Pick the level you can genuinely sustain for <b>12 to 18 months</b>. The level you choose should be the level you keep \u2014 a level you can hold is worth more than a level you can start.</p></div>'+
+    '<h3 data-keep>Where each month’s pieces come from</h3>'+
+    sourceMix()+
+    '<p><b>The archive gives 4 pieces a month at every level.</b> Each step up adds a source rather than digging deeper into the same hole — which is why the archive lasts about as long whichever level you pick. What changes is how many places the month’s content can come from.</p>'+
+    '<p class="muted small">Rooms are lumpy. A podcast and a stage in the same fortnight can hand you four reels at once — cut them all, schedule two, bank the rest. The counts above are an average across the year, not a promise about March.</p>'+
     tierCards()+
     tierNotes()+
     '<p class="muted"><b>Read the ladder this way:</b> Prospect is where content starts building on itself rather than just existing. Contender is where you stop being limited by a finite archive, sporadic podcast appearances and speaking opportunities.</p>'+
@@ -1454,13 +1519,13 @@ function render(){
     shootTable()+
     '<p><b>Two different editors, two different jobs.</b> The reels from a shoot are cut by the team that shot it, at $450 to $500 each — they are working from footage that was planned and lit for exactly this, and it shows. Your short-form editors stay on what they are built for: highlight reels and short cuts from the archive, plus the graphics and carousels. Maybe one or two long-form highlight cuts a year, and that is it.</p>'+
     '<p><b>Ask for the thumbnails by name.</b> One or two YouTube thumbnails belong to the long-form edit and should be quoted inside it, not billed afterwards as a design extra. It is a small thing that gets left off scopes constantly, and a long-form piece without a thumbnail is a video nobody clicks — you paid for the whole day and then hid it behind a grey freeze-frame. Put it in writing before the shoot.</p>'+
-    '<p class="muted">Stills are an add-on at $300 to $500 for the same day. Often times they can be negotiated into that $3,500–7,500 figure. Worth trying, because the site, the speaker one-sheet and the bootcamp sell sheet all need real photographs of Marc that are updated periodically, and they have to come from somewhere.</p>'+
+    '<p class="muted">Stills are an add-on at $300 to $500 for the same day. Often times they can be negotiated into that $3,950–7,500 figure. Worth trying, because the site, the speaker one-sheet and the bootcamp sell sheet all need real photographs of Marc that are updated periodically, and they have to come from somewhere.</p>'+
     '<h3>How often, and what it costs</h3>'+
     '<p>The real decision inside Contender. Each option below includes everything — the shoots amortized, the short-form editor, the tools and the paid spend.</p>'+
-    '<p class="muted small"><b>How the monthly number is built:</b> it is the Prospect level — $900 to $1,400 a month, which already carries the newsletter, Metricool and the $200 to $300 of ad spend — plus the shoots annualized and divided across 12 months. Quarterly: 4 shoots at $3,500 to $7,500 is $14,000 to $30,000 a year, on top of $10,800 to $16,800 of Prospect, which is $24,800 to $46,800 a year. Twice a year: $7,000 to $15,000 of shoots for $17,800 to $31,800 a year.</p>'+
-    '<p class="muted small"><b>One thing the monthly figure hides:</b> shoot money does not arrive in even slices. You pay it in two or four lumps of $3,500 to $7,500. Treat the monthly number as what to set aside, not what leaves the account.</p>'+
+    '<p class="muted small"><b>How the monthly number is built:</b> it is the Prospect level — $900 to $1,400 a month, which already carries the newsletter, Metricool and the $200 to $300 of ad spend — plus the shoots annualized and divided across 12 months. Quarterly: 4 shoots at $3,950 to $7,500 is $15,800 to $30,000 a year, on top of $10,800 to $16,800 of Prospect, which is $26,600 to $46,800 a year. Twice a year: $7,900 to $15,000 of shoots for $18,700 to $31,800 a year.</p>'+
+    '<p class="muted small"><b>One thing the monthly figure hides:</b> shoot money does not arrive in even slices. You pay it in two or four lumps of $3,950 to $7,500. Treat the monthly number as what to set aside, not what leaves the account.</p>'+
     cadenceCards()+
-    '<p><b>The difference is about $600 to $1,250 a month.</b> It buys two extra long-form pieces, twice as much footage to fragment, and it halves the gap between fresh footage. That last part is the one that matters, because a shoot is the only new footage you can actually schedule. Everything else arrives when somebody else books you. At twice a year, months four to six run entirely on footage half a year old, with the archive thinning underneath it.</p>'+
+    '<p><b>The difference is about $660 to $1,250 a month.</b> It buys two extra long-form pieces a year, twice as much footage to fragment, and it halves the gap between fresh footage. That last part is the one that matters, because a shoot is the only new footage you can actually schedule. Everything else arrives when somebody else books you. At twice a year, months four to six run entirely on footage half a year old, with the archive thinning underneath it.</p>'+
     '<p class="muted">Quarterly is what I would argue for. Twice a year is the honest floor. Either is a real plan. Monthly is not, at any budget short of $5,000 a month.</p>'+
     '<h3>The stack, line by line</h3>'+'<p class="muted small">Every tool named above, with what it costs and why it is there. The tools total is roughly the same at Scrappy and Prospect — the difference between the levels is people and spend, not software.</p>'+
     '<div class="tbl"><table><thead><tr><th>What</th><th>Tool</th><th>Cost</th><th>Why</th></tr></thead><tbody>'+
@@ -1791,9 +1856,11 @@ function wire(){
 }
 
 /* ---------- send ---------- */
+var SESSION_KEY = "";
 function getKey(){
   var m = /[#&]k=([A-Za-z0-9]+)/.exec(location.hash||"");
-  if(m){ try{ localStorage.setItem(KEY_STORE, m[1]); }catch(e){} return m[1]; }
+  if(m){ SESSION_KEY = m[1]; try{ localStorage.setItem(KEY_STORE, m[1]); }catch(e){} return m[1]; }
+  if(SESSION_KEY) return SESSION_KEY;
   try{ return localStorage.getItem(KEY_STORE) || ""; }catch(e){ return ""; }
 }
 /* The gate. Obfuscation, not encryption: this whole file is readable by anyone
@@ -1814,26 +1881,31 @@ function renderGate(){
       '<p class="eyebrow">Coach Marc Montoya</p>'+
       '<h1>Roadmap to Gold</h1>'+
       '<p class="gate-note">This one is private. Use the link I sent you, or type the passcode below.</p>'+
-      '<form id="gate-form" class="gate-form" autocomplete="off">'+
+      '<div class="gate-form">'+
         '<input id="gate-input" type="password" autocapitalize="none" autocorrect="off" spellcheck="false" aria-label="Passcode" placeholder="Passcode">'+
-        '<button type="submit" class="btn">Open</button>'+
-      '</form>'+
+        '<button type="button" id="gate-go" class="btn">Open</button>'+
+      '</div>'+
       '<p class="gate-err" id="gate-err" hidden>That is not it. The passcode is the part of my link after <b>#k=</b>.</p>'+
     '</div>';
   var input = document.getElementById("gate-input");
-  document.getElementById("gate-form").addEventListener("submit", function(ev){
-    ev.preventDefault();
+  function tryOpen(ev){
+    if(ev && ev.preventDefault) ev.preventDefault();
     var v = (input.value||"").trim().toLowerCase();
     if(keyOk(v)){
+      SESSION_KEY = v;
       try{ localStorage.setItem(KEY_STORE, v); }catch(e){}
-      location.hash = "#k=" + v;
-      location.reload();
+      try{ if((location.hash||"").indexOf("k=") < 0) location.hash = "#k=" + v; }catch(e){}
+      startPage();
     } else {
       document.getElementById("gate-err").hidden = false;
       input.select();
     }
+  }
+  document.getElementById("gate-go").addEventListener("click", tryOpen);
+  input.addEventListener("keydown", function(ev){
+    if(ev.key === "Enter" || ev.keyCode === 13) tryOpen(ev);
   });
-  input.focus();
+  try{ input.focus(); }catch(e){}
 }
 
 function getDevice(){
@@ -1930,13 +2002,15 @@ function copyAnswers(){
 }
 
 /* ---------- boot ---------- */
-if(!keyOk(getKey())){ renderGate(); return; }
-render(); wire(); refresh(); syncAllBtn();
-var decided = DECISIONS.filter(function(d){ return isAnswered(d.id); }).length;
-var submittedAt = 0; try{ submittedAt = +localStorage.getItem(SUB_STORE)||0; }catch(e){}
-if(submittedAt){ setStatus("You submitted on "+fmtDate(submittedAt)+". Change anything and press Submit again.","good"); }
-else if(restoredAt && decided){ setStatus("Welcome back. Your "+decided+" saved decision"+(decided===1?"":"s")+" from "+fmtDate(restoredAt)+" are right where you left them.","good"); }
-else { setStatus("Read what you like, decide what you can. Press Save progress anytime."); }
+function startPage(){
+  render(); wire(); refresh(); syncAllBtn();
+  var decided = DECISIONS.filter(function(d){ return isAnswered(d.id); }).length;
+  var submittedAt = 0; try{ submittedAt = +localStorage.getItem(SUB_STORE)||0; }catch(e){}
+  if(submittedAt){ setStatus("You submitted on "+fmtDate(submittedAt)+". Change anything and press Submit again.","good"); }
+  else if(restoredAt && decided){ setStatus("Welcome back. Your "+decided+" saved decision"+(decided===1?"":"s")+" from "+fmtDate(restoredAt)+" are right where you left them.","good"); }
+  else { setStatus("Read what you like, decide what you can. Press Save progress anytime."); }
+}
+if(keyOk(getKey())) startPage(); else renderGate();
 })();
 </script>
 </body>
