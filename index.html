@@ -956,7 +956,15 @@ try{ openSecs = JSON.parse(localStorage.getItem(OPEN_KEY) || "{}") || {}; }catch
 function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
 function money(n){ return "$" + n.toLocaleString("en-US"); }
 function fmtDate(t){ try{ return new Date(t).toLocaleString([], {month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}); }catch(e){ return ""; } }
-function isAnswered(id){ var a=answers[id]; if(!a) return false; var v=a.v; return v!=null && String(v).trim()!==""; }
+/* A written note counts. Several decisions are free-text by design, so a
+   considered paragraph with no option clicked is still an answer. */
+function isAnswered(id){
+  var a = answers[id];
+  if(!a) return false;
+  var v = a.v, note = a.n;
+  if(v != null && String(v).trim() !== "") return true;
+  return note != null && String(note).trim() !== "";
+}
 function phaseName(id){ for(var i=0;i<PHASES.length;i++){ if(PHASES[i].id===id) return PHASES[i].name; } return id; }
 function phaseIndex(id){ for(var i=0;i<PHASES.length;i++){ if(PHASES[i].id===id) return i; } return 99; }
 function owners(){ var o={}, out=["All"]; TASKS.forEach(function(t){ if(!o[t[2]]){ o[t[2]]=1; out.push(t[2]); } }); return out; }
