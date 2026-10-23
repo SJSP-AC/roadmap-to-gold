@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
-<title>Roadmap to Gold — Coach Marc Montoya</title>
+<title>Roadmap to Gold — Coach Marc Montoya (print)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
@@ -494,6 +494,60 @@ ul.cant li{border-left:2px solid var(--gold);padding:2px 0 2px 12px;margin-botto
 .trow-toggle[aria-expanded="true"] .chev{transform:rotate(-135deg) translateX(-2px)}
 .trow-toggle[aria-expanded="false"] .chev{transform:rotate(45deg) translateY(-3px)}
 .trow>div[id^="body-tg-"]{padding:0 16px 6px}
+/* ---------- print / Save as PDF ---------- */
+@media print{
+  /* the dark palette would print white-on-white, so force the light one */
+  :root,:root[data-theme="dark"],:root[data-theme="light"]{
+    --ground:#FFFFFF; --surface:#FFFFFF; --ink:#16140F; --muted:#4A463F; --line:#B9B4AA;
+    --gold:#8A6318; --gold-ink:#6B4A10; --gold-wash:#F4ECD9; --chip:#EFEDE8;
+    --ok:#2F6B45; --warn:#8A3B1E; color-scheme:light;
+  }
+  html,body{background:#FFF;color:#16140F}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  @page{margin:14mm 12mm}
+
+  /* interface off: nav, sticky bar, dock, buttons, gate, scratch areas */
+  .bar,.jump,.dock,.sidenav,.gate,.copybox,.filters,.chev,.actions,.status,.theme-btn,
+  #pg-all,#pg-pdf,#pg-save,#pg-submit,#pg-copy{display:none!important}
+
+  /* every collapsed group opens */
+  /* the page sets [hidden]{display:none!important} at the top, so this needs !important too */
+  .sec-body[hidden],.sub-body[hidden],
+  [id^="body-ph-"][hidden],[id^="body-tn-"][hidden]{display:block!important}
+  .sec-toggle,.phase-toggle,.sub-toggle,.tn-toggle{cursor:default;background:none}
+
+  /* full width once the sidenav is gone */
+  .shell{display:block}
+  .secs,.wrap{max-width:none;margin:0;padding:0}
+
+  /* page breaks: one section per page, nothing split mid-card */
+  .sec+.sec{break-before:page;page-break-before:always}
+  h2,h3,h4,.sec-h{break-after:avoid;page-break-after:avoid}
+  .pcard,.phase,.q,.stat,.fstep,.hm-cell,.hm-hub,.hm-fork,.smx-row,.tnote,.grp,.wcard,
+  .tcol,.chartrow,tr{break-inside:avoid;page-break-inside:avoid}
+  table,.tbl{break-inside:auto}
+  thead{display:table-header-group}
+  p,li{orphans:3;widows:3}
+
+  /* section 09: leave room to write the answers in by hand */
+  .q{padding-bottom:5mm}
+  .q textarea,.q input.note{
+    border:0;border-bottom:1px solid #8C877E;border-radius:0;background:transparent;
+    box-shadow:none;color:#16140F;width:100%;min-height:20mm;
+  }
+  .q input.note{min-height:9mm}
+  .opts{display:block}
+  .opt{display:block;margin:3px 0}
+  /* the real radio is opacity:0 by design, so put a tickable circle on the chip */
+  .opt span::before{
+    content:"";display:inline-block;width:10px;height:10px;margin-right:8px;
+    border:1px solid #6B665E;border-radius:50%;background:#FFF;vertical-align:-1px;
+  }
+  .opt input:checked + span::before{background:#16140F}
+
+  /* links read as text on paper */
+  a[href^="#sec-"]{text-decoration:none;color:inherit}
+}
 </style>
 </head>
 <body>
@@ -554,31 +608,31 @@ var TASKS = [
  ["p0","Chase the recordings of talks and speeches you have already given — anything sitting on a host’s YouTube or Vimeo, and anything they still have on a drive. This is the cheapest footage you will ever get and it is in somebody else’s account","Marc",4],
  ["p0","The other half of the same job, plus chasing every creator still holding footage — Jordan Kurtz, Red Rocks Church, anyone who ever filmed you","Jarah",10],
  ["p0","Buy two 4 TB external drives — one to dump onto, one for the editor (about $200 the pair)","Jarah",1],
- ["p0","Sort and restructure the whole dump into a proper archive — folders that make sense, files named so you can find them","Alex",0],
- ["p0","Build the index: every clip tagged by arena, pressure pattern, tool shown and what it is usable for — searchable and sortable","Alex",0],
- ["p0","Cut both drive copies from the finished archive — one yours, one the editor’s","Alex",0],
- ["p0","Build the shot list: what is missing and needs filming","Alex",0],
- ["p0","Hand the editor the labeled library and the index, ready to work from","Alex",0],
- ["p0","Mirror the finished archive to Google Drive — the backup nobody can accidentally delete. Happens after the drive is organized, not before","Alex",0],
+ ["p0","Sort and restructure the whole dump into a proper archive — folders that make sense, files named so you can find them","Not yours",0],
+ ["p0","Build the index: every clip tagged by arena, pressure pattern, tool shown and what it is usable for — searchable and sortable","Not yours",0],
+ ["p0","Cut both drive copies from the finished archive — one yours, one the editor’s","Not yours",0],
+ ["p0","Build the shot list: what is missing and needs filming","Not yours",0],
+ ["p0","Hand the editor the labeled library and the index, ready to work from","Not yours",0],
+ ["p0","Mirror the finished archive to Google Drive — the backup nobody can accidentally delete. Happens after the drive is organized, not before","Not yours",0],
  // p1 — decide the business
  ["p1","The claim is already written and it is in section 01. Read it. If a word of it is wrong, tell me now","Marc",1],
  ["p1","Use it in the conversations you are already having this month — clients, coaches, whoever asks what you do now. You are not booking meetings to test a sentence. You are listening to what happens after you say it","Marc",2],
  ["p1","Then tell me what happened: which part they repeated back, which part made them ask a second question, and where it landed flat","Marc",1],
  ["p1","Put it in the Instagram and LinkedIn bios once it holds","Jarah",1],
- ["p1","Put it on the site, the one-sheet and the opening of a call — this rides along with the site build","Alex",0],
- ["p1","Price every offer: the 90-day Mission, speaking, workshop, bootcamp, Expedition","Alex",0],
+ ["p1","Put it on the site, the one-sheet and the opening of a call — this rides along with the site build","Not yours",0],
+ ["p1","Price every offer: the 90-day Mission, speaking, workshop, bootcamp, Expedition","Not yours",0],
  ["p1","Sign off on the prices","Marc",3],
- ["p1","Write the one-sentence answer to “what do you do now?”","Alex",0],
+ ["p1","Write the one-sentence answer to “what do you do now?”","Not yours",0],
  ["p1","Decide where faith sits and write it into the positioning","Marc",1],
  ["p1","Confirm the facts: belt count, PRACCE wording, years, named fighters","Marc",3],
  ["p1","Ask your current coaching clients first — the founders, leaders and people in a hard season. They are the ones a buyer needs to see","Marc",6],
  ["p1","Then ask the six fighters, and chase the ones who say yes","Marc",8],
  ["p1","Build the bootcamp sell sheet and fee card — one page a company can circulate internally","Jarah",5],
  // p2 — content engine
- ["p2","Three pillars mapped to discovery, awareness and conversion","Alex",0],
- ["p2","Build the 4-week rotating calendar with a CTA on every slot","Alex",0],
- ["p2","Write the editor brief: the look and feel, do’s and don’ts, tone of voice, deliverables — reels, carousels and quote cards — every asset tied to a funnel stage","Alex",0],
- ["p2","A worked example of each pillar, so the handover sticks","Alex",0],
+ ["p2","Three pillars mapped to discovery, awareness and conversion","Not yours",0],
+ ["p2","Build the 4-week rotating calendar with a CTA on every slot","Not yours",0],
+ ["p2","Write the editor brief: the look and feel, do’s and don’ts, tone of voice, deliverables — reels, carousels and quote cards — every asset tied to a funnel stage","Not yours",0],
+ ["p2","A worked example of each pillar, so the handover sticks","Not yours",0],
  ["p2","Talk into your phone whenever something happens worth telling","Marc",6],
  ["p2","Brief the editor each month, collect the cuts, review","Jarah",16],
  ["p2","Manual posting twice a week across platforms — caption, schedule, engage the audience and reply to DMs. About 5 hours a week","Jarah",87],
@@ -586,25 +640,25 @@ var TASKS = [
  ["p2","Write the monthly newsletter — minimum one a month, in your own words","Marc",5],
  ["p2","Review what worked each month and adjust the mix","Marc",4],
  // p3 — the site
- ["p3","Site map and the job each page has to do","Alex",0],
- ["p3","Write every page","Alex",0],
- ["p3","Design and build it","Alex",0],
- ["p3","Cut the speaker sizzle reel from the archive","Alex",0],
- ["p3","Structured data and a Google profile, so a search for his name returns the business rather than a guess (full build)","Alex",0],
+ ["p3","Site map and the job each page has to do","Not yours",0],
+ ["p3","Write every page","Not yours",0],
+ ["p3","Design and build it","Not yours",0],
+ ["p3","Cut the speaker sizzle reel from the archive","Not yours",0],
+ ["p3","Structured data and a Google profile, so a search for his name returns the business rather than a guess (full build)","Not yours",0],
  ["p3","Sit for the photos and the on-camera intro","Marc",6],
- ["p3","Set up booking, the inquiry form, the auto-reply and the alert to Marc","Alex",0],
+ ["p3","Set up booking, the inquiry form, the auto-reply and the alert to Marc","Not yours",0],
  ["p3","Build the tracker: the fields, the stages, and the view that shows what needs chasing","Jarah",6],
  ["p3","Set up the domain email: Google Workspace, the three addresses on coachmarcmontoya.com, the DNS records, and forwarding from whatever Marc uses now so nothing gets lost","Jarah",3],
  ["p3","Finish the mailboxes properly: a jarah@ alias on marketing@ so she can send as herself, accounting@ forwarding to the bookkeeper, and a designed signature for each of you that matches the site","Jarah",2],
  ["p3","Learn to update the site and run the inbox","Jarah",6],
  ["p3","Approve copy and design — two rounds, 5 days each","Marc",4],
  // p4 — sales system
- ["p4","Discovery call structure, printed and practiced","Alex",0],
+ ["p4","Discovery call structure, printed and practiced","Not yours",0],
  ["p4","Run it twice with real people and adjust","Marc",4],
- ["p4","Qualification criteria — who is a fit and who is not","Alex",0],
- ["p4","One-page proposal template","Alex",0],
- ["p4","Four-touch follow-up rhythm, with owners","Alex",0],
- ["p4","Objection prompts for Marc to write his own answers from","Alex",0],
+ ["p4","Qualification criteria — who is a fit and who is not","Not yours",0],
+ ["p4","One-page proposal template","Not yours",0],
+ ["p4","Four-touch follow-up rhythm, with owners","Not yours",0],
+ ["p4","Objection prompts for Marc to write his own answers from","Not yours",0],
  ["p4","Invoicing, payments and the deposit rule","Jarah",5],
  ["p5","Work the pipeline: chase follow-ups, update stages, keep every inquiry moving","Jarah",22],
  ["p5","The Monday review: read the six numbers, decide what changes","Marc",2],
@@ -649,26 +703,6 @@ var FORMULA = [
  ["6","One thing this week","Small, specific, and finishable before the next issue lands. Not ’reflect on your patterns.’ Something with a verb in it."]
 ];
 
-var ADDON_CAVEAT = "These are a starting set. We’d confirm the scope before anything begins, it can shrink or grow, and figure out an honest fee together.";
-var ADDONS = [
- {id:"kb", name:"A brand guide", price:"$1,500–2,500",
-  deliv:["Logo usage: the versions, the clear space, the smallest it can go, and what nobody is allowed to do to it. Usage, not drawing — if the mark itself needs designing, that is a different job and a different number.",
-         "Color with the technical values — hex, RGB and CMYK — so a printer, an editor and Squarespace all produce the same color instead of three near-misses.",
-         "Type: the typefaces, the weights, the sizes, and the licenses actually confirmed so nobody gets a bill in year two.",
-         "Imagery direction: what a Proving Grounds photograph looks like, and what it never looks like. This is the line the editor and the shooter both work to.",
-         "Do’s and don’ts, with worked examples — a post, a slide, a page header — so Jarah and the editor can follow it without asking either of us.",
-         "Delivered as a web page with a link you can send anybody, not a PDF that ends up in one person’s downloads folder.",
-         "If I build the full site, this comes with it."]},
- {id:"k2", name:"The Monday scoreboard, wired up", price:"$500",
-  deliv:["The inquiry tracker and the scoreboard connected, so four of the six numbers — inquiries, calls booked, closes and revenue — fill themselves in from the pipeline.",
-         "Jarah types two numbers a week instead of six.",
-         "A Monday reminder that fires on its own, and a one-page note on how to run the 10 minutes."]},
- {id:"k3", name:"The small stuff", price:"$200–500 each",
-  deliv:["The bootcamp sell sheet and fee card — one page a company can circulate internally.",
-         "The Monday scoreboard as a plain template, if you would rather fill it in by hand than have it wired.",
-         "The handover page: every tool, where it lives, how to change it, and what breaks if nobody looks at it.",
-         "A booking tracker for podcasts, stages and companies — who you pitched, where it stands, and who needs chasing this week. You write the list; this is just somewhere to keep it."]}
-];
 
 var MAP_IN = [
  {k:"Instagram and LinkedIn", w:"Two channels, one rotation. The only source here whose volume you actually control \u2014 and the one that runs on footage.", sec:"content", secn:"04"},
@@ -837,47 +871,18 @@ var LADDER = [
  {phase:"Now", name:"Get seen, get found, get called", when:"Months 1–6", spend:"$450–1,600/mo",
   what:["The archive, organized and feeding everything","A site that looks like a real business and captures people","Content on a schedule with a job and a CTA on every piece","A sales process an inquiry cannot fall out of","Podcasts and one speaking relationship worked properly"],
   solves:"Nobody knows you do this yet.",
-  alex:"Set out phase by phase in section 09 \u2014 what each piece is, what it looks like if you run it yourselves, and what it costs if I do it. No second number here, because there should only ever be one.",
-  without:"All of it is doable without me. The site takes Jarah a weekend on a template, the calendar is a spreadsheet, and the sales structure is on this page. It will be rougher and slower, and it will still work."},
+  without:"All of it is doable yourselves. The site takes Jarah a weekend on a template, the calendar is a spreadsheet, and the sales structure is on this page. It will be rougher and slower, and it will still work."},
  {phase:"Next", name:"Stop doing it by hand", when:"Months 6–12", spend:"+$200–400/mo in tools",
   what:["Scheduling and posting automated across platforms","Email sequences that run without anyone sending them","A real CRM instead of a Notion database \u2014 when you need automation Notion cannot do, not when the list gets long","Whatever you decide belongs between $0 and a 90-day Mission, earning properly","Speaker pipeline with a target list and a cadence"],
   solves:"Jarah is the bottleneck, and interested people have no way to stay in touch. Months 6\u201312 is an estimate, not a deadline \u2014 Notion holds this longer than most people expect, and the move happens when something breaks, not when the calendar says so.",
-  alex:"Set it up, wire it together, train Jarah, leave. Roughly $4,000–8,000 as a project, or a few hundred a month to keep running it.",
   without:"Achievable with off-the-shelf tools and a weekend of patience. The risk is ending up with six tools that do not talk to each other."},
  {phase:"Later", name:"Own the whole thing", when:"Months 12–24",
-  spend:"$17,000–24,000 build",
+  spend:"",
   what:["One system you own instead of six subscriptions you rent","Hours back every month, because the copying between tools stops","A client experience nobody else in this category has: Drills, the Victory Log and the Film Room in one place with their name on it","Intake to 90-day Mission to renewal tracked end to end, so you know your numbers without asking anyone","The Tape running as a system: record, transcribe, draft, file"],
   solves:"By then you are renting six tools that do not talk to each other, and Jarah is the integration \u2014 copying between them by hand, every week.",
-  alex:"Design and build, stage by stage, each one standing alone. Priced per stage, approved before it starts.",
-  without:"This is the one that genuinely needs someone technical. Not necessarily me — but not a template either."}
+  without:"This is the one that genuinely needs someone technical — and not a template either."}
 ];
 
-var TOGETHER = [
- {id:"p0", name:"Build the archive", price:"On me",
-  is:"Everything you have ever shot, in one place, organized, tagged and searchable, plus two hard-drive copies and a list of what is missing.",
-  diy:"Dump it all into one Drive folder named by year. Jarah, a few weekends. It works, and it will not be searchable by what is actually in a clip — which is the part that matters every month for the next 2 years.",
-  mine:"This one is on me, and here is how it runs. You dump everything you can find onto one drive — raw, uncurated, no sorting. I sort it, restructure it into an archive that actually makes sense, and build the index so it is searchable and sortable by what is in a clip rather than what year it is from. Then both drives get cut from the finished version, one yours and one the editor’s, and the whole thing mirrors up to Google Drive as the backup. You buy the drives, about $200 the pair. Nothing else here moves at full speed until this is done, so I would rather guarantee it happens than put a price on it."},
- {id:"p1", name:"Get your story straight", price:"On me",
-  is:"Every part of this you are not certain about yet. The claim, what each thing costs, the one-sentence answer to “what do you do now?”, how the pipeline actually runs, how the content engine feeds itself, how this part is too wordy or what you genuinely hate about this roadmap. Anything in this document.",
-  diy:"You two argue about it with each other. Which works, right up until you agree too fast because it is late and you are tired, or you go round the same loop for three weeks because you are both standing inside the thing you are trying to look at. Failing that, there is always arguing with yourself in the mirror. People get further with that than they admit.",
-  mine:"I will argue about it with you for nothing. That is not a figure of speech and it is not a teaser for something priced further down — call me, send a voice note at 11pm, tell me a section of this is wrong. Ask me to push back on something you have already decided. Ask me to make the opposite case so you can hear how it sounds out loud. Ask me what I actually think and you will get it, including the parts you would rather I softened. Nothing here is on a meter. What’s the point of handing you a plan and not getting to argue about it with you?"},
- {id:"p3", name:"Build the site", price:"$2,700–2,900 or $5,800–7,900",
-  is:"A site that looks like a real business, says what you do now, and books calls.",
-  diy:"Pick a site you like and build your version of it on Squarespace. John Windsor’s is the right reference for this category — ask me and I will send it. Jarah, 2 weekends. Rougher, simpler funnel, and still better than having nowhere to send anyone.",
-  mine:"Two ways. A working site, about 20 hours at $2,700–2,900: one strong page, booking wired, built properly. Or the full thing, about 50 hours at $5,800–7,900: every page written, the speaker reel cut from the archive, a real funnel behind it, and the structured data that makes Google and the AI assistants describe you correctly instead of guessing. The difference is a site that exists and a site that converts."},
- {id:"p2", name:"Turn on the content engine", price:"$1,900–2,900",
-  is:"Three pillars, a 4-week calendar with a CTA on every slot, an editor briefed and running, and a newsletter going out.",
-  diy:"The calendar is on this page — copy it into a spreadsheet. The newsletter formula is on this page too, in section 04, so Marc can write one tonight without asking me anything. Brief the editor yourselves. Jarah, 2 or 3 hours to set up, then the same ongoing work either way.",
-  mine:"16\u201324 hours: the pillars, the 4-week calendar, and the editor brief \u2014 the look and feel, do\u2019s and don\u2019ts, tone of voice, every asset tied to a funnel stage so you can see which ones actually move people. Plus a worked example of each pillar, so the handover actually sticks. One thing gets set later on purpose: how often the editor delivers and how long Jarah has to approve. That depends on who the editor turns out to be, and guessing it now just means changing it in January. Then it is yours to run, and the monthly review after that is yours too."},
- {id:"p4", name:"Wire the pipeline", price:"$1,000–1,200",
-  is:"Call structure, qualification, a one-page proposal, a four-touch follow-up, objections in your words — and an inquiry that announces itself instead of waiting to be found.",
-  diy:"The eight steps are in section 06 — that is the system. Write your own versions, run two calls, adjust. It works. The first draft is just the slow part.",
-  mine:"10–12 hours for the structure of each one \u2014 the call skeleton, the qualification criteria, a proposal shell, the follow-up rhythm and prompts for the objections. Plus the wiring on the front end: a form that sends the auto-reply with the booking link, creates the row in Notion and texts Marc, all off one submission. You do more of the writing; I make sure the shape is right. Still the cheapest phase here that directly makes money."},
- {id:"p5", name:"Go get the rooms", price:"Yours",
-  is:"Speaker one-sheet, podcast target list and pitch, bootcamp sell sheet — and the calls.",
-  diy:"All of it, and honestly this is the one I would keep. Three things are worth building before you start dialing: a tracker so nothing gets dropped, one pitch template you reuse, and the first 25 names written down. The assets are a page each in Canva. The calls are relationships, not tasks, and they only work coming from you.",
-  mine:"This one stays yours, and I mean that as a compliment — nobody can pitch you but you, and you already know most of the people worth calling. Worth knowing before you decide how hard to chase it: every room that gets recorded hands you footage for free, which quietly buys back months of archive. The only piece I would offer is somewhere to keep track of it, and that sits with the other small builds below. After that I can push it to the 10 yard line, but you still have to run it in."}
-];
 
 var CANT = [
  ["Being in the room","Not a monthly homework assignment in front of a lens. But every stage, every podcast and any shoot you decide to pay for needs you physically there, and none of that footage exists without you in it."],
@@ -889,7 +894,7 @@ var CANT = [
 
 var DECISIONS = [
  {id:"d1", need:1, q:"What can you actually spend on this each month?",
-  help:"The single most useful answer on this page, and the one everything else bends around. It is not my fee — it is the running cost: editor, tools, hosting, design. Three honest levels are laid out in What It Runs On. Roughly $500 a month starts it. Roughly $1,500 makes it compound. Roughly $3,000 makes it fast. There is no wrong answer, and a real number beats a generous guess every time.",
+  help:"The single most useful answer on this page, and the one everything else bends around. This is the running cost: editor, tools, hosting, design. Three honest levels are laid out in What It Runs On. Roughly $500 a month starts it. Roughly $1,500 makes it compound. Roughly $3,000 makes it fast. There is no wrong answer, and a real number beats a generous guess every time.",
   opts:["Around $500 a month to start","Around $1,000–1,500 a month","Around $2,500–3,000 a month","I need to think about it — note below"]},
  {id:"d2", need:1, q:"Will you and Jarah dump the whole archive in the next 3 weeks?",
   help:"Everything. Fights, corners, gym footage, podcasts, interviews, family-adjacent stuff, photos on old phones, whatever Jordan Kurtz and Red Rocks are sitting on. Do not curate — dump it. I organize and tag the lot, then hand the editor a labeled library. Nothing else in this plan moves at full speed until this is done, because everything visual comes out of it.",
@@ -928,7 +933,7 @@ var DECISIONS = [
   help:"This is yours and Jarah’s call, not mine, but it has to be decided before the first proposal goes out rather than invented on the call. The three real options: a deposit that holds the slot with the balance across 3 months; paid in full up front, which is the strongest commitment signal and the highest bar for a stranger; or 3 equal payments with no deposit, which is the easiest yes and leaves you carrying the risk if someone disappears in month 2. Whatever you pick, it goes in writing and no work starts before the first payment clears.",
   opts:["Deposit to hold, balance across 3 months","Paid in full up front","3 equal monthly payments, no deposit","Something else — see my note"]},
  {id:"d15", need:0, q:"Expeditions: describe the first one you would actually run.",
-  help:"Section 11 lays out the shape, the sequence and the questions. This is the one that unlocks the rest: how many people, how many days, where, how physical, what they leave with. Do not design the perfect version — describe the one you could run in 6 months with people who already trust you. Rough is fine. Vague is the problem.",
+  help:"Section 10 lays out the shape, the sequence and the questions. This is the one that unlocks the rest: how many people, how many days, where, how physical, what they leave with. Do not design the perfect version — describe the one you could run in 6 months with people who already trust you. Rough is fine. Vague is the problem.",
   type:"text"},
  {id:"d16", need:0, q:"Expeditions: what is your appetite for the liability side?",
   help:"Waivers, insurance, medical screening, possibly a medic on site. This is the actual gate on the idea and it is worth knowing your instinct now, because it changes how physical the thing can be and therefore what it is. There is no wrong answer — a low-risk version is still a real product.",
@@ -940,7 +945,7 @@ var DECISIONS = [
 
 /* ---------- state ---------- */
 var answers = {};
-var DRAFT_KEY = "pg-r2-draft", OPEN_KEY = "pg-r2-open", THEME_KEY = "pg-r2-theme", KEY_STORE = "pg-key", DEVICE_STORE = "pg-device", SENT_STORE = "pg-r2-sent", SUB_STORE = "pg-r2-submitted";
+var DRAFT_KEY = "pg-r2-draft", OPEN_KEY = "pg-r2-open", THEME_KEY = "pg-r2-theme", KEY_STORE = "pg-key", DEVICE_STORE = "pg-device", SENT_STORE = "pg-r2p-sent", SUB_STORE = "pg-r2p-submitted";
 var HOOK = "https://hooks.airtable.com/workflows/v1/genericWebhook/app4p3M3dzNu8DCqS/wfl2T8bgEp7TQkpkz/wtrVaqFMDG8KuUC3V";
 var restoredAt = 0, dirty = false, saving = false, lastSentSig = "", confirmSubmit = false;
 var sortKey = "phase", sortDir = 1, ownerFilter = "All";
@@ -973,7 +978,7 @@ function owners(){ var o={}, out=["All"]; TASKS.forEach(function(t){ if(!o[t[2]]
    the index, so this list and the section numbering can never disagree. */
 var JUMP = [["north","North Star"],["constraint","The constraint"],["engine","Demand"],["content","Content"],
  ["site","The site"],["sales","The Pipeline"],["runs","What it runs on"],["roadmap","The work"],
- ["together","Working together"],["decisions","Decisions"],["ladder","Where this goes"]];
+ ["decisions","Decisions"],["ladder","Where this goes"]];
 
 /* ---------- render ---------- */
 var SEC_N = 0;
@@ -991,7 +996,7 @@ function sectionShell(id, title, note, body){
 
 function taskTable(){
   var h = '<div class="filters" id="owner-filters">';
-  ["All","Alex","Marc","Jarah"].forEach(function(o){ h += '<button type="button" data-owner="'+esc(o)+'" aria-pressed="'+(o===ownerFilter?"true":"false")+'">'+esc(o)+'</button>'; });
+  ["All","Marc","Jarah"].forEach(function(o){ h += '<button type="button" data-owner="'+esc(o)+'" aria-pressed="'+(o===ownerFilter?"true":"false")+'">'+esc(o)+'</button>'; });
   h += '<button type="button" data-key="phase" class="sortable" id="group-btn" style="margin-left:auto">Group by phase</button></div><div class="tbl"><table id="task-table"><thead id="task-head"></thead><tbody id="task-body"></tbody></table></div>'+
     '<p class="muted" id="task-foot"></p>';
   return h;
@@ -1000,7 +1005,7 @@ function taskTable(){
 /* Alex's hours are never rendered. The fee is not billed by the hour, and publishing
    them lets a client derive an effective rate per tier. Internal figures live in the
    Pricing Architecture doc, not here. */
-var FEE_OWNER = "Alex";
+var FEE_OWNER = "Not yours";
 function shownHrs(t){ return t[2]===FEE_OWNER ? 0 : t[3]; }
 function hrsCell(t){ return t[2]===FEE_OWNER ? '<span class="notyours">Not yours</span>' : (t[3]?t[3]:'<span class="notyours">Not yours</span>'); }
 function feeTaskCount(){ var c=0; TASKS.forEach(function(t){ if(t[2]===FEE_OWNER) c++; }); return c; }
@@ -1021,7 +1026,7 @@ h += '</div><p class="muted"><b>'+all+' hours across 6 months</b> is what this a
     '<p class="muted"><b>These are the hours for building it, not for doing it.</b> Coaching clients, delivering a bootcamp, standing on a stage \u2014 none of that is counted here, because none of it is setup. A bootcamp day is roughly two more of Marc\u2019s days once you add the prep. That is the good problem, and it is the one this whole plan is trying to cause.</p>'+
     '<p class="muted"><b>Jarah\u2019s hours scale with how much you publish.</b> The numbers above are the Scrappy case \u2014 eight pieces a month. At Prospect, which is ten, add roughly 1 hour a week to her total; at Contender, which is sixteen, add roughly 3. The three content lines are the ones that move; everything else stays where it is.</p>'+
     '<p class="muted"><b>My hours are not listed, on purpose.</b> I own '+feeTaskCount()+' of the '+TASKS.length+' tasks below. What that work costs is a separate conversation, and it happens after you answer the budget question \u2014 not before. Putting an hour count beside it would only start an argument about hours instead of about whether the right things are on the list.</p>'+
-    '<p class="muted"><b>Every one of them is doable without me.</b> The tasks marked Alex are the ones I would take off your hands, not ones only I can do. Section 11 sets out plainly what each phase looks like if you run it yourselves \u2014 this plan does not stop working if you do.</p>';
+    '<p class="muted"><b>Every one of them is doable in-house.</b> The ones marked <b>Not yours</b> are the ones that would come off your plate \u2014 not ones you could never do. Section 10 sets out plainly what each phase looks like if you run it yourselves \u2014 this plan does not stop working either way.</p>';
   box.innerHTML = h;
 }
 
@@ -1058,7 +1063,7 @@ function renderTasks(){
   var foot = document.getElementById("task-foot");
   if(foot){
     var tail = (ownerFilter===FEE_OWNER)
-      ? " · hours not shown, this work is covered by the fee"
+      ? " · hours not shown, this work does not land on you"
       : " · " + hrs + " hours" + (ownerFilter==="All" ? " for Marc and Jarah" : " for " + ownerFilter);
     foot.textContent = rows.length + " tasks" + tail + (sortKey==="phase" ? " · grouped by phase" : "");
   }
@@ -1105,20 +1110,6 @@ function mathRows(){
     MATH.rows.map(function(r){
       return '<tr><td class="mp">'+esc(r[0])+'</td><td class="mw">'+esc(r[1])+'</td><td class="mx">'+esc(r[2])+'</td></tr>';
     }).join("")+'</tbody></table></div>';
-}
-function addonCard(id){
-  var a=null,i; for(i=0;i<ADDONS.length;i++){ if(ADDONS[i].id===id) a=ADDONS[i]; }
-  if(!a) return "";
-  var sid="ad-"+a.id, open=!!openSecs[sid];
-  return '<div class="addon">'+
-    '<button type="button" class="addon-toggle" data-sec="'+sid+'" aria-expanded="'+(open?"true":"false")+'" aria-controls="body-'+sid+'">'+
-      '<span class="ad-l"><span class="ad-cta">Ask me to build it</span><span class="ad-nm">'+esc(a.name)+'</span></span>'+
-      '<span class="sec-right"><span class="ad-px">'+esc(a.price)+'</span><span class="chev"></span></span>'+
-    '</button>'+
-    '<div id="body-'+sid+'"'+(open?"":" hidden")+'><div class="ad-body">'+
-      '<b>What you get</b><ul>'+a.deliv.map(function(d){ return "<li>"+esc(d)+"</li>"; }).join("")+'</ul>'+
-      '<p class="ad-note">'+esc(ADDON_CAVEAT)+'</p>'+
-    '</div></div></div>';
 }
 function hubMap(){
   var cell = function(o){
@@ -1244,28 +1235,13 @@ function tierCards(){
 function ladderCards(){
   return LADDER.map(function(l){
     return '<div class="pcard"><h4>'+esc(l.phase)+' · '+esc(l.name)+'</h4>'+
-      '<p class="tag">'+esc(l.when)+' · '+esc(l.spend)+'</p>'+
+      '<p class="tag">'+esc(l.when)+(l.spend?' · '+esc(l.spend):'')+'</p>'+
       '<p class="gets"><b>What it solves:</b> '+esc(l.solves)+'</p>'+
       '<ul>'+l.what.map(function(w){ return '<li>'+esc(w)+'</li>'; }).join("")+'</ul>'+
-      '<p class="system"><b>With me:</b> '+esc(l.alex)+'</p>'+
-      '<p class="muted small"><b>Without me:</b> '+esc(l.without)+'</p></div>';
+      '<p class="muted small"><b>If you run it yourselves:</b> '+esc(l.without)+'</p></div>';
   }).join("");
 }
 
-function togetherRows(){
-  return TOGETHER.map(function(t){
-    var sid = "tg-"+t.id, open = !!openSecs[sid];
-    return '<div class="trow">'+
-      '<button type="button" class="trow-toggle" data-sec="'+sid+'" aria-expanded="'+(open?"true":"false")+'" aria-controls="body-'+sid+'">'+
-        '<span class="thd"><h4>'+esc(t.name)+'</h4><span class="tis">'+esc(t.is)+'</span></span>'+
-        '<span class="sec-right"><span class="tprice">'+esc(t.price)+'</span><span class="chev"></span></span>'+
-      '</button>'+
-      '<div id="body-'+sid+'"'+(open?"":" hidden")+'><div class="tcols">'+
-        '<div class="tcol"><b>If you do it yourselves</b><p>'+esc(t.diy)+'</p></div>'+
-        '<div class="tcol mine"><b>If I do it</b><p>'+esc(t.mine)+'</p></div>'+
-      '</div>'+'</div></div>';
-  }).join("");
-}
 
 /* Progressive disclosure: wrap every h3 and its following siblings into a
    collapsible sub-block. An h3 marked data-keep stays open. */
@@ -1304,7 +1280,7 @@ function render(){
    '<p class="lede">Nothing happens until the right people know about it. A plan you can run with me or without me. It starts where the money actually is.</p>'+
    '<p class="lede muted sourceline">Built from the Decision Sheet you submitted on Sep 22, 2026.</p>'+
    '<div class="how"><div><b>Read</b>Tap any section to open it. Everything starts closed so you can see the whole shape on one screen.</div>'+
-   '<div><b>Decide</b>16 questions in section 10. The first one — what you can spend each month — matters more than the other 15 together.</div>'+
+   '<div><b>Decide</b>16 questions in section 09. The first one — what you can spend each month — matters more than the other 15 together.</div>'+
    '<div><b>Save</b>Press <i>Save progress</i> anytime. When you\'re done, press <i>Submit</i> so I know.</div></div>';
 
   h += '<div class="bar"><div class="bar-row"><div class="meter"><span id="pg-meter-text">0 of 16 answered</span>'+
@@ -1313,6 +1289,7 @@ function render(){
      '<button type="button" class="toggle theme-btn" id="pg-theme" aria-label="Switch to dark mode" title="Switch to dark mode">'+
        '<span class="theme-ico" aria-hidden="true"></span>'+
      '</button>'+
+     '<button type="button" class="toggle" id="pg-pdf">Save as PDF</button>'+
      '<button type="button" class="toggle" id="pg-all">Expand all</button>'+
    '</div></div>'+
    '<div class="jump">'+
@@ -1321,7 +1298,7 @@ function render(){
      }).join("")+
    '</div></div>';
 
-  var NAV = [["north","North Star"],["constraint","The constraint"],["engine","How demand gets made"],["content","Content"],["site","The site"],["sales","The Pipeline"],["runs","What it runs on"],["roadmap","The work"],["together","How we can work together"],["decisions","Decisions"],["ladder","Where this goes"]];
+  var NAV = [["north","North Star"],["constraint","The constraint"],["engine","How demand gets made"],["content","Content"],["site","The site"],["sales","The Pipeline"],["runs","What it runs on"],["roadmap","The work"],["decisions","Decisions"],["ladder","Where this goes"]];
   h += '<div class="shell"><nav class="sidenav" aria-label="Sections"><ol>'+
     NAV.map(function(n,i){ return '<li><a href="#sec-'+n[0]+'" data-nav="'+n[0]+'"><span class="num">'+(i<9?"0":"")+(i+1)+'</span>'+esc(n[1])+'</a></li>'; }).join("")+
     '</ol></nav><div class="secs">';
@@ -1508,7 +1485,7 @@ function render(){
   /* 07 Runs on */
   h += sectionShell("runs","What it runs on","what the business actually costs",
     '<p class="lede">This is the number I need from you, and it is the only one that changes the shape of everything else.</p>'+
-    '<div class="feebox"><p><b>None of this is my fee.</b> Every number in this section is the running cost of the business \u2014 the editors, the tools, the hosting, the design, the shoots. What I charge sits separately, in section 09, and all of it is optional.</p>'+
+    '<div class="feebox"><p><b>These are the costs of running the business.</b> Every number in this section goes to somebody else \u2014 the editor, the tools, the hosting, the design, the shoots.</p>'+
       '<p>Pick the level you can genuinely sustain for <b>12 to 18 months</b>. The level you choose should be the level you keep \u2014 a level you can hold is worth more than a level you can start.</p></div>'+
     '<h3 data-keep>Where each month’s pieces come from</h3>'+
     sourceMix()+
@@ -1574,7 +1551,7 @@ function render(){
       '<span><span class="when">'+esc(p.when)+'</span><h4>'+esc(p.name)+'</h4></span>'+
       '<span class="sec-right"><span class="sec-note">'+n+' tasks · '+ny+' of them yours'+(hrs?' · ~'+(Math.round(hrs/p.weeks*10)/10)+' hrs a week':'')+'</span><span class="chev"></span></span></button>'+
       '<div id="body-ph-'+p.id+'"'+(open?"":" hidden")+'><p><b>At the end of it:</b> '+esc(p.end)+'</p>'+
-      '<p class="legend">Hours are what this asks of you and Jarah. <b>Not yours</b> means it does not land on you at all \u2014 section 09 sets out who does it and what each way costs.</p>'+'<div class="tbl"><table><thead><tr><th>Work</th><th>Your time</th></tr></thead><tbody>'+list+'</tbody></table></div>'+
+      '<p class="legend">Hours are what this asks of you and Jarah. <b>Not yours</b> means it does not land on you at all.</p>'+'<div class="tbl"><table><thead><tr><th>Work</th><th>Your time</th></tr></thead><tbody>'+list+'</tbody></table></div>'+
       '</div></div>';
   });
 
@@ -1582,13 +1559,12 @@ function render(){
 
   h += sectionShell("roadmap","The work","six phases, Oct \u2013 Mar",
     '<p class="lede">Every piece of work, in the order it has to happen. <b>The sequence is the argument:</b> the archive and the decisions first, then the site with capture wired into it, then content, then the selling half of the pipeline, then the rooms.</p>'+'<p>The site moved ahead of content on purpose. Posting before there is somewhere to land is how attention arrives and leaks straight back out \u2014 and the person most likely to go looking for Marc is not an Instagram follower, it is someone who just heard him on a podcast.</p>'+
-    '<p>No names on this list. Who does what depends on what you decide in section 09, so putting a name beside every line would only be a guess dressed up as a plan. The only split shown is whether a task lands on the two of you or not.</p>'+
+    '<p>No names on this list. Who ends up doing what is still open, so putting a name beside every line would only be a guess dressed up as a plan. The only split shown is whether a task lands on the two of you or not.</p>'+
     
     tl+ml+'<p class="muted">Tap a phase to see what is in it.</p>'+ph+
     '<h3>What nobody can do for you</h3>'+
     '<p>Whatever you decide about the rest, these five stay yours at any budget. Worth knowing now, because hiring help does not get you out of them.</p>'+
     '<ul class="cant">'+cant+'</ul>'+
-    '<p class="muted">I can push most of this to the 10 yard line. You still have to run it in.</p>'+
     '<h3>When to stop, change, or double down</h3>'+
     '<p>Every plan on paper assumes it works. This one has three points where you should stop and look at it honestly rather than keep going because the calendar says to. None of them mean quit — they mean the thing you are doing is not the thing that is wrong.</p>'+
     '<ul class="cant">'+
@@ -1598,31 +1574,6 @@ function render(){
     '</ul>'+
     '<p class="muted">And the one that points the other way: if something is clearly working — one pillar outperforming, one track producing every inquiry, a bootcamp that turns into two — put the money and the calendar behind it and let the rest of this plan bend around it. The plan is a starting position, not a contract.</p>');
 
-  /* 09 How we can work together */
-  h += sectionShell("together","How we can work together","where I fit, and what it costs",
-    '<p class="lede">Six phases, and for each one: what it is, what it looks like if you run it yourselves, and what changes if I do it.</p>'+
-    '<p>The money is the last thing in each row on purpose. It is the least interesting part \u2014 what matters is whether the difference is worth it to you, and on some of these it honestly is not.</p>'+
-    '<div class="together">'+togetherRows()+'</div>'+
-    '<h3>Smaller pieces, if you want them</h3>'+
-    '<p>Not everything is a phase. The first of these is real design work. The rest are small builds \u2014 a few hours each, mostly things where the tooling does the heavy lifting and I am really just deciding how they should be shaped.</p>'+
-    addonCard("kb")+addonCard("k2")+addonCard("k3")+
-    '<p><b>If the number is what stops you from asking, ask anyway.</b> I would rather help you build it than it get swept under the rug or break.</p>'+
-    '<h3>Two ways that actually adds up</h3>'+
-    '<p>Ranges make totals hard to picture, so here are the two I would actually recommend.</p>'+
-    '<div class="wex">'+
-      '<div class="wcard"><h4>About $5,000</h4><p class="wsum">$4,600\u20135,800</p>'+
-        '<ul><li>The content engine \u2014 $1,900\u20132,900</li><li>A working site \u2014 $2,700\u20132,900</li></ul>'+
-        '<p>You can make the right people aware of you, and you have somewhere real to send them. If this is the only money there is, this is the pairing I would pick \u2014 the two together do something neither does alone.</p></div>'+
-      '<div class="wcard rec"><h4>About $10,000</h4><p class="wsum">$8,700\u201312,000</p>'+
-        '<ul><li>The content engine \u2014 $1,900\u20132,900</li><li>The full site, reel and funnel \u2014 $5,800\u20137,900</li><li>The pipeline \u2014 $1,000\u20131,200</li></ul>'+
-        '<p>The same thing, but the site converts instead of just existing and nothing that comes in gets dropped. The brand guide rides along with the full site, so it is in here without a line of its own \u2014 which means this looks like a business rather than a start.</p></div>'+
-    '</div>'+
-    '<p class="muted">The archive is free and the rooms are yours either way, so neither appears in these. Nothing here is a package \u2014 they are just the two combinations I would argue for.</p>'+
-    '<h3 data-keep>Tell me what you can spend</h3>'+
-    '<p><b>These are ranges, not quotes.</b> Tell me what you can spend and I\u2019ll tell you honestly what we can accomplish with it \u2014 including if the honest answer is that you should do it yourselves. I\u2019d rather help at a number that works than not help at all.</p>'+
-    '<p>If the number is small, we shrink the scope, not the standard. Everything I take on, I do properly \u2014 you just pick fewer things. Around $5,000 buys two of these phases done right, and that is a real starting point rather than a consolation prize.</p>'+
-    '<p class="muted">The newsletter formula is in section 04 now — no need to ask. Two things I still have written up and will send if you want them: the site I would use as a reference for this category, and the skeletons behind the sales system. Ask and they are yours \u2014 no strings attached.</p>');
-
   /* 10 Decisions */
   var dec = DECISIONS.map(decisionHTML).join("");
   h += sectionShell("decisions","Decisions","0 of 16 answered",
@@ -1631,7 +1582,7 @@ function render(){
 
   /* 11 Ladder */
   h += sectionShell("ladder","Where this goes","the bigger build, if you ever want it",
-    '<p class="lede">Everything above is the first 6 months at a budget you set. This is what comes after, if and when you want it — and what it would cost.</p>'+
+    '<p class="lede">Everything above is the first 6 months at a budget you set. This is what comes after, if and when you want it.</p>'+
     '<p>You do not need to decide any of this now. It is here so the next step is obvious whenever you are ready, and so you can see that nothing in phase one is wasted when phase two arrives.</p>'+
     '<div class="pcards">'+ladderCards()+'</div>'+
     '<h3>Expeditions — the one with no price on it</h3>'+
@@ -1668,7 +1619,7 @@ function render(){
     '<h3>Why phase three is the real North Star</h3>'+
     '<p>The first 6 months make people aware of you. The second phase stops you doing it all by hand. <b>Phase three is the one that makes this a business you own rather than a job you run.</b> Everything in one place with your name on it, giving back hours every month, and giving clients something no other coach in this category can hand them.</p>'+
     '<p>That is the version worth aiming at. It is also the version that only makes sense once the first two have proved themselves, which is why it sits at the end of this page and not the front.</p>'+
-    '<p><b>The honest summary:</b> phase one you could do alone with this document and some weekends. Phase two you could do alone with more patience than most people have. Phase three genuinely needs someone technical. Section 09 sets out where I fit in the first 6 months and what each piece costs \u2014 and I will not be offended by any part of it you take on yourself. The point of writing this down was to make sure you have it either way.</p>'+
+    '<p><b>The honest summary:</b> phase one you could do alone with this document and some weekends. Phase two you could do alone with more patience than most people have. Phase three genuinely needs someone technical. The point of writing this down was to make sure you have the whole plan either way.</p>'+
     '<p class="muted">One caution worth stating plainly: a custom build is a risk as much as an asset. It has to be documented and handed over properly or you end up depending on whoever built it. If phase three ever happens, that condition is not negotiable — whoever builds it, including me.</p>');
 
   h += '</div></div>';
@@ -1694,7 +1645,7 @@ function render(){
 
 /* every "section NN" in prose becomes a link that jumps and opens it */
 var SEC_BY_NUM = {"01":"north","02":"constraint","03":"engine","04":"content","05":"site",
-  "06":"sales","07":"runs","08":"roadmap","09":"together","10":"decisions","11":"ladder"};
+  "06":"sales","07":"runs","08":"roadmap","09":"decisions","10":"ladder"};
 function linkifySections(root){
   var scope = root || document.getElementById("pg-root");
   if(!scope) return;
@@ -1837,6 +1788,8 @@ function wire(){
     var secs = document.querySelectorAll("[data-sec]");
     for(var i=0;i<secs.length;i++){ setOpen(secs[i].getAttribute("data-sec"), open); }
   });
+  var pdfBtn = document.getElementById("pg-pdf");
+  if(pdfBtn) pdfBtn.addEventListener("click", function(){ window.print(); });
   document.getElementById("pg-save").addEventListener("click", saveNow);
   document.getElementById("pg-submit").addEventListener("click", submitAll);
   document.getElementById("pg-copy").addEventListener("click", copyAnswers);
